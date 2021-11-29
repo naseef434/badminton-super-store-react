@@ -1,0 +1,105 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    8.  show
+========================
+************************/
+
+.back-text {
+	position: absolute;
+	z-index: 1;
+	font-size: 250px;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: #35383f;
+	left: 52%;
+	top: 72%;
+	transform: translate(-50%, -50%);
+	font-family: "Barlow Condensed", Sans-serif;
+	letter-spacing: 60px;
+	opacity: 0.5;
+    @include mq(xs){
+        font-size: 86px;
+        left: 52%;
+        top: 72%;
+        letter-spacing: 3px;
+    }
+    @include mq(lg){
+        left: 43%;
+    }
+}
+.banar-product {
+	position: relative;
+	z-index: 999;
+    top: 10%;
+	animation: float-bob-x 5s infinite;
+}
+.show-case{
+    position: relative;
+    padding-bottom: 130px;
+    @include mq(xs){
+        position: relative;
+        padding: 50px 0;
+    }
+}
+.back1-text {
+	font-size: 250px;
+	position: absolute;
+	top: 33%;
+	left: 35%;
+	color: #35383f;
+	font-family: "Barlow Condensed", Sans-serif;
+	letter-spacing: 60px;
+	font-weight: 900;
+	opacity: .5;
+	text-transform: uppercase;
+    @include mq(xs){
+        font-size: 50px;
+        top: 53%;
+        left: 35%;
+        letter-spacing: 20px;
+    }
+    @include mq(md){
+        left: 28%;
+    }
+}
+.offer-text {
+	height: 80px;
+	width: 35px;
+	position: absolute;
+	background: #ff145c;
+	color: #fff;
+	text-transform: uppercase;
+    line-height: 1;
+    display: grid;
+    left: 29%;
+    place-items: center;
+    font-weight: 600;
+    & i{
+        display: inline-block;
+        padding-bottom: 12px;
+
+    }
+}
+.product__update .lightblueclr {
+	background: $ligtblue;
+}
+.show-case {
+	@include mq(lg){
+        padding-top: 0;
+    }
+}
+.offer-text::before {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 17.5px 8px 17.5px;
+	border-color: transparent transparent #202227 transparent;
+}

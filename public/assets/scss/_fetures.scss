@@ -1,0 +1,198 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+
+/***********************
+========================
+    6.  fetures
+========================
+************************/
+
+.fetures{
+    position: relative;
+    &__thumb{
+        & a{
+            display: block;
+        }
+        & img{
+            width: 100%;
+            max-height: 100vh;
+        }
+    }
+    &:hover img{
+        transform: scale(1.1);
+    }
+    &__content{
+        position: absolute;
+        top: 54%;
+        left: 20%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        & p{
+            font-size: 18px;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: 600;
+        }
+        @include mq(xs){
+            left: 5%;
+        }
+    }
+}
+.feature-title{
+    color: $white;
+    font-family: "Barlow Condensed", Sans-serif;
+    font-size: 3.5vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    text-align: right;
+    @include mq(xs){
+        text-align: left;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+}
+.discount{
+    color: $yellow;
+}
+//responsive
+.features-area {
+	@include mq(xs){
+        padding-top: 30px;
+    }
+    
+}
+.fetures {
+	@include mq(xs){
+        margin-bottom: 30px;
+    }
+}
+//home 3
+.fetures_3{
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 30px 30px;
+    @include mq(md){
+        margin-top: 296px;
+    }
+    & h2{
+        padding-top: 66px;
+        color: $white;
+        font-weight: 600;
+        text-transform: uppercase;
+        @include mq(lg){
+            padding-top: 51px;
+        }
+    }
+    & p{
+        font-size: 18px;
+        font-weight: 600;
+        color: $white;
+        text-transform: uppercase;
+        & span{
+            color: #ffc000;
+        }
+    }
+}
+.offer-text.offer_3 {
+	height: 80px;
+	width: 35px;
+	position: absolute;
+	background: #ffc000;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 1;
+	display: grid;
+	left: 29%;
+	place-items: center;
+	font-weight: 600;
+    &::before{
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 17.5px 8px 17.5px;
+        border-color: transparent transparent #9a1819 transparent;
+    }
+}
+
+.offer-text.offer_3{
+    top: 6%;
+    left: 10%;
+    text-align: center;
+}
+.fetures_s_2 {
+	font-size: 70px;
+	font-weight: 600;
+    @include mq(xs){
+        font-size: 44px;
+    }
+    & span{
+        font-weight: 400;
+    }
+}
+.fesection-2.fetures_s_2{
+    padding: 0;
+}
+.button_style_f {
+	padding: 20px 35px;
+	background: $white;
+	font-size: 18px;
+	color: $heading;
+	font-weight: 600;
+}
+.fetures_3 .text-clr-change{
+    color: #a80e0e;
+}
+
+
+// extra css
+.close-times {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search-c-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.search__input-group-c {
+    padding-left: 70px;
+    & input {
+        width: 100%;
+    }
+}
+.p-rel {
+    position: relative;
+}
+.background-white {
+    padding: 18px 30px;
+}
+.search-c-btn {
+    width: 50px;
+    background: transparent;
+    color: #222222;
+    border: 0;
+    height: 100%;
+}
+.close-times {
+    width: 50px;
+    background: transparent;
+    border: 0;
+    height: 100%;
+    color: #222222;
+}
+
+.fetures_3{
+    @include mq(md){
+        margin-top: 0;
+    }
+}

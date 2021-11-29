@@ -1,0 +1,54 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    16. page
+========================
+************************/
+
+.page-layout {
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: bottom;
+	padding: 160px 0;
+}
+.page-layout.about{
+    padding: 250px 0;
+    @include mq(xs){
+        padding: 100px 0;
+    }
+}
+.page-title{
+    font-size: 60px;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 500;
+    @include mq(xs){
+        font-size: 32px;
+    }
+}
+.breadcrumb-area{
+    & p{
+        color: $white;
+    }
+}
+.breadcrumb-menu{
+    & ol{
+        & li{
+            & a{
+                color: $white;
+                font-size: 16px;
+            }
+        }
+    }
+}
+.widget-title{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+}
+.sidebar {
+	max-width: 300px;
+}

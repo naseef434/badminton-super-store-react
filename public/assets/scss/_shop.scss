@@ -1,0 +1,302 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    17. shop
+========================
+************************/
+.product-categories{
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    & li{
+        padding: 5px 0 5px;
+        margin: 5px 0;
+        & a{
+            text-transform: capitalize;
+            color: $subheading;
+            padding-right: 5px;
+            font-size: 16px;
+            font-family: 'Futura Std Book';
+            & span{
+                color: $blogcolor;
+            }
+        }
+    }
+}
+.layer-size{
+    & span{
+        display: inline-flex;
+        line-height: 1;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid #f1f1f1;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        background-color: #f1f1f1;
+        font-size: 12px;
+    }
+}
+.blue,.gray,.skyblue,.red,.yellow {
+	display: inline-block;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	background: blue;
+	outline: 0;
+	border: 1px solid transparent;
+}
+.gray {
+	background: #d4d4d4;
+}
+.skyblue{
+    background: #1cbbb4;
+}
+.red{
+    background: #dd3333;
+}
+.yellow{
+    background: #eeee22;
+}
+.img-left img {
+	float: left;
+	width: 46%;
+	max-width: 95px;
+	margin-right: 20px;
+}
+.sm-title{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.item-widget{
+    overflow: hidden;
+}
+.product-meta{
+    overflow: hidden;
+    & span{
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+.tags{
+    & a{
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 30px;
+        display: inline-block;
+        margin: 4px;
+        background: #f5f5f5;
+        text-transform: capitalize;
+        @include transition(.3s);
+        &:hover{
+            background: $ligtblue;
+            color: $white;
+            @include transition(.3s);
+        }
+    }
+}
+.shop-top-bar{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    @include mq(xs){
+        flex-direction: column;
+    }
+}
+.showing-result{
+    & p{
+        font-size: 16px;
+        font-family: 'Futura Std Book';
+        color: $subheading;
+        font-weight: 400;
+    }
+}
+
+.shop-tabs{
+    &:first-child{
+        & button{
+            background:transparent;
+            border: 0;
+            font-size: 16px;
+            font-family: 'Futura Std Book';
+        }
+    }
+}
+.shop-tab .nav-tabs{
+    border: 0 !important;
+}
+.shop-tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: $heading;
+	background-color: #fff;
+	border: 0 !important;
+	border-radius: 0;
+}
+.order-by{
+    text-transform: capitalize;
+    font-size: 1rem;
+    border: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    color: #666;
+    cursor: pointer;
+    height: auto;
+    line-height: 25px;
+}
+.filter-select{
+    & button{
+        display: inline-flex;
+        align-items: center;
+        color: #666;
+        padding: 7px 18px 7px 11px;
+        background-color: #232323;
+        font-weight: 500;
+        border: 1px solid #232323;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 13px;
+        position: relative;
+        & i{
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+
+}
+.filter-content {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background: $white;
+	z-index: 99;
+    box-shadow: 0 8px 32px -8px rgba(0,0,0,0.1);
+    padding: 0px 30px;
+    display: none;
+}
+.filter-content .product-widget .widget-title{
+    font-size: 17px;
+}
+
+//price
+
+/* price filter */
+
+.filter-widget .filter-item {
+    margin-bottom: 50px;
+  }
+  
+  div#slider-range,
+  div#slider-range-2 {
+    height: 4px;
+    background: #eb2323;
+    border: none;
+  }
+  .ui-slider-range.ui-corner-all.ui-widget-header {
+    background-color: #eb2323;
+  }
+  
+  span.ui-slider-handle.ui-corner-all.ui-state-default {
+    background: #eb2323;
+    border-radius: 50%;
+    cursor: e-resize;
+    transform: translateY(-2px);
+    outline: none;
+    border: none;
+    position: absolute;
+  }
+  
+  span.ui-slider-handle.ui-corner-all.ui-state-default::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: scale(0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .filter-form-submit button {
+    background: #333333;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.5s;
+    line-height: 25px;
+    font-weight: 400;
+    padding: 0 24px;
+    border-radius: 3px;
+    height: 40px;
+  }
+  .filter-form-submit button:hover {
+    background-color: #eb2323;
+  }
+  .filter-price {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+  }
+  .filter-price input {
+    background: transparent;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    line-height: 33.6px;
+    font-weight: 500;
+  }
+  
+  ul.color-list li {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid #ddd;
+  }
+  ul.color-list li:not(:last-child) {
+    margin-right: 15px;
+  }
+  ul.color-list li:hover {
+    transform: scale(0.8);
+  }
+  .widget .size-link a {
+    display: inline-block;
+    line-height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #222;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #eeeeee;
+  }
+  .widget .size-link a {
+    margin-right: 15px;
+  }
+  .widget .size-link a:hover {
+    color: #fff;
+    background-color: #eb2323;
+  }
+  .single_prodct.single-bottom .nav-tabs li {
+	display: inline-block;
+	width: 20%;
+}
+.single_prodct.single-bottom .nav-tabs li button {
+	border: 0;
+}
+.single_prodct.single-bottom .nav-tabs {
+	border: 0;
+}

@@ -1,0 +1,71 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    14. testimonial
+========================
+************************/
+
+.categories_area {
+	@include mq(md){
+        margin-bottom: 50px;
+    }
+}
+.testimonial{
+    &__content{
+        & p{
+            font-size: 18px;
+            color: $heading;
+            font-family: 'Futura Std Book';
+            line-height: 1.8;
+            @include mq(xs){
+                font-size: 11px;
+            }
+            @include mq(md){
+                font-size: 13px;
+            }
+        }
+        & h4{
+            color: $heading;
+            font-size: 16px;
+            & span{
+                font-weight: 600;
+                color: #2bb9a9;
+            }
+        }
+    }
+}
+// .service__wrapper{
+//     box-shadow: 1px -2px 7px -5px rgba(0,0,0,0.5);
+//     padding: 53px 15px;
+// }
+.service{
+    @include mq(xs){
+        margin-bottom: 30px;
+    }
+    &__thumb{
+        float: left;
+        margin-right: 20px;
+    }
+    &__content{
+        overflow: hidden;
+        & h4{
+            font-size: 16px;
+            color: $heading;
+            font-weight: 600;
+        }
+        & p{
+            font-size: 16px;
+            color: $subheading;
+            font-family: 'Futura Std Book';
+            @include mq(md){
+                font-size: 11px;
+            }
+        }
+    }
+}
+.service__thumb.service4{
+    float: none;
+}

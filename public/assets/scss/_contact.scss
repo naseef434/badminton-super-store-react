@@ -1,0 +1,224 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    20. contact
+========================
+************************/
+
+.contact__area{
+    background: #F7F8F9;
+    padding: 160px 0;
+}
+.contact__content{
+    & h2{
+        color: $heading;
+        font-size: 80px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @include mq(xs){
+            font-size: 40px;
+        }
+    }
+    & p{
+        line-height: 2;
+    }
+}
+.contactbox{
+    &__heading{
+        & h5{
+            font-size: 16px;
+            color: $blogcolor;
+        }
+        & h2{
+            font-size: 36px;
+            color: $heading;
+            font-family: 'Futura Std Book';
+            line-height: 1.7;
+            @include mq(xs){
+                font-size: 30px;
+            }
+        }
+    }
+    &__info{
+        & h5{
+            color: #006699;
+            font-family: 'Futura Std Book';
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        & ul{
+            & li{
+                color: $subheading;
+                font-family: 'Futura Std Book';
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+.form{
+    & h5{
+        margin-bottom: 10px;
+        font-family: 'Futura Std Book';
+        color: #7a7a7a;
+        text-transform: capitalize;
+        font-size: 14px;
+        padding-top: 5px;
+    }
+}
+.c-input-group{
+    & label{
+        display: block;
+        margin: 15px 0;
+        color: $heading;
+        font-size: 12px;
+    }
+    & input{
+        width: 100%;
+        padding: 15px 20px;
+        display: inline-block;
+        border: 1px solid #ebebeb;
+        @include transition(.3s);
+        &:focus{
+            outline: 1px solid $heading;
+            @include transition(.3s);
+        }
+    }
+    & textarea{
+        height: 150px;
+        width: 100%;
+        border: 1px solid #ebebeb;
+        padding-left: 20px;
+        padding-top: 20px;
+        resize: none;
+        margin-bottom: 25px;
+        &:focus{
+            outline: 1px solid $heading;
+            @include transition(.3s);
+        }
+    }
+}
+.submit-btn{
+    & input{
+        width: 100%;
+        padding: 15px 0;
+        background: $heading;
+        color: $white;
+        font-size: 16px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        @include transition(.3s);
+        &:hover{
+            background: transparent;
+            border: 1px solid $ligtblue;
+            color: $heading;
+            @include transition(.3s);
+        }
+    }
+
+}
+.contact-wrapper{
+    box-shadow: 0px 33px 30px -18px rgba(0, 0, 0, 0.2);
+    padding: 60px 80px 60px 80px;
+    background: $white;
+    z-index: 999999;
+    position: relative;
+    @include mq(xs){
+        padding: 20px;
+    }
+}
+.map__area{
+    margin-top: -410px;
+}
+.contact__area_2{
+    padding: 168px 0 180px 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left top;
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #02122d;
+        content: "";
+        z-index: 2;
+        opacity: .8;
+    }
+}
+.contact__inner_2{
+    position: relative;
+    z-index: 9;
+    & h2{
+        color: $white;
+        font-size: 80px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        position: relative;
+        @include mq(xs){
+            font-size: 30px;
+        }
+        &::before{
+            position: absolute;
+            bottom: -30px;
+            height: 2px;
+            width: 70px;
+            background: $white;
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    & p{
+        line-height: 2;
+        color: $white;
+    }
+}
+.contact-single{
+    border-right: 1px solid #ddd;
+    @include mq(xs){
+        margin-bottom: 50px;
+    }
+    &__thumb{
+        & i{
+            font-size: 50px;
+            color: $ligtblue;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            border: 2px solid $ligtblue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 30px;
+        }
+    }
+    &__content{
+        & h3{
+            color: $heading;
+            font-weight: 600;
+            font-size: 21px;
+        }
+        & p{
+            font-size: 15px;
+        }
+        & h5{
+            font-size: 17px;
+            color: $heading;
+            font-weight: 600;
+            font-family: 'Futura Std Book';
+        }
+    }
+}
+.google-map.contact-map {
+	margin-bottom: -5px;
+}
