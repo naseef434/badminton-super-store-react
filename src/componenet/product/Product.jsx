@@ -5,7 +5,6 @@ var img = "assets/img/product/test.jpg"
 
 
 export default function Product(props){
- console.log(props.data);
  
   const [product, setProduct] = useState(
     {

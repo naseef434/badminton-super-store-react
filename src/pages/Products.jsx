@@ -1,9 +1,7 @@
 
 import Navbar from "../componenet/navbar/Navbar";
 import BreadCrumb from '../componenet/product/BreadCrumb'
-
 import React, {useState,useEffect} from "react";
-
 import Category from "../componenet/product/Categories";
 import Product from "../componenet/product/Product";
 import ProductFilter from "../componenet/product/ProductFilter";

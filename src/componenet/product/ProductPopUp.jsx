@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-var img = "assets/img/product/test.jpg"
-export default function ProductPopUp( { closeModel,item }) {
+var img = "assets/img/product/test.jpg";
 
-    
+export default function ProductPopUp( { closeModel,item }) {
     return (
-       
-        
         <div>
-              {console.log(item.name)}
+              {console.log("hello"+closeModel)}
             {/* <button onClick={() => { closeModel(false) }}>X</button> */}
             <div className="overlay show-popup" />
             <div className="product-popup show-popup">

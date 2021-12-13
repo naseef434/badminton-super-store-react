@@ -1,10 +1,13 @@
 import React from "react";
+import  {useState} from "react";
+import CartSideBar from "../Cart/CartSideBar";
+
 
 export default function Navbar(){
-const img  = {
-    backgroundColor : "Red"
-} 
-    return(       
+  const [openCartModel, setCartOpen] = useState(false)
+    return(    
+      <>   
+       {openCartModel && <CartSideBar closeModel={setCartOpen} />}
         <header className="header-area">
   <div className="gota_top bg-soft d-none d-sm-block">
     <div className="container-fluid">
@@ -177,7 +180,8 @@ const img  = {
         </div>
         <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4">
           <div className="gota_cart gotat_cart_1 text-end">
-            <a href="javascript:void(0)"><i className="fal fa-shopping-cart" />My Bag<span className="counter"> (2)</span></a>
+          <a onClick={()=>{setCartOpen(true)}}  ><i className="fal fa-shopping-cart" />My Bag<span className="counter"> (2)</span></a>
+          
           </div>
         </div>
       </div>
@@ -185,5 +189,6 @@ const img  = {
   </div>
 </header>
 
+</>
     )
 }

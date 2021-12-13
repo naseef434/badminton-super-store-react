@@ -11,7 +11,7 @@ import ProductPopUp from "./componenet/product/ProductPopUp";
 import Home from "./pages/Home";
 import CartPage from "./pages/CartPage";
 import CheckOutPage from "./pages/CheckOutPage";
-import CarttSideBar from "./componenet/Cart/CarttSideBar";
+import CartSideBar from "./componenet/Cart/CartSideBar";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Route path="/productsview/:product_id"  element={<ProductSinleView /> } />
         <Route path="/cart" element={<CartPage /> } />
         <Route path="/checkout" element={<CheckOutPage />} />
-        <Route path="/cart_sidebar" element={<CarttSideBar />} />
+        {/* <Route path="/cart_sidebar" element={<CartSideBar />} /> */}
 
         
           
