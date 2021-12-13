@@ -5,27 +5,47 @@ var img = "assets/img/product/test.jpg"
 
 
 export default function Product(props){
-  var products  = props.data
-  console.log(products);
-  const [product, setProduct] = useState([
+ console.log(props.data);
+ 
+  const [product, setProduct] = useState(
     {
       id: '',
       category: '',
       brand: '',
       color: '',
-      long_disc: '',
+      long_desc: '',
       name: '',
       sale_price: '',
       short_desc: '',
       size: '',
       thumbnail: ''
     }
-  ])
+  )
+  function demo(item){
+    setOpen(true)
+    setProduct({ 
+      id:item.id,
+      category:item.category.name,
+      brand:item.brand.name,
+      color:item.color,
+      long_desc:item.long_desc,
+      name:item.name,
+      sale_price:item.sale_price,
+      short_desc:item.short_desc,
+      size:item.size,
+      thumbnail:item.thumbnail
+
+    })
+    
+    
+  }
   const [openModel, setOpen] = useState(false)
+   
+  
     return(
       <>
       {/* if model is true run the component */}
-      {openModel && <ProductPopUp closeModel={setOpen}  product={products}/>}
+      {openModel && <ProductPopUp closeModel={setOpen}  item={product}/>}
         <div className="col-xl-12 col-lg-12 col-md-12">
         <div className="tab-content" id="nav-tabContent">
           <div className="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
@@ -67,7 +87,7 @@ export default function Product(props){
                                   <a href="#"><i className="fal fa-heart" /></a>
                                 </div>
                                 <div className="view">
-                                  <a onClick={()=>{setOpen(true)}}><i className="fal fa-eye" /></a>
+                                  <a onClick ={()=> demo(item)} ><i className="fal fa-eye" /></a>
                                 </div>
                                 <div className="layer">
                                   <a href="#"><i className="fal fa-layer-group" /></a>

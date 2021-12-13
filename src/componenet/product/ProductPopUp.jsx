@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+var img = "assets/img/product/test.jpg"
+export default function ProductPopUp( { closeModel,item }) {
 
-export default function ProductPopUp( { closeModel }) {
-
+    
     return (
+       
+        
         <div>
+              {console.log(item.name)}
             {/* <button onClick={() => { closeModel(false) }}>X</button> */}
             <div className="overlay show-popup" />
             <div className="product-popup show-popup">
@@ -12,15 +16,15 @@ export default function ProductPopUp( { closeModel }) {
                         <div className="col-xl-5 col-lg-5 col-md-5">
                             <div className="quickview">
                                 <div className="quickview__thumb">
-                                    <img src="./assets/img/quick_view/25.jpg" alt="" />
+                                    <img src={img} alt="" />
                                 </div>
                             </div>
                         </div>
                         <div className="col-xl-7 col-lg-7 col-md-7">
                             <div className="viewcontent">
                                 <div className="viewcontent__header">
-                                    <a href="single.html">  <h2>Brown Leather Bags</h2>
-                                    </a>                     <a className="view_close product-p-close"  onClick={() => { closeModel(false) }} href="javascript:void(0)"><i className="fal fa-times-circle" /></a>
+                                    <a href="single.html">  <h2>{item.name}</h2></a>
+                                    <a className="view_close product-p-close"  onClick={() => { closeModel(false) }} href="javascript:void(0)"><i className="fal fa-times-circle" /></a>
                                 </div>
                                 <div className="viewcontent__rating">
                                     <i className="fal fa-star ratingcolor" />
@@ -29,13 +33,13 @@ export default function ProductPopUp( { closeModel }) {
                                     <i className="fal fa-star" />
                                 </div>
                                 <div className="viewcontent__price">
-                                    <h4><span>$</span>99.00</h4>
+                                    <h4><span>AED - </span>{item.sale_price}</h4>
                                 </div>
                                 <div className="viewcontent__stock">
                                     <h4>Available :<span> In stock</span></h4>
                                 </div>
                                 <div className="viewcontent__details">
-                                    <p>Anlor sit amet, consectetur adipiscing elit. Fusce condimentum est lacus, non pretium risus lacinia vel. Fusce eget turpis orci.</p>
+                                    <p>{item.long_desc}</p>
                                 </div>
                                 <div className="viewcontent__action">
                                     <span>Qty</span>
@@ -51,9 +55,9 @@ export default function ProductPopUp( { closeModel }) {
                                         <li>Brand:</li>
                                     </ul>
                                     <ul>
-                                        <li>Watches</li>
+                                        <li>{item.category}</li>
                                         <li>2584-MK63</li>
-                                        <li>Brenda</li>
+                                        <li>{item.brand}</li>
                                     </ul>
                                 </div>
                             </div>

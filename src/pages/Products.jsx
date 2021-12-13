@@ -1,9 +1,9 @@
 
 import Navbar from "../componenet/navbar/Navbar";
 import BreadCrumb from '../componenet/product/BreadCrumb'
-import {BrowserRouter as Router, Routes, Route, Navigate, Link, Outlet} from 'react-router-dom'
+
 import React, {useState,useEffect} from "react";
-import axios from "axios";
+
 import Category from "../componenet/product/Categories";
 import Product from "../componenet/product/Product";
 import ProductFilter from "../componenet/product/ProductFilter";
