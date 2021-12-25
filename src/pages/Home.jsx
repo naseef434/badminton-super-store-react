@@ -8,18 +8,18 @@ import NewArrivals from "../componenet/home/NewArrivals";
 import BlogArea from "../componenet/home/BlogArea";
 import Gallery from "../componenet/home/Gallery";
 import Footer from "../componenet/footer/Footer";
-export default function Home(){
-    return (
-        <>
-          <Navbar />
-          <Carousel /> 
-          <FeaturesArea />
-          <Categories />
-          <ProductShowCase />
-          <NewArrivals />
-          <BlogArea />
-          <Gallery />
-          <Footer />
-        </>
-    )
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+      <Carousel />
+      <FeaturesArea />
+      <Categories />
+      <ProductShowCase />
+      <NewArrivals />
+      <BlogArea />
+      <Gallery />
+      <Footer />
+    </>
+  )
 }

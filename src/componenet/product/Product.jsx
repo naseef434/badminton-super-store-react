@@ -4,8 +4,8 @@ import ProductPopUp from "./ProductPopUp";
 var img = "assets/img/product/test.jpg"
 
 
-export default function Product(props){
- 
+export default function Product({products_data}){
+  console.log({products_data});
   const [product, setProduct] = useState(
     {
       id: '',
@@ -20,7 +20,7 @@ export default function Product(props){
       thumbnail: ''
     }
   )
-  function demo(item){
+  function openModelFunction(item){
     setOpen(true)
     setProduct({ 
       id:item.id,
@@ -35,8 +35,6 @@ export default function Product(props){
       thumbnail:item.thumbnail
 
     })
-    
-    
   }
   const [openModel, setOpen] = useState(false)
    
@@ -50,7 +48,7 @@ export default function Product(props){
           <div className="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <div className="row">
              {
-                 props.data.map((item,key)=>{
+                 products_data.map((item,key)=>{
                      return(
                         <div className="col-xl-3">
                         <div className="product product-3">
@@ -76,7 +74,7 @@ export default function Product(props){
                             <h4><Link to={`/productsview/${item.id}`}> {item.name}</Link></h4>
                               {/* <h4><Link to=""> {item.name}</Link></h4> */}
                               <div className="pro-price">
-                                <p className="p-absoulute pr-1"><span>AED - {item.sale_price} </span>{props.rate} </p>
+                                <p className="p-absoulute pr-1"><span>AED - {item.sale_price} </span>{products_data.rate} </p>
                                 <a className="p-absoulute pr-2" href="#">add to cart</a>
                               </div>
                             </div>
@@ -86,7 +84,7 @@ export default function Product(props){
                                   <a href="#"><i className="fal fa-heart" /></a>
                                 </div>
                                 <div className="view">
-                                  <a onClick ={()=> demo(item)} ><i className="fal fa-eye" /></a>
+                                  <a onClick ={()=> openModelFunction(item)} ><i className="fal fa-eye" /></a>
                                 </div>
                                 <div className="layer">
                                   <a href="#"><i className="fal fa-layer-group" /></a>
