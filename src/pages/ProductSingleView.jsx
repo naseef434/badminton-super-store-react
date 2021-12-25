@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import {useState,useEffect} from "react";
 
 export default function ProductSinleView(){
-const {product_id} = useParams() 
+const {product_id} = useParams(0) 
 const  [product, setProduct] = useState([])
 
 //calling product api 

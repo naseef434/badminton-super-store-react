@@ -5,7 +5,7 @@ var img = "assets/img/product/test.jpg";
 export default function ProductPopUp( { closeModel,item }) {
     return (
         <div>
-              {console.log("hello"+closeModel)}
+             
             <div className="overlay show-popup" />
             <div className="product-popup show-popup">
                 <div className="view-background">
@@ -20,7 +20,8 @@ export default function ProductPopUp( { closeModel,item }) {
                         <div className="col-xl-7 col-lg-7 col-md-7">
                             <div className="viewcontent">
                                 <div className="viewcontent__header">
-                                <Link to={`/productsview/${item.id}`}><h2> {item.name}</h2></Link>
+                               
+                                <Link to={`/product_view/${item.id}`}><h2> {item.name}</h2></Link>
                                     
                                     <a className="view_close product-p-close"  onClick={() => { closeModel(false) }} href="javascript:void(0)"><i className="fal fa-times-circle" /></a>
                                 </div>
