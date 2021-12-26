@@ -20,13 +20,11 @@ function App() {
   return (
     <Router>
       <Routes>
-       
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product_view/:product_id" element={<ProductSinleView />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckOutPage />} />
-        
         <Route
           path="*"
           element={

@@ -11,8 +11,6 @@ export default function Signup({ closeModel }) {
   const [formSubmitted, setFormSubmitted] = useState(false)
   return (
     <div>
-
-
       <div className="overlay show-popup" />
       <div className="product-popup show-popup">
         <form action="#" className="form" id="forms" onsubmit="event.preventDefault()">
@@ -24,8 +22,7 @@ export default function Signup({ closeModel }) {
                 {tabs?.map((tab) => (
                   <div className={`progress-step ${activeTab === tab.key ? "progress-step-active" : ""} `} data-title={tab.label} />
                 ))}
-                {/* <div className="progress-step" data-title="OTP" />
-            <div className="progress-step" data-title="Personal" /> */}
+          
               </div>
               {activeTab === "phoneNumber" ? (
                 <div className="step-forms step-forms-active">
