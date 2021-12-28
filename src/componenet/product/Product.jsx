@@ -4,7 +4,7 @@ import Signup from "../Customer/Signup";
 import ProductPopUp from "./ProductPopUp";
 var img = "assets/img/product/test.jpg"
 
-export default function Product({ products_data, handleLoginPop, openLoginModel, setLoginModel, openModelSingleView, setOpen, product, openModelFunction }) {
+export default function Product({ products_data, handleLoginPop, openLoginModel, setLoginModel, openModelSingleView, setOpen, product, openModelFunction, }) {
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function Product({ products_data, handleLoginPop, openLoginModel,
                             {/* <h4><Link to=""> {item.name}</Link></h4> */}
                             <div className="pro-price">
                               <p className="p-absoulute pr-1"><span>AED - {item.sale_price} </span>{products_data.rate} </p>
-                              <a className="p-absoulute pr-2" onClick={handleLoginPop}>add toooo cart</a>
+                              <a  className="p-absoulute pr-2"  href="javascript:void(0)" onClick={()=> handleLoginPop(item)}>add toooo cart</a>
                             </div>
                           </div>
                           <div className="product__action">

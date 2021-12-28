@@ -1,71 +1,87 @@
-
-import React, { useState, useEffect } from "react"
-import { urlGateWay } from "../../services/service"
-import * as serviceEndPoint from "../../services/serviceEndPoint"
+import React, { useState, useEffect } from "react";
+import { urlGateWay } from "../../services/service";
+import * as serviceEndPoint from "../../services/serviceEndPoint";
 import Navbar from "../navbar/Navbar";
 import BreadCrumb from "./BreadCrumb";
-import Categories from "./Categories"
-import ProductFilter from "./ProductFilter"
-import Product from "./Product"
-
+import Categories from "./Categories";
+import ProductFilter from "./ProductFilter";
+import Product from "./Product";
 
 export default function Index() {
-    const [products, setProducts] = useState([])
-    const [category, setCategory] = useState([])
+    const [products, setProducts] = useState([]);
+    const [category, setCategory] = useState([]);
     //get categories
     useEffect(async () => {
-        const response = await urlGateWay.get(`${serviceEndPoint.productsEndpoints.getCategory}`)
-        setCategory(response?.data?.results)
-    }, [])
+        const response = await urlGateWay.get(
+            `${serviceEndPoint.productsEndpoints.getCategory}`
+        );
+        setCategory(response?.data?.results);
+    }, []);
 
     //get products
     useEffect(() => {
         async function fetchData() {
-            const response = await urlGateWay.get(`${serviceEndPoint.productsEndpoints.getProducts}`)
-            setProducts(response?.data?.results)
+            const response = await urlGateWay.get(
+                `${serviceEndPoint.productsEndpoints.getProducts}`
+            );
+            setProducts(response?.data?.results);
         }
         fetchData();
-    }, [])
+    }, []);
 
     //handle login popup
-    const [openLoginModel, setLoginModel] = useState(false)
-    const loginModelFunction = () => {
-        setLoginModel(true)
-    }
+    const [openLoginModel, setLoginModel] = useState(false);
+   
+    const loginModelFunction = async(prod) => {
+        const userToken = localStorage.getItem("token");
+        if (userToken) {
+            let body = {
+                product_id: prod.id,
+                quantity: 1
+            }
+            const response = await urlGateWay.post(serviceEndPoint.cart.addToCart, body);
+            const { data, status } = response;
+            if (status === 200) {
+                console.log("success");
+            } else {
+              window.alert("something went wrong");
+            }
+        } else {
+            setLoginModel(true);
+        }
+    };
 
     //single product
-    const [openModel, setOpen] = useState(false)
-    const [product, setProduct] = useState(
-        {
-          id: '',
-          category: '',
-          brand: '',
-          color: '',
-          long_desc: '',
-          name: '',
-          sale_price: '',
-          short_desc: '',
-          size: '',
-          thumbnail: ''
-        }
-      )
-      //calling single product model
-      function openModelFunction(item) {
-        setOpen(true)
+    const [openModel, setOpen] = useState(false);
+    const [product, setProduct] = useState({
+        id: "",
+        category: "",
+        brand: "",
+        color: "",
+        long_desc: "",
+        name: "",
+        sale_price: "",
+        short_desc: "",
+        size: "",
+        thumbnail: "",
+    });
+    //calling single product model
+    function openModelFunction(item) {
+        setOpen(true);
         setProduct({
-          id: item.id,
-          category: item.category.name,
-          brand: item.brand.name,
-          color: item.color,
-          long_desc: item.long_desc,
-          name: item.name,
-          sale_price: item.sale_price,
-          short_desc: item.short_desc,
-          size: item.size,
-          thumbnail: item.thumbnail
-        })
-      }
-      
+            id: item.id,
+            category: item.category.name,
+            brand: item.brand.name,
+            color: item.color,
+            long_desc: item.long_desc,
+            name: item.name,
+            sale_price: item.sale_price,
+            short_desc: item.short_desc,
+            size: item.size,
+            thumbnail: item.thumbnail,
+        });
+    }
+
     return (
         <>
             <Navbar />
@@ -82,7 +98,18 @@ export default function Index() {
                             <div className="shop-page-product pt-50 pb-100">
                                 <div className="row">
                                     <h1>Products</h1>
-                                    <Product products_data={products} handleLoginPop={loginModelFunction} openLoginModel={openLoginModel} setLoginModel={setLoginModel}  openModelSingleView={openModel} setOpen={setOpen} product={product} setProduct={setProduct} openModelFunction={openModelFunction}/>
+                                    <Product
+                                        products_data={products}
+                                        handleLoginPop={loginModelFunction}
+                                        openLoginModel={openLoginModel}
+                                        setLoginModel={setLoginModel}
+                                        openModelSingleView={openModel}
+                                        setOpen={setOpen}
+                                        product={product}
+                                        setProduct={setProduct}
+                                        openModelFunction={openModelFunction}
+                                       
+                                    />
                                 </div>
                             </div>
                             {/* product display end */}
@@ -92,6 +119,5 @@ export default function Index() {
             </div>
             {/* shop page end */}
         </>
-
-    )
+    );
 }
