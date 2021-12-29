@@ -42,7 +42,7 @@ export default function Index() {
             const response = await urlGateWay.post(serviceEndPoint.cart.addToCart, body);
             const { data, status } = response;
             if (status === 200) {
-                console.log("success");
+               alert("adde item to cart")
             } else {
               window.alert("something went wrong");
             }

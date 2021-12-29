@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
 
 function CartSideBar({ closeModel }) {
-
   return (
     <div>
-
       {/* cart area start  */}
       <div className="cart__sidebar open-cart">
         <div className="container">
@@ -17,14 +15,23 @@ function CartSideBar({ closeModel }) {
                   <img src="./assets/img/product/17.jpg" alt="" />
                 </div>
                 <div className="add_cart_product__content">
-                  <h5><a href="shop.html">Buddy non Stripes</a></h5>
+                  <h5>
+                    <a href="shop.html">Buddy non Stripes</a>
+                  </h5>
                   <p>1 × 40.00 - AED</p>
-                  <button className="cart_close"><i className="fal fa-times" /></button>
+                  <button className="cart_close">
+                    <i className="fal fa-times" />
+                  </button>
                 </div>
               </div>
             </div>
             <div className="cart-icon">
-              <i className="fal fa-times" onClick={() => { closeModel(false) }} />
+              <i
+                className="fal fa-times"
+                onClick={() => {
+                  closeModel(false);
+                }}
+              />
             </div>
             <div className="cart-bottom">
               <div className="cart-bottom__text">
@@ -40,8 +47,7 @@ function CartSideBar({ closeModel }) {
       <div className="cart-offcanvas-overlay open-cart-overlay" />
       {/* cart area end  */}
     </div>
-
-  )
+  );
 }
 
-export default CartSideBar
+export default CartSideBar;

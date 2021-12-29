@@ -502,7 +502,7 @@ export default function NewArrivals() {
         </div>
       </div>
    
-});
+);
         </div>
     )
 }
