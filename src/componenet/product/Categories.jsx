@@ -1,24 +1,44 @@
 import React from "react";
 
-export default function Category({ category_data }) {
+export default function Category({ category_data, brands, selectCategory,getProductByBrand }) {
+  
   return (
     <div className="col-xl-3 col-lg-4 col-md-12">
       <div className="sidebar">
         <div className="product-widget">
-          <h3 className="widget-title mb-30">Product categories</h3>
+          <h3 className="widget-title mb-30">categories</h3>
           <ul className="product-categories">
-            {category_data.length
-              ? category_data.map((item, idx) => (
-                  <li>
-                    <a href="shop.html">
-                      {item?.name || "-"} <span>(0)</span>
-                    </a>
-                  </li>
-                ))
-              : "no dta found"}
+            {category_data.map((item, key) =>
+              category_data ? (
+                <li>
+                  <a  href="javascript:void(0)" onClick={()=> selectCategory(item.id)}>
+                    {item.name} <span>(5)</span>
+                  </a>
+                </li>
+              ) : (
+                "Not Category Found "
+              )
+            )}
           </ul>
         </div>
-        <div className="product-widget pt-50">
+
+        <div className="product-widget">
+          <h3 className="widget-title mb-30">Brands</h3>
+          <ul className="product-categories">
+            {brands.map((item, key) =>
+              category_data ? (
+                <li>
+                  <a  href="javascript:void(0)" onClick={()=> getProductByBrand(item.id)}>
+                    {item.name} <span>(5)</span>
+                  </a>
+                </li>
+              ) : (
+                "Not Category Found "
+              )
+            )}
+          </ul>
+        </div>
+        {/* <div className="product-widget pt-50">
           <h3 className="widget-title mb-30">Filter By Price</h3>
           <form action="#">
             <div className="price-filter">
@@ -33,12 +53,12 @@ export default function Category({ category_data }) {
                 <span
                   tabIndex={0}
                   className="ui-slider-handle ui-corner-all ui-state-default"
-                  style={{ left: "7.2%" }}
+                  style={{ left: "15%" }}
                 />
                 <span
                   tabIndex={0}
                   className="ui-slider-handle ui-corner-all ui-state-default"
-                  style={{ left: "48.8%" }}
+                  style={{ left: "60%" }}
                 />
                 <div
                   className="ui-slider-range ui-corner-all ui-widget-header"
@@ -48,17 +68,21 @@ export default function Category({ category_data }) {
                   className="ui-slider-range ui-corner-all ui-widget-header"
                   style={{ left: "7.2%", width: "41.6%" }}
                 />
+                <div
+                  className="ui-slider-range ui-corner-all ui-widget-header"
+                  style={{ left: "15%", width: "45%" }}
+                />
               </div>
               <div className="filter-form-submit mt-35">
                 <button type="submit">Filter</button>
                 <div className="filter-price d-inline-block pl-20">
                   Price:{" "}
-                  <input type="button" id="amount" defaultValue="$36 - $244" />
+                  <input type="button" id="amount" defaultValue="$75 - $300" />
                 </div>
               </div>
             </div>
           </form>
-        </div>
+        </div> */}
         <div className="product-widget pt-50">
           <h3 className="widget-title mb-30">Size</h3>
           <div className="layer-size">
@@ -92,7 +116,7 @@ export default function Category({ category_data }) {
           <div className="item-widget">
             <div className="img-left">
               <a href="single.html">
-                <img src="./assets/img/product/101.jpg" alt="product-meta" />
+                <img src="./assets/img/product/10.jpg" alt="product-meta" />
               </a>
             </div>
             <div className="product-meta">
@@ -105,10 +129,7 @@ export default function Category({ category_data }) {
           <div className="item-widget">
             <div className="img-left">
               <a href="single.html">
-                <img
-                  src="./assets/img/product/quick-view.png"
-                  alt="product-meta"
-                />
+                <img src="./assets/img/product/11.jpg" alt="product-meta" />
               </a>
             </div>
             <div className="product-meta">
@@ -121,7 +142,7 @@ export default function Category({ category_data }) {
           <div className="item-widget">
             <div className="img-left">
               <a href="single.html">
-                <img src="./assets/img/product/101.jpg" alt="product-meta" />
+                <img src="./assets/img/product/12.jpg" alt="product-meta" />
               </a>
             </div>
             <div className="product-meta">
@@ -134,10 +155,7 @@ export default function Category({ category_data }) {
           <div className="item-widget">
             <div className="img-left">
               <a href="single.html">
-                <img
-                  src="./assets/img/product/quick-view.png"
-                  alt="product-meta"
-                />
+                <img src="./assets/img/product/13.jpg" alt="product-meta" />
               </a>
             </div>
             <div className="product-meta">

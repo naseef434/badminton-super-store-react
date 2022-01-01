@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -17,30 +18,25 @@ export default function Footer() {
                   animationName: "fadeInUp",
                 }}
               >
+                
                 <h3 className="f-title">contact info</h3>
                 <ul>
-                  <li>Add: 734 Riverwood Drive, Suite 245 Cottonwood </li>
-                  <li>Beverly Hill, Melbourne, USA.</li>
-                  <li>Email: Contact@erentheme.com</li>
-                  <li>Fax: (+100) 123 456 7890 - (+100) 123 456 7891</li>
+                  <li> Qusais Club, WH # 10-AL Qusais-3,</li>
+                  <li>P.B #57909-Dubai, UAE</li>
+                  <li>engageteams@gmail.com</li>
+                  <li>(971) 55 778 4141</li>
+                 
                 </ul>
                 <div className="social__media mb-30">
                   <h3 className="f-title">FOLLOW US ON</h3>
                   <a href="#">
                     <i className="fab fa-facebook-f" />
                   </a>
-                  <a href="#">
-                    <i className="fab fa-twitter" />
-                  </a>
+                 
                   <a href="#">
                     <i className="fab fa-instagram" />
                   </a>
-                  <a href="#">
-                    <i className="fab fa-google-plus-g" />
-                  </a>
-                  <a href="#">
-                    <i className="fab fa-dribbble" />
-                  </a>
+                  
                 </div>
               </div>
             </div>
@@ -61,21 +57,7 @@ export default function Footer() {
                   <li>
                     <a href="contact.html">Contact Us</a>
                   </li>
-                  <li>
-                    <a href="accordion.html">Delivery Information</a>
-                  </li>
-                  <li>
-                    <a href="accordion.html">Sale Terms &amp; Conditions</a>
-                  </li>
-                  <li>
-                    <a href="accordion.html">Privacy Notice</a>
-                  </li>
-                  <li>
-                    <a href="accordion.html">Shopping FAQs</a>
-                  </li>
-                  <li>
-                    <a href="accordion.html">Returns &amp; Refundss</a>
-                  </li>
+                  
                 </ul>
               </div>
             </div>
@@ -96,30 +78,7 @@ export default function Footer() {
                   <li>
                     <a href="shop.html">Sneaker</a>
                   </li>
-                  <li>
-                    <a href="shop.html">Clothing &amp; Stools</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Helmet for Women’s</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Basketball</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Mens Running</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Footwear</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Outerwears</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Men’s</a>
-                  </li>
-                  <li>
-                    <a href="shop.html">Kids &amp; Young</a>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -172,15 +131,7 @@ export default function Footer() {
                     <li>
                       <a href="contact.html">Site Map</a>
                     </li>
-                    <li>
-                      <a href="accordion.html">Search Terms</a>
-                    </li>
-                    <li>
-                      <a href="shop.html">Advanced Search </a>
-                    </li>
-                    <li>
-                      <a href="contact.html">Contact Us</a>
-                    </li>
+                  
                   </ul>
                 </div>
               </div>

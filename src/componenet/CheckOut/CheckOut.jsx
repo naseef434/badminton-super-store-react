@@ -10,10 +10,10 @@ function CheckOut() {
               <i className="fal fa-window-maximize" />
               Returning customer? Click here to <a href="login.html">login</a>
             </p>
-            <p>
+            {/* <p>
               <i className="fal fa-window-maximize" />
               Have a coupon? Click here to enter your code
-            </p>
+            </p> */}
           </div>
           <div className="row">
             <div className="col-xl-7 col-lg-7 col-md-12">
@@ -153,55 +153,8 @@ function CheckOut() {
                 </table>
                 <div className="checkout__accordion mt-30">
                   <div className="accordion" id="accordionExample">
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingOne">
-                        <button
-                          className="accordion-button"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="true"
-                          aria-controls="collapseOne"
-                        >
-                          Check payments
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseOne"
-                        className="accordion-collapse collapse show"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          Please send a check to Store Name, Store Street, Store
-                          Town, Store State / County, Store Postcode.
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="headingTwo">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          Cash on delivery
-                        </button>
-                      </h2>
-                      <div
-                        id="collapseTwo"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">
-                          Pay with cash upon delivery.
-                        </div>
-                      </div>
-                    </div>
+                   
+             
                     <div className="accordion-item">
                       <h2 className="accordion-header" id="headingThree">
                         <button

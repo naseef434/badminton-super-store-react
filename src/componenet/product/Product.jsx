@@ -13,6 +13,7 @@ export default function Product({
   setOpen,
   product,
   openModelFunction,
+  
 }) {
   return (
     <>
@@ -80,7 +81,7 @@ export default function Product({
                           {/* <h4><Link to=""> {item.name}</Link></h4> */}
                           <div className="pro-price">
                             <p className="p-absoulute pr-1">
-                              <span>AED - {item.sale_price} </span>
+                              <span>AED - {item.price} </span>
                               {products_data.rate}{" "}
                             </p>
                             <a

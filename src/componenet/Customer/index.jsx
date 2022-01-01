@@ -44,12 +44,17 @@ export default function Index({ closeModel }) {
     const response = await urlGateWay.post(userLogin.requestingOtp, {
       phone: loginDetails.phone,
     });
-    // console.log({response});
-    const { data, status, error } = response;
+   console.log(response);
+    const { data, status, error,message } = response;
+   
     if (status === 200) {
+      alert(data.message)
       setActiveTab("validateOtp");
+    
+    }else if(response.response.status === 400){
+      alert("Phone number required")
     } else {
-      console.log(data?.message);
+      console.log("something went wrong");
     }
   };
 

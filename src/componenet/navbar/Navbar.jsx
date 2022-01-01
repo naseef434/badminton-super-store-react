@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CartSideBar from "../Cart/CartSideBar";
 
 export default function Navbar() {
@@ -16,12 +17,12 @@ export default function Navbar() {
                   <ul>
                     <li>
                       <a href="#">
-                        usd
+                        AED
                         <i className="fal fa-chevron-down" />
                       </a>
                       <ul className="additional_dropdown">
                         <li>
-                          <a href="#">euro</a>
+                          <a href="#">AED</a>
                         </li>
                       </ul>
                     </li>
@@ -32,11 +33,9 @@ export default function Navbar() {
                       </a>
                       <ul className="additional_dropdown">
                         <li>
-                          <a href="#">frences</a>
+                          <a href="#">Arabic</a>
                         </li>
-                        <li>
-                          <a href="#">japanes</a>
-                        </li>
+                        
                       </ul>
                     </li>
                   </ul>
@@ -45,15 +44,11 @@ export default function Navbar() {
               <div className="col-xl-4 offset-xl-5 col-lg-6 col-md-6 col-sm-6 text-end">
                 <div className="gota_right">
                   <ul>
-                    <li>
-                      <a href="cart.html">Wishlist</a>
-                    </li>
-                    <li>
+                 
+                    {/* <li>
                       <a href="login.html">Account</a>
-                    </li>
-                    <li>
-                      <a href="checkout.html">Checkout</a>
-                    </li>
+                    </li> */}
+                  
                     <li>
                       <a href="login.html">Login &amp; register</a>
                     </li>
@@ -91,15 +86,7 @@ export default function Navbar() {
                           <li>
                             <a href="index.html">home shop 1</a>
                           </li>
-                          <li>
-                            <a href="index-2.html">home shop 2</a>
-                          </li>
-                          <li>
-                            <a href="index-3.html">home shop 3</a>
-                          </li>
-                          <li>
-                            <a href="index-4.html">home shop 4</a>
-                          </li>
+                          
                         </ul>
                       </li>
                       <li className="position-static menu-item-has-children">
@@ -118,38 +105,13 @@ export default function Navbar() {
                               <li>
                                 <a href="shop.html">Pagination</a>
                               </li>
-                              <li>
-                                <a href="shop.html">Ajax Load More</a>
-                              </li>
-                              <li>
-                                <a href="shop-3-width.html">Infinite Scroll</a>
-                              </li>
-                              <li>
-                                <a href="shop-right.html">Sidebar Right</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Sidebar Left</a>
-                              </li>
+                              
                             </ul>
                           </li>
                           <li>
                             <h4 className="mega_title">shop pages</h4>
                             <ul className="mega_item">
-                              <li>
-                                <a href="shop-list.html">List View</a>
-                              </li>
-                              <li>
-                                <a href="shop-sm.html">Small Products</a>
-                              </li>
-                              <li>
-                                <a href="shop-large.html">Large Products</a>
-                              </li>
-                              <li>
-                                <a href="shop-3-width.html">Shop — 3 Items</a>
-                              </li>
-                              <li>
-                                <a href="shop-4.html">Shop — 4 Items</a>
-                              </li>
+                             
                               <li>
                                 <a href="shop-sm.html">Shop — 5 Items</a>
                               </li>
@@ -158,22 +120,7 @@ export default function Navbar() {
                           <li>
                             <h4 className="mega_title">Product Layout</h4>
                             <ul className="mega_item">
-                              <li>
-                                <a href="shop-sticky.html">
-                                  Description Sticky
-                                </a>
-                              </li>
-                              <li>
-                                <a href="shop-carousel.html">
-                                  Product Carousel
-                                </a>
-                              </li>
-                              <li>
-                                <a href="modern.html"> Gallery Modern</a>
-                              </li>
-                              <li>
-                                <a href="single.html"> Thumbnail Left</a>
-                              </li>
+                            
                               <li>
                                 <a href="single-right.html">Thumbnail Right</a>
                               </li>
@@ -200,24 +147,7 @@ export default function Navbar() {
                           >
                             <h4 className="mega_title_2">Basketball</h4>
                             <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">East Hampton Fleece</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Faxon Canvas Low</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Habitasse dictumst</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Kaoreet lobortis</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">NikeCourt Zoom Prestige</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">NikeCourts Air Zoom</a>
-                              </li>
+                             
                               <li>
                                 <a href="shop.html">NikeCourts Air Zoom</a>
                               </li>
@@ -232,24 +162,7 @@ export default function Navbar() {
                           >
                             <h4 className="mega_title_2">Helmet for Women’s</h4>
                             <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">Arsenal Home Jersey</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Arsenal Home Jersey</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Pellentesque posuere</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Running 3-Stripes</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Running 3-Stripes</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">V-Neck T-Shirt</a>
-                              </li>
+                             
                               <li>
                                 <a href="shop.html">WordPress Pennant</a>
                               </li>
@@ -264,24 +177,7 @@ export default function Navbar() {
                           >
                             <h4 className="mega_title_2">Basketball</h4>
                             <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">East Hampton Fleece</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Faxon Canvas Low</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Habitasse dictumst</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Kaoreet lobortis</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">NikeCourt Zoom Prestige</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">NikeCourts Air Zoom</a>
-                              </li>
+                           
                               <li>
                                 <a href="shop.html">NikeCourts Air Zoom</a>
                               </li>
@@ -290,29 +186,18 @@ export default function Navbar() {
                         </ul>
                       </li>
                       <li>
-                        <a className="d-none d-xl-block" href="index.html">
+                        <Link className="d-none d-xl-block" to="/">
                           <img
                             className="pl-50 pr-50"
-                            src="./assets/img/logo/logo-1.png"
+                            src="./assets/img/engage-logo.png"
                             alt=""
                           />
-                        </a>
+                        </Link>
                       </li>
                       <li className="menu-item-has-children">
                         <a href="blog.html">Blog</a>
                         <ul className="sub-menu">
-                          <li>
-                            <a href="blog-grid.html">Blog Grid</a>
-                          </li>
-                          <li>
-                            <a href="blog-large.html">Blog large</a>
-                          </li>
-                          <li>
-                            <a href="blog-left.html">Blog left</a>
-                          </li>
-                          <li>
-                            <a href="blog-right.html">Blog Right</a>
-                          </li>
+                         
                           <li>
                             <a href="blog-no-sidebar.html">Blog no sidebar</a>
                           </li>
@@ -321,33 +206,7 @@ export default function Navbar() {
                       <li className="menu-item-has-children">
                         <a href="about.html">pages</a>
                         <ul className="sub-menu">
-                          <li>
-                            <a href="about.html">about us</a>
-                          </li>
-                          <li>
-                            <a href="about-2.html">about us 2</a>
-                          </li>
-                          <li>
-                            <a href="contact.html">contact</a>
-                          </li>
-                          <li>
-                            <a href="contact-2.html">contact 2</a>
-                          </li>
-                          <li>
-                            <a href="single.html">single page</a>
-                          </li>
-                          <li>
-                            <a href="cart.html">cart page</a>
-                          </li>
-                          <li>
-                            <a href="checkout.html">checkout page</a>
-                          </li>
-                          <li>
-                            <a href="404.html">page 404</a>
-                          </li>
-                          <li>
-                            <a href="service.html">services</a>
-                          </li>
+                         
                           <li>
                             <a href="accordion.html">frequently questions</a>
                           </li>
@@ -379,6 +238,34 @@ export default function Navbar() {
           </div>
         </div>
       </header>
+      <div>
+   <div className="fix">
+    <div className="side-info ">
+      <button className="side-info-close"><i className="fal fa-times" /></button>
+      <div className="side-info-content">
+        <div className="mobile-menu " />
+        <div className="contact-infos mb-30">
+          <div className="contact-list mb-30">
+            <h4>Office Address</h4>
+            <p>123/A, Miranda City Likaoli
+              Prikano, Dope</p>
+          </div>
+          <div className="contact-list mb-30">
+            <h4>Phone Number</h4>
+            <p>+0989 7876 9865 9</p>
+            <p>+(090) 8765 86543 85</p>
+          </div>
+          <div className="contact-list mb-30">
+            <h4>Email Address</h4>
+            <p>info@example.com</p>
+            <p>example.mail@hum.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="offcanvas-overlay " />
+</div>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CartSideBar({ closeModel }) {
   return (
@@ -37,7 +38,7 @@ function CartSideBar({ closeModel }) {
               <div className="cart-bottom__text">
                 <span>Subtotal:</span>
                 <span className="end">$121.00</span>
-                <a href="cart.html">view cart</a>
+                <Link to="/cart">view cartssssss</Link>
                 <a href="checkout.html">checkout</a>
               </div>
             </div>

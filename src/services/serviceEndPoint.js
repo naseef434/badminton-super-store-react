@@ -1,6 +1,8 @@
 export const productsEndpoints = {
   getCategory: "/category/",
   getProducts: "/product/",
+  getBrands : "/brand",
+  // getProductCategoryWise : "/product/"
 };
 export const userLogin = {
   requestingOtp: "/customer/get_otp/",
@@ -9,4 +11,6 @@ export const userLogin = {
 };
 export const cart = {
   addToCart: "/cart/add_to_cart/",
+  getCart: "/cart/get_cart/", 
+  
 };

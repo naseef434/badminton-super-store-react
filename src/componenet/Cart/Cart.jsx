@@ -1,7 +1,8 @@
 import React from "react";
 import BreadCrumb from "../product/BreadCrumb";
-
-function Cart() {
+var img = "assets/img/product/test.jpg";
+function Cart({ cart_item }) {
+  console.log(cart_item);
   return (
     <div>
       <BreadCrumb name={["Home", "Cart"]} />
@@ -14,33 +15,38 @@ function Cart() {
                   <tbody>
                     <tr>
                       <td>Product</td>
-                      <td />
-                      <td>price</td>
-                      <td>Quantity</td>
-                      <td>Total</td>
+                      <td>Name</td>
+                      <td> price  </td>
+                      <td> Quantity </td>
+                      <td> Total </td>
+                      <td></td>
                     </tr>
                   </tbody>
                   <tbody>
-                    <tr className="max-width-set">
-                      <td>
-                        <img src="./assets/img/desc/3-500x500.jpg" alt="" />
-                      </td>
-                      <td>Detail V-Neck Sweater</td>
-                      <td>$18.00</td>
-                      <td>
-                        <div className="viewcontent__action single_action pt-30">
-                          <span>
-                            <input type="number" placeholder={1} />
-                          </span>
-                        </div>
-                      </td>
-                      <td>$451.00</td>
-                      <td className="width-set">
-                        <a href="javascript:void(0)">
-                          <i className="fal fa-times-circle" />
-                        </a>
-                      </td>
-                    </tr>
+                    {cart_item?.items?.map((item, index) => (
+                      <tr className="max-width-set">
+                        <td>
+                          <img src={img} alt="" />
+                        </td>
+                        <td>{item.product}</td>
+                        <td>{item.price} - AED</td>
+                        <td>{item.quantity} </td>
+                        <td>{item.total}</td>
+                        {/* <td>
+
+                          <div className="viewcontent__action single_action pt-30">
+                            <span>
+                              <input type="number" placeholder={1} />
+                            </span>
+                          </div>
+                        </td> */}
+                        <td className="width-set">
+                          <a href="javascript:void(0)">
+                            <i className="fal fa-times-circle" />
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                   <tfoot>
                     <tr className="design-footer">
@@ -63,9 +69,9 @@ function Cart() {
                 <h5>Cart totals</h5>
                 <table>
                   <tbody>
-                    <tr className="first-child">
+                    {/* <tr className="first-child">
                       <td>Subtotal</td>
-                      <td>$18.00</td>
+                      <td>{`${cart_item.total} - AED`}</td>
                     </tr>
                     <tr className="first-child lastchild">
                       <td>Shipping</td>
@@ -73,10 +79,10 @@ function Cart() {
                         Enter your address to view shipping options <br />
                         Calculate shipping
                       </td>
-                    </tr>
+                    </tr> */}
                     <tr className="first-child">
                       <td>Total</td>
-                      <td>$47.00</td>
+                      <td>{`${cart_item.total} - AED`}</td>
                     </tr>
                     <tr>
                       <td colSpan={2}>
