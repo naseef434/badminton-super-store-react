@@ -1,156 +1,196 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import img2 from "./asset15.jpeg";
+import academy from "./accademy.jpg";
+import kick from "./kick.jpg";
+import tournament from "./tournament.jpg";
+import sportsAreana from "./sports-areana.jpg";
+import swimming from "./swimming.jpg";
 
 export default function FeaturesArea() {
   return (
-    // features area start
-    <div className="features-area d-none d-md-block fix">
-      <div className="row g-0">
-        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div className="fetures">
-            <div className="fetures__thumb fix">
-              <a href="shop.html">
-                <img src="./assets/img/features/fe-test.png" alt="features1" />
-              </a>
-            </div>
-            <div className="fetures__content">
-              <h4 className="feature-title mb-40">
-                Engage Sports <br />
-                Areana
-              </h4>
-              <p className="d-md-none d-lg-block">
-                all products{" "}
-                <span className="discount">
-                  <a href="#">up to 70% off</a>
-                </span>{" "}
-                limited time discount
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div className="fetures">
-            <div className="fetures__thumb fix">
+    <div className="banar_area">
+      <div className="container-fluid padding-remove">
+        <div className="row g-0">
+          <div className="col-xl-6 col-lg-6 col-md-6">
+            <div
+              className="banar_right_down wow fadeIn"
+              data-wow-duration=".9s"
+              data-wow-delay=".8s"
+              style={{
+                visibility: "visible",
+                animationDuration: "0.9s",
+                animationDelay: "0.8s",
+                animationName: "fadeIn",
+              }}
+            >
               <Link to="/products">
-                <img
-                  src="./assets/img/features/fe-test-1.png"
-                  alt="features1"
-                />
+                <img src={img2} alt="" />
               </Link>
+              <div className="banarright__content position-change">
+                <span className="d-none d-sm-block">Engage Sports</span>
+                <h2 className="banar-title mb-60 pt-80">
+                  Badminton <br />
+                  Super Store
+                  {/* <br /> for men’s */}
+                </h2>
+                <h4 className="d-none d-sm-block">Black friday </h4>
+                <p className="d-none d-sm-block">
+                  <span>up to 20% off</span> All products
+                </p>
+              </div>
             </div>
-            <div className="fetures__content">
-              <h4 className="feature-title mb-40">
-                Badminton
-                <br />
-                Super Storeeeeeee
-              </h4>
-              <p className="d-md-none d-lg-block">
-                all products{" "}
-                <span className="discount">
-                  <Link to="/products">up to 70% off</Link>
-                </span>{" "}
-                limited time discount
-              </p>
+          </div>
+          <div className="col-xl-3 col-lg-3 col-md-6">
+            <div
+              className="banar_right_down wow fadeIn"
+              data-wow-duration=".9s"
+              data-wow-delay=".8s"
+              style={{
+                visibility: "visible",
+                animationDuration: "0.9s",
+                animationDelay: "0.8s",
+                animationName: "fadeIn",
+              }}
+            >
+              <a href="shop.html">
+                <img src={sportsAreana} height={"302px"} alt="" />
+              </a>
+              <div className="banarright__content position-change">
+                <span className="d-none d-sm-block">Engage Sports</span>
+                <h2 className="banar-title mb-60 pt-80">
+                  Sports <br />
+                  Areana
+                  {/* <br /> for men’s */}
+                </h2>
+                {/* <h4 className="d-none d-sm-block">Black friday </h4>
+                <p className="d-none d-sm-block">
+                  <span>up to 20% off</span> All products
+                </p> */}
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-3 col-lg-3 col-md-6">
+            <div
+              className="banar_right_down wow fadeIn"
+              data-wow-duration=".9s"
+              data-wow-delay=".8s"
+              style={{
+                visibility: "visible",
+                animationDuration: "0.9s",
+                animationDelay: "0.8s",
+                animationName: "fadeIn",
+              }}
+            >
+              <a href="shop.html">
+                <img src={academy} height={"302px"} alt="" />
+              </a>
+              <div className="banarright__content position-change">
+                <span className="d-none d-sm-block">Engage Sports</span>
+                <h2 className="banar-title mb-60 pt-80">
+                  Badminton <br />
+                  Academy
+                  <br />
+                </h2>
+                {/* <h4 className="d-none d-sm-block">Black friday </h4>
+                <p className="d-none d-sm-block">
+                  <span>up to 20% off</span> All products
+                </p> */}
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div className="fetures">
-            <div className="fetures__thumb fix">
+        <div className="row g-0">
+          <div className="col-xl-3 col-lg-3 col-md-3">
+            <div
+              className="banar_right_down wow fadeIn"
+              data-wow-duration=".9s"
+              data-wow-delay=".8s"
+              style={{
+                visibility: "visible",
+                animationDuration: "0.9s",
+                animationDelay: "0.8s",
+                animationName: "fadeIn",
+              }}
+            >
               <a href="shop.html">
-                <img src="./assets/img/features/fe-test.png" alt="features1" />
+                <img src={tournament} height={"300px"} alt="" />
               </a>
-            </div>
-            <div className="fetures__content">
-              <h4 className="feature-title mb-40">
-                Badminton
-                <br />
-                Academy
-              </h4>
-              <p className="d-md-none d-lg-block">
-                all products{" "}
-                <span className="discount">
-                  <a href="#">up to 70% off</a>
-                </span>{" "}
-                limited time discount
-              </p>
+              <div className="banarright__content position-change">
+                <span className="d-none d-sm-block">Engage Sports</span>
+                <h2 className="banar-title mb-60 pt-80">
+                  Events <br />
+                  Management
+                </h2>
+                {/* <br /> for men’s
+                </h2>
+                <h4 className="d-none d-sm-block">Black friday </h4>
+                <p className="d-none d-sm-block">
+                  <span>up to 20% off</span> All products
+                </p> */}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="row g-0">
-        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div className="fetures">
-            <div className="fetures__thumb fix">
+          <div className="col-xl-3 col-lg-3 col-md-6">
+            <div
+              className="banar_right_down wow fadeIn"
+              data-wow-duration=".9s"
+              data-wow-delay=".8s"
+              style={{
+                visibility: "visible",
+                animationDuration: "0.9s",
+                animationDelay: "0.8s",
+                animationName: "fadeIn",
+              }}
+            >
               <a href="shop.html">
-                <img src="./assets/img/features/fe-test.png" alt="features1" />
+                <img src={kick} height={"300px"} alt="" />
               </a>
-            </div>
-            <div className="fetures__content">
-              <h4 className="feature-title mb-40">
-                Events <br /> Planner
-              </h4>
-              <p className="d-md-none d-lg-block">
-                all products{" "}
-                <span className="discount">
-                  <a href="#">up to 70% off</a>
-                </span>{" "}
-                limited time discount
-              </p>
+              <div className="banarright__content position-change">
+                <span className="d-none d-sm-block">Engage Sports</span>
+                <h2 className="banar-title mb-60 pt-80">Kick</h2> <br />
+                {/* Sport
+                  <br /> for men’s
+                </h2>
+                <h4 className="d-none d-sm-block">Black friday </h4>
+                <p className="d-none d-sm-block">
+                  <span>up to 20% off</span> All products
+                </p> */}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div className="fetures">
-            <div className="fetures__thumb fix">
+          <div className="col-xl-6 col-lg-6 col-md-6">
+            <div
+              className="banar_right_down wow fadeIn"
+              data-wow-duration=".9s"
+              data-wow-delay=".8s"
+              style={{
+                visibility: "visible",
+                animationDuration: "0.9s",
+                animationDelay: "0.8s",
+                animationName: "fadeIn",
+              }}
+            >
               <a href="shop.html">
-                <img
-                  src="./assets/img/features/fe-test-1.png"
-                  alt="features1"
-                />
+                <img src={swimming} alt="" />
               </a>
-            </div>
-            <div className="fetures__content">
-              <h4 className="feature-title mb-40">
-                Engage
-                <br />
-                Kick
-              </h4>
-              <p className="d-md-none d-lg-block">
-                all products{" "}
-                <span className="discount">
-                  <a href="#">up to 70% off</a>
-                </span>{" "}
-                limited time discount
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-          <div className="fetures">
-            <div className="fetures__thumb fix">
-              <a href="shop.html">
-                <img src="./assets/img/features/fe-test.png" alt="features1" />
-              </a>
-            </div>
-            <div className="fetures__content">
-              <h4 className="feature-title mb-40">
-                Kawasaki
-                <br />
-                Swimming Store
-              </h4>
-              <p className="d-md-none d-lg-block">
-                all products{" "}
-                <span className="discount">
-                  <a href="#">up to 70% off</a>
-                </span>{" "}
-                limited time discount
-              </p>
+              <div className="banarright__content position-change">
+                <span className="d-none d-sm-block">Engage Sports</span>
+                <h2 className="banar-title mb-60 pt-80">
+                  Kawasaki <br />
+                  Swimming Store
+                </h2>
+                {/* <br /> for men’s
+                </h2>
+                <h4 className="d-none d-sm-block">Black friday </h4>
+                <p className="d-none d-sm-block">
+                  <span>up to 20% off</span> All products
+                </p> */}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    // features area end
   );
 }

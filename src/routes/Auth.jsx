@@ -20,6 +20,7 @@ export default function Auth() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckOut />} />
       </Route>
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 }

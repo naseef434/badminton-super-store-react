@@ -1,4 +1,7 @@
 import React from "react";
+import product1 from "./product-1.jpg";
+import product2 from "./product-2.jpg";
+import product3 from "./product-3.jpg";
 
 export default function Categories() {
   return (
@@ -104,12 +107,12 @@ export default function Categories() {
                               <a href="single.html">
                                 <img
                                   className="product-primary"
-                                  src="./assets/img/product/9.jpg"
+                                  src={product1}
                                   alt="product_image"
                                 />
                                 <img
                                   className="product-secondary"
-                                  src="./assets/img/product/9-2.jpg"
+                                  src={product1}
                                   alt="product_image"
                                 />
                               </a>
@@ -193,14 +196,14 @@ export default function Categories() {
                           <div className="product">
                             <div className="product__thumb">
                               <a href="single.html">
-                                <img
+                              <img
                                   className="product-primary"
-                                  src="./assets/img/product/3.jpg"
+                                  src={product2}
                                   alt="product_image"
                                 />
                                 <img
                                   className="product-secondary"
-                                  src="./assets/img/product/3-2.jpg"
+                                  src={product2}
                                   alt="product_image"
                                 />
                               </a>
@@ -284,14 +287,14 @@ export default function Categories() {
                           <div className="product">
                             <div className="product__thumb">
                               <a href="single.html">
-                                <img
+                              <img
                                   className="product-primary"
-                                  src="./assets/img/product/11.jpg"
+                                  src={product3}
                                   alt="product_image"
                                 />
                                 <img
                                   className="product-secondary"
-                                  src="./assets/img/product/11-2.jpg"
+                                  src={product3}
                                   alt="product_image"
                                 />
                               </a>
@@ -373,17 +376,17 @@ export default function Categories() {
                           <div className="product">
                             <div className="product__thumb">
                               <a href="single.html">
-                                <img
+                              <img
                                   className="product-primary"
-                                  src="./assets/img/product/4.jpg"
+                                  src={product1}
                                   alt="product_image"
                                 />
                                 <img
                                   className="product-secondary"
-                                  src="./assets/img/product/4-2.jpg"
+                                  src={product1}
                                   alt="product_image"
                                 />
-                              </a>
+                                </a>
                               {/* <div class="product__update">
                                                                 <a class="#">new</a>
                                                             </div> */}
@@ -462,14 +465,14 @@ export default function Categories() {
                           <div className="product">
                             <div className="product__thumb">
                               <a href="single.html">
-                                <img
+                              <img
                                   className="product-primary"
-                                  src="./assets/img/product/10.jpg"
+                                  src={product1}
                                   alt="product_image"
                                 />
                                 <img
                                   className="product-secondary"
-                                  src="./assets/img/product/10-2.jpg"
+                                  src={product1}
                                   alt="product_image"
                                 />
                               </a>

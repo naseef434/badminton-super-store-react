@@ -12,11 +12,11 @@ export default function ProductShowCase() {
                 <h2 class="section-title text-white">
                   Nike Air Force 1 Sage Low LX
                 </h2>
-                <p class="d-none d-lg-block">
+                {/* <p class="d-none d-lg-block">
                   Commodo sociosqu venenatis cras dolor sagittis integer luctus
                   sem primis
                   <br /> eget maecenas sed urna malesuada.
-                </p>
+                </p> */}
               </div>
             </div>
             <div class="case-info text-center">

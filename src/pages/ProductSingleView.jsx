@@ -29,7 +29,7 @@ export default function ProductSinleView() {
         <div className="container">
           <ProductBreadCrumb />
           <div className="row">
-            <ProductImagesView />
+            <ProductImagesView product={product} />
             <ProductDetails data={product} />
           </div>
         </div>

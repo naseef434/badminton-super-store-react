@@ -1,4 +1,7 @@
 import React from 'react'
+import product1 from "./product-1.jpg";
+import product2 from "./product-2.jpg";
+import product3 from "./product-3.jpg";
 
 export default function NewArrivals() {
     return (
@@ -24,8 +27,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/6.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/6-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product1} alt="product_image" />
+                            <img className="product-secondary" src={product1} alt="product_image" />
                           </a>
                           {/* <div class="product__update">
                                                     <a class="#">new</a>
@@ -70,8 +73,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/9.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/9-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product2} alt="product_image" />
+                            <img className="product-secondary" src={product2} alt="product_image" />
                           </a>
                           <div className="product__update">
                             <a href="#">new</a>
@@ -116,8 +119,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/3.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/3-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product3} alt="product_image" />
+                            <img className="product-secondary" src={product3} alt="product_image" />
                           </a>
                           <div className="product__update">
                             <a className="lightblueclr" href="#">-30%</a>
@@ -162,8 +165,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/1.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/1-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product1} alt="product_image" />
+                            <img className="product-secondary" src={product1} alt="product_image" />
                           </a>
                           {/* <div class="product__update">
                                                     <a class="#">new</a>
@@ -208,8 +211,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/4.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/4-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product3} alt="product_image" />
+                            <img className="product-secondary" src={product3} alt="product_image" />
                           </a>
                           <div className="product__update">
                             <a className="#">new</a>
@@ -314,8 +317,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/5.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/5-1.jpg" alt="product_image" />
+                            <img className="product-primary" src={product3} alt="product_image" />
+                            <img className="product-secondary" src={product3} alt="product_image" />
                           </a>
                           <div className="product__update">
                             <a href="#">new</a>
@@ -360,8 +363,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/24.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/24-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product3} alt="product_image" />
+                            <img className="product-secondary" src={product3} alt="product_image" />
                           </a>
                           <div className="product__update">
                             <a className="lightblueclr" href="#">-30%</a>
@@ -406,8 +409,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/1.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/1-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product3} alt="product_image" />
+                            <img className="product-secondary" src={product3} alt="product_image" />
                           </a>
                           {/* <div class="product__update">
                                                     <a class="#">new</a>
@@ -452,8 +455,8 @@ export default function NewArrivals() {
                       <div className="product product-2">
                         <div className="product__thumb">
                           <a href="single.html">
-                            <img className="product-primary" src="./assets/img/product/4.jpg" alt="product_image" />
-                            <img className="product-secondary" src="./assets/img/product/4-2.jpg" alt="product_image" />
+                            <img className="product-primary" src={product3} alt="product_image" />
+                            <img className="product-secondary" src={product3} alt="product_image" />
                           </a>
                           <div className="product__update">
                             <a className="#">new</a>

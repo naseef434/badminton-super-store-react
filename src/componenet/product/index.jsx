@@ -17,18 +17,23 @@ export default function Index() {
   });
   //get categories
   useEffect(async () => {
-    const response = await urlGateWay.get(
-      `${serviceEndPoint.productsEndpoints.getCategory}`
-    );
-    setCategory(response?.data?.results);
+    try{
+      const response = await urlGateWay.get(
+        `${serviceEndPoint.productsEndpoints.getCategory}`
+      );
+      setCategory(response?.data);
+    }catch(e){
+      console.log("categories api error ");
+    }
+    
   }, []);
-
+  
   //get brands
   useEffect(async () => {
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getBrands}`
     );
-    setBrands(response?.data?.results)
+    setBrands(response?.data)
   }, []);
 
   //get products
@@ -39,6 +44,7 @@ export default function Index() {
     );
     setProducts(response?.data?.results);
   }, [params]);
+
   //get product by category
   const SelectCategory = (id) => {
     setParams({ ...params, category: id });
@@ -135,7 +141,6 @@ export default function Index() {
                     product={product}
                     setProduct={setProduct}
                     openModelFunction={openModelFunction}
-                    
                   />
                 </div>
               </div>

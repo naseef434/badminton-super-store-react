@@ -114,29 +114,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="footer__bottom pb-10 mt-60">
-            <div className="row">
-              <div className="col-xl-5 col-lg-5 col-md-6 col-sm-12 ">
-                <p>
-                  Copyright © <span>Gota Store</span> All Rights Reserved.
-                  Powered by{" "}
-                  <span>
-                    <a href="themepure.net">theme_pure</a>
-                  </span>
-                </p>
-              </div>
-              <div className="col-xl-5 offset-xl-2 col-lg-4 col-md-6 col-sm-12">
-                <div className="footer-menu">
-                  <ul className="text-end">
-                    <li>
-                      <a href="contact.html">Site Map</a>
-                    </li>
-                  
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </footer>
     </div>
