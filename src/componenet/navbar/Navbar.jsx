@@ -35,7 +35,6 @@ export default function Navbar() {
                         <li>
                           <a href="#">Arabic</a>
                         </li>
-                        
                       </ul>
                     </li>
                   </ul>
@@ -44,11 +43,10 @@ export default function Navbar() {
               <div className="col-xl-4 offset-xl-5 col-lg-6 col-md-6 col-sm-6 text-end">
                 <div className="gota_right">
                   <ul>
-                 
                     {/* <li>
                       <a href="login.html">Account</a>
                     </li> */}
-                  
+
                     <li>
                       <a href="login.html">Login &amp; register</a>
                     </li>
@@ -86,7 +84,6 @@ export default function Navbar() {
                           <li>
                             <a href="index.html">home shop 1</a>
                           </li>
-                          
                         </ul>
                       </li>
                       <li className="position-static menu-item-has-children">
@@ -105,13 +102,11 @@ export default function Navbar() {
                               <li>
                                 <a href="shop.html">Pagination</a>
                               </li>
-                              
                             </ul>
                           </li>
                           <li>
                             <h4 className="mega_title">shop pages</h4>
                             <ul className="mega_item">
-                             
                               <li>
                                 <a href="shop-sm.html">Shop — 5 Items</a>
                               </li>
@@ -120,7 +115,6 @@ export default function Navbar() {
                           <li>
                             <h4 className="mega_title">Product Layout</h4>
                             <ul className="mega_item">
-                            
                               <li>
                                 <a href="single-right.html">Thumbnail Right</a>
                               </li>
@@ -147,7 +141,6 @@ export default function Navbar() {
                           >
                             <h4 className="mega_title_2">Basketball</h4>
                             <ul className="mega_item_2">
-                             
                               <li>
                                 <a href="shop.html">NikeCourts Air Zoom</a>
                               </li>
@@ -162,7 +155,6 @@ export default function Navbar() {
                           >
                             <h4 className="mega_title_2">Helmet for Women’s</h4>
                             <ul className="mega_item_2">
-                             
                               <li>
                                 <a href="shop.html">WordPress Pennant</a>
                               </li>
@@ -177,7 +169,6 @@ export default function Navbar() {
                           >
                             <h4 className="mega_title_2">Basketball</h4>
                             <ul className="mega_item_2">
-                           
                               <li>
                                 <a href="shop.html">NikeCourts Air Zoom</a>
                               </li>
@@ -194,29 +185,19 @@ export default function Navbar() {
                           />
                         </Link>
                       </li>
-                      <li className="menu-item-has-children">
-                        <a href="blog.html">Blog</a>
-                        <ul className="sub-menu">
-                         
-                          <li>
-                            <a href="blog-no-sidebar.html">Blog no sidebar</a>
-                          </li>
-                        </ul>
+                      <li >
+                        <Link to="/events">Events</Link>
+                       
                       </li>
-                      <li className="menu-item-has-children">
-                        <a href="about.html">pages</a>
-                        <ul className="sub-menu">
-                         
-                          <li>
-                            <a href="accordion.html">frequently questions</a>
-                          </li>
-                        </ul>
+
+                      <li>
+                        <Link to="/about">About</Link>
                       </li>
                       <li>
-                        <a href="service.html">Portfolio</a>
+                        <Link to="/portfolio">Service</Link>
                       </li>
                       <li>
-                        <a href="contact.html">contact us </a>
+                        <Link to="/contact">Contact Us </Link>
                       </li>
                     </ul>
                   </nav>
@@ -239,33 +220,34 @@ export default function Navbar() {
         </div>
       </header>
       <div>
-   <div className="fix">
-    <div className="side-info ">
-      <button className="side-info-close"><i className="fal fa-times" /></button>
-      <div className="side-info-content">
-        <div className="mobile-menu " />
-        <div className="contact-infos mb-30">
-          <div className="contact-list mb-30">
-            <h4>Office Address</h4>
-            <p>123/A, Miranda City Likaoli
-              Prikano, Dope</p>
-          </div>
-          <div className="contact-list mb-30">
-            <h4>Phone Number</h4>
-            <p>+0989 7876 9865 9</p>
-            <p>+(090) 8765 86543 85</p>
-          </div>
-          <div className="contact-list mb-30">
-            <h4>Email Address</h4>
-            <p>info@example.com</p>
-            <p>example.mail@hum.com</p>
+        <div className="fix">
+          <div className="side-info ">
+            <button className="side-info-close">
+              <i className="fal fa-times" />
+            </button>
+            <div className="side-info-content">
+              <div className="mobile-menu " />
+              <div className="contact-infos mb-30">
+                <div className="contact-list mb-30">
+                  <h4>Office Address</h4>
+                  <p>123/A, Miranda City Likaoli Prikano, Dope</p>
+                </div>
+                <div className="contact-list mb-30">
+                  <h4>Phone Number</h4>
+                  <p>+0989 7876 9865 9</p>
+                  <p>+(090) 8765 86543 85</p>
+                </div>
+                <div className="contact-list mb-30">
+                  <h4>Email Address</h4>
+                  <p>info@example.com</p>
+                  <p>example.mail@hum.com</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <div className="offcanvas-overlay " />
       </div>
-    </div>
-  </div>
-  <div className="offcanvas-overlay " />
-</div>
     </>
   );
 }

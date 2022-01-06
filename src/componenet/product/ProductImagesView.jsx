@@ -1,11 +1,9 @@
 import React from "react";
-import { productsEndpoints } from "../../services/serviceEndPoint";
 var img = "../assets/img/product/test.jpg";
-export default function ProductImagesView({product}) {
-     console.log(product);
-     let images_new = []
-     images_new =  product.images
-      
+export default function ProductImagesView({ product }) {
+  product.images?.map((item) => {
+    console.log(item);
+  });
 
   return (
     <div class="col-xl-6 col-lg-6 col-md-12">
@@ -19,19 +17,70 @@ export default function ProductImagesView({product}) {
                 role="tablist"
               >
                 <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link active"
-                  id="home-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#homde"
-                  type="button"
-                  role="tab"
-                  aria-selected="true"
-                >
-                  <img src={img} alt="" />
-                </button>
-              </li>
-               
+                  <button
+                    class="nav-link active"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#homde"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    <img src={img} alt="" />
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#homde"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    <img src={img} alt="" />
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#homde"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    <img src={img} alt="" />
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#homde"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    <img src={img} alt="" />
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#homde"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    <img src={img} alt="" />
+                  </button>
+                </li>
               </ul>
             </div>
           </div>

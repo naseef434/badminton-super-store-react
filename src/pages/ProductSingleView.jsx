@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 
 export default function ProductSinleView() {
   const { product_id } = useParams(0);
-  const [product, setProduct] = useState([]);
+  const [singleProduct, setSingleProduct] = useState([]);
 
   //calling product api
   useEffect(() => {
@@ -17,10 +17,12 @@ export default function ProductSinleView() {
         "http://localhost:8000/api/product/" + product_id
       );
       response = await response.json();
-      setProduct(response);
+      setSingleProduct(response);
     }
     fetchMyAPI();
   }, []);
+  
+  
 
   return (
     <>
@@ -29,8 +31,8 @@ export default function ProductSinleView() {
         <div className="container">
           <ProductBreadCrumb />
           <div className="row">
-            <ProductImagesView product={product} />
-            <ProductDetails data={product} />
+            <ProductImagesView product={singleProduct} />
+            <ProductDetails productdata={singleProduct} />
           </div>
         </div>
       </div>

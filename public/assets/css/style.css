@@ -16393,7 +16393,7 @@ ul.color-list li:hover {
 }
 
 .service__wrapper h2 {
-  color: #222329;
+  color: #fff;
   font-size: 35px;
   font-weight: 600;
   text-transform: uppercase;
@@ -16486,7 +16486,7 @@ ul.color-list li:hover {
 }
 
 .service_brand {
-  background: #DFAA0A;
+  background: #ed1b33;
   padding: 100px 0;
 }
 

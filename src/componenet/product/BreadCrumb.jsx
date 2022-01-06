@@ -6,7 +6,7 @@ export default function BreadCrumb(props) {
   return (
     <div
       className="page-layout"
-      data-background="assets/img/slider/shop-1.jpg"
+      
       height="400px"
       style={{ background: `url(${img})` }}
     >

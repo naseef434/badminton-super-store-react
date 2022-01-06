@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function ProductDetails(props) {
+export default function ProductDetails({productdata}) {
+  console.log(productdata);
   return (
     <div className="col-xl-6 col-lg-6 col-md-12">
       <div className="single_preview_content pl-30">
         <h2 className="title-5 edit-title border-bottom-0">
-          {props.data.name}
+          {productdata.name}
         </h2>
         <div className="s-product-review">
           <span>
@@ -26,17 +27,17 @@ export default function ProductDetails(props) {
           <span className="pl-left">(1 customer review)</span>
         </div>
         <div className="s-price pt-30 mb-30">
-          <span>{props.data.sale_price} - AED</span>
+          <span>{productdata.price} - AED</span>
         </div>
         <div className="s-des">
-          <p>{props.data.long_desc}</p>
+          <p>{productdata.long_desc}</p>
         </div>
         <div className="viewcontent__action single_action pt-30">
           <span>
             <input type="number" placeholder="1" />
           </span>
           <span>
-            <a href="cart.html">+ add to cart</a>
+            <a href="">+ add to cart</a>
           </span>
           <span>
             <i className="fal fa-heart"></i>
