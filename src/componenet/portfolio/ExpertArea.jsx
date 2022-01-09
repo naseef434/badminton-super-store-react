@@ -7,7 +7,7 @@ function ExpertArea() {
 <div className="expert__area mb-130">
   <div className="container">
     <div className="service__wrapper text-center mb-50">
-      <h2>our expertise</h2>
+      <h2 style={{backgroundColor:"black"}}>our services</h2>
     </div>
     <div className="row">
       <div className="col-xl-5 col-lg-5 col-md-5 offset-xl-1">

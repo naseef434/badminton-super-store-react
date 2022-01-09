@@ -13,7 +13,6 @@ export default function Product({
   setOpen,
   product,
   openModelFunction,
-  
 }) {
   return (
     <>

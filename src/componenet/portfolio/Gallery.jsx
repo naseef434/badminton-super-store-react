@@ -1,5 +1,5 @@
 import React from "react";
-import portfolio from "./portfolio.jpg"
+import portfolio from "./engage-ground.jpg";
 
 export default function Gallery() {
   return (
@@ -7,7 +7,6 @@ export default function Gallery() {
       {/* gallary area start */}
       <div
         className="about__gallary service_page"
-        
         style={{ background: `url(${portfolio})` }}
       >
         <div className="container">
@@ -16,11 +15,22 @@ export default function Gallery() {
               <div className="service-single">
                 <h3 className="mb-30">we are on our way</h3>
                 <p className="mb-40">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin{" "}
-                  <br /> iaculis luctus leo ut lacinia. Nunc et augue pulvinar,
-                  luctus <br /> mi non, sagittis odio. Phasellus congue sem
-                  nulla, non <br /> sodales orci malesuada vel. Aliquam posuere
-                  mi eros, at <br /> condimentum elit feugiat vel.
+                  We can help you with a range of events from award ceremonies,
+                  road shows, product launches, business awards, team building,
+                  brand activations, corporate parties, and press conferences
+                  through to sporting events and ala dinners we also help with
+                  Small Gatherings, Private Themed Events, Corporate Sports
+                  Events District Level Tournaments, State Level Tournaments,
+                  International Tournaments, Tournaments and Leagues and Other
+                  EventsT
+                </p>
+                <p>
+                  This means it doesn't matter if your event is a prestigious
+                  award ceremony for a whole industry or an event for just for a
+                  handful of employees, as we are happy to help.
+                </p>
+                <p>
+                We also offer additional complimentary corporate services to make your experience with us more memorable:
                 </p>
                 <a href="service.html">read more</a>
               </div>

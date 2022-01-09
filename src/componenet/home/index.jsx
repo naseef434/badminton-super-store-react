@@ -16,7 +16,7 @@ export default function index() {
       <FeaturesArea />
       <Categories />
       <ProductShowCase />
-      <NewArrivals />
+      {/* <NewArrivals /> */}
       <BlogArea />
       <Gallery />
       <Footer />

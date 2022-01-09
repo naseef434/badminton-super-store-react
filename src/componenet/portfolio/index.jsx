@@ -12,7 +12,7 @@ export default function index() {
             <Gallery />     
             <Service /> 
             <ExpertArea />   
-            <Brand />  
+            {/* <Brand />   */}
            <Footer />
         </div>
     )

@@ -17,11 +17,13 @@ export default function Index() {
   });
   //get categories
   useEffect(async () => {
+    
     try{
       const response = await urlGateWay.get(
         `${serviceEndPoint.productsEndpoints.getCategory}`
       );
       setCategory(response?.data);
+    
     }catch(e){
       console.log("categories api error ");
     }
@@ -30,10 +32,12 @@ export default function Index() {
   
   //get brands
   useEffect(async () => {
+    
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getBrands}`
     );
     setBrands(response?.data)
+    
   }, []);
 
   //get products
@@ -47,7 +51,8 @@ export default function Index() {
 
   //get product by category
   const SelectCategory = (id) => {
-    setParams({ ...params, category: id });
+    setParams({ ...params, category: id, });
+    
   };
 
   //get product by brand

@@ -29,12 +29,18 @@ export default function Footer() {
                 </ul>
                 <div className="social__media mb-30">
                   <h3 className="f-title">FOLLOW US ON</h3>
-                  <a href="#">
+                  <a href="https://www.facebook.com/getengage/">
                     <i className="fab fa-facebook-f" />
                   </a>
                  
-                  <a href="#">
+                  <a href="https://www.instagram.com/explore/locations/952109704944354/engage-sports-academy/?hl=en">
                     <i className="fab fa-instagram" />
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCp-oDBaVYF3PlhQ5Sz7fLbw">
+                  <i className="fab fa-youtube"></i>
+                  </a>
+                  <a href="">
+                    <i className="fab fa-linkedin" />
                   </a>
                   
                 </div>

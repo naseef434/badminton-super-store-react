@@ -1,7 +1,8 @@
 import React from "react";
 import image from "./About-us1.jpg";
+
 export default function BreadCrumb() {
-    
+
   return (
     <div>
       {/* breadcrumb area start */}

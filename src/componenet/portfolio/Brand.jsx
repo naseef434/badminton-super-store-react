@@ -17,22 +17,22 @@ export default function Brand() {
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
                     <div className="brand-item">
-                      <img
-                        src={brand1}
-                        alt="brand_logo"
-                      />
+                   
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+                    <i class="fas fa-camera fa-5x"></i>
+
                     </div>
                     
+                    
+                    
                   </div>
-                  <div class="swiper-slide">
-                                <div class="brand-item">
-                                <img
-                        src={brand1}
-                        alt="brand_logo"
-                      />
-                                </div>
-                            </div>
-            
+                
                 </div>
               </div>
             </div>

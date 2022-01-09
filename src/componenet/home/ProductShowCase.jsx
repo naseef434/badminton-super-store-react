@@ -1,5 +1,5 @@
 import React from "react";
-
+import img from './ssssssss-removebg-preview.png'
 export default function ProductShowCase() {
   return (
     <div>

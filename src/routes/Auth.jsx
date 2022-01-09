@@ -13,7 +13,8 @@ import PrivateRoutes from "../routes/PrivateRoutes";
 import Blog from '../componenet/blog'
 import Contact from "../componenet/Contact"
 import BlogDetails from "../componenet/blog/BlogDetails";
-
+import Trading from "../componenet/detail_page/Trading";
+import Accademy from "../componenet/detail_page/Accademy";
 export default function Auth() {
   return (
     <Routes>
@@ -21,10 +22,13 @@ export default function Auth() {
       <Route path="/products" element={<Products />} />
       <Route path="/product_view/:product_id" element={<ProductSinleView />} />
       <Route path="/about" element={<About />} />
-      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/service" element={<Portfolio />} />
       <Route path="/events" element={<Blog />} />
       <Route path="/blog_details" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/trading" element={<Trading />} />
+      <Route path="/accademy" element={<Accademy />} />
+
 
       <Route element={<PrivateRoutes />}>
         <Route path="/cart" element={<Cart />} />

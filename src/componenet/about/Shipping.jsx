@@ -1,6 +1,6 @@
 import React from "react";
 import shipping from "./shipping.jpg"
-import image from "./About-us1.jpg";
+import parallex from "./parallex.jpg";
 export default function Shipping() {
   return (
     <div>

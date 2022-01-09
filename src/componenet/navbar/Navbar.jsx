@@ -11,16 +11,15 @@ export default function Navbar() {
       <header className="header-area">
         <div className="gota_top bg-soft d-none d-sm-block">
           <div className="container-fluid">
-            <div className="row">
-              <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div className="gota_lang">
+            <div class="row">
+              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                <div class="gota_lang">
                   <ul>
                     <li>
                       <a href="#">
-                        AED
-                        <i className="fal fa-chevron-down" />
+                        AED<i class="fal fa-chevron-down"></i>
                       </a>
-                      <ul className="additional_dropdown">
+                      <ul class="additional_dropdown">
                         <li>
                           <a href="#">AED</a>
                         </li>
@@ -28,10 +27,9 @@ export default function Navbar() {
                     </li>
                     <li>
                       <a href="#">
-                        english
-                        <i className="fal fa-chevron-down" />
+                        english<i class="fal fa-chevron-down"></i>
                       </a>
-                      <ul className="additional_dropdown">
+                      <ul class="additional_dropdown">
                         <li>
                           <a href="#">Arabic</a>
                         </li>
@@ -40,15 +38,23 @@ export default function Navbar() {
                   </ul>
                 </div>
               </div>
-              <div className="col-xl-4 offset-xl-5 col-lg-6 col-md-6 col-sm-6 text-end">
-                <div className="gota_right">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-center">
+                <div class="gota_lang">
                   <ul>
-                    {/* <li>
-                      <a href="login.html">Account</a>
-                    </li> */}
-
                     <li>
-                      <a href="login.html">Login &amp; register</a>
+                      <Link to="#">
+                        <h4 style={{color:"white"}}> ENGAGE <span style={{color:"#ed1b33"}}>SPORTS</span></h4>
+                        <h3></h3>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-3  col-lg-6 col-md-6 col-sm-6 text-end">
+                <div class="gota_right">
+                  <ul>
+                    <li>
+                      <a href="login.html">Book &amp; Play</a>
                     </li>
                   </ul>
                 </div>
@@ -61,12 +67,17 @@ export default function Navbar() {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 d-none d-sm-block">
                 <div className="gota_search">
-                  <form className="search_form">
+                  {/* <form className="search_form">
                     <button className="search_action">
                       <i className="fal fa-search d-sm-none d-md-block" />
                     </button>
                     <input type="text" placeholder="search" />
-                  </form>
+                  </form> */}
+                  <img
+                            
+                            src="./assets/img/logo.png"
+                            alt="" height={"76px"}
+                          />
                 </div>
               </div>
               <div className="col-xl-8 col-lg-8 col-md-4 col-sm-4">
@@ -78,16 +89,16 @@ export default function Navbar() {
                 <div className="main-menu">
                   <nav id="mobile-menu" style={{ display: "block" }}>
                     <ul>
-                      <li className="menu-item-has-children">
-                        <a href="index.html">Home </a>
-                        <ul className="sub-menu">
+                      <li >
+                        <Link to="/">Home </Link>
+                        {/* <ul className="sub-menu">
                           <li>
                             <a href="index.html">home shop 1</a>
                           </li>
-                        </ul>
+                        </ul> */}
                       </li>
                       <li className="position-static menu-item-has-children">
-                        <a href="shop.html">Shop</a>
+                        <Link to="#">Shop</Link>
                         <ul
                           className="mega_menu"
                           data-background="./assets/img/mega-menu/product.jpg"
@@ -97,15 +108,30 @@ export default function Navbar() {
                           }}
                         >
                           <li>
-                            <h4 className="mega_title">Shop Layout</h4>
+                            <h4 className="mega_title">Badminton</h4>
                             <ul className="mega_item">
                               <li>
-                                <a href="shop.html">Pagination</a>
+                                <a href="shop.html">Racket</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Shoe</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Shuttle</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Grip</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Shoe</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Racket</a>
                               </li>
                             </ul>
                           </li>
                           <li>
-                            <h4 className="mega_title">shop pages</h4>
+                            <h4 className="mega_title">Football</h4>
                             <ul className="mega_item">
                               <li>
                                 <a href="shop-sm.html">Shop — 5 Items</a>
@@ -113,7 +139,21 @@ export default function Navbar() {
                             </ul>
                           </li>
                           <li>
-                            <h4 className="mega_title">Product Layout</h4>
+                            <h4 className="mega_title">Cricket</h4>
+                            <ul className="mega_item">
+                              <li>
+                                <a href="single-right.html">Thumbnail Right</a>
+                              </li>
+                              <li>
+                                <a href="single-bottom.html">
+                                  {" "}
+                                  Thumbnail Botttom
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <h4 className="mega_title">SWimming</h4>
                             <ul className="mega_item">
                               <li>
                                 <a href="single-right.html">Thumbnail Right</a>
@@ -130,10 +170,10 @@ export default function Navbar() {
                         </ul>
                       </li>
                       <li className="position-static menu-item-has-children">
-                        <a href="service.html">Features</a>
+                        <Link to="#">Features</Link>
                         <ul className="mega_menu_2">
                           <li
-                            data-background="./assets/img/mega-menu/product2.jpg"
+                           
                             style={{
                               backgroundImage:
                                 'url("./assets/img/mega-menu/product2.jpg")',
@@ -146,6 +186,21 @@ export default function Navbar() {
                               </li>
                             </ul>
                           </li>
+                          <li
+                           
+                           style={{
+                             backgroundImage:
+                               'url("./assets/img/mega-menu/product2.jpg")',
+                           }}
+                         >
+                           <h4 className="mega_title_2">Basketball</h4>
+                           <ul className="mega_item_2">
+                             <li>
+                               <a href="shop.html">NikeCourts Air Zoom</a>
+                             </li>
+                           </ul>
+                         </li>
+                          
                           <li
                             data-background="./assets/img/mega-menu/product3.jpg"
                             style={{
@@ -176,7 +231,7 @@ export default function Navbar() {
                           </li>
                         </ul>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link className="d-none d-xl-block" to="/">
                           <img
                             className="pl-50 pr-50"
@@ -184,18 +239,18 @@ export default function Navbar() {
                             alt=""
                           />
                         </Link>
+                      </li> */}
+                        <li>
+                        <Link to="/service">Service</Link>
                       </li>
-                      <li >
+                      <li>
                         <Link to="/events">Events</Link>
-                       
                       </li>
 
                       <li>
                         <Link to="/about">About</Link>
                       </li>
-                      <li>
-                        <Link to="/portfolio">Service</Link>
-                      </li>
+                    
                       <li>
                         <Link to="/contact">Contact Us </Link>
                       </li>
@@ -203,7 +258,7 @@ export default function Navbar() {
                   </nav>
                 </div>
               </div>
-              <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+              {/* <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4">
                 <div className="gota_cart gotat_cart_1 text-end">
                   <a
                     onClick={() => {
@@ -214,7 +269,7 @@ export default function Navbar() {
                     My Bag<span className="counter"> (2)</span>
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
