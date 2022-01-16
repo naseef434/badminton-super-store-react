@@ -6,7 +6,14 @@ import BreadCrumb from "./BreadCrumb";
 import Categories from "./Categories";
 import ProductFilter from "./ProductFilter";
 import Product from "./Product";
+import { BounceLoader } from "react-spinners";
+import { css } from "@emotion/react";
 
+const override = css`
+  display: block;
+  margin: auto;
+  border-color: red;
+`;
 export default function Index() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -15,54 +22,50 @@ export default function Index() {
     category: null,
     brand: null,
   });
+  const [loader, setLoader] = useState(true);
   //get categories
   useEffect(async () => {
-    
-    try{
+    try {
       const response = await urlGateWay.get(
         `${serviceEndPoint.productsEndpoints.getCategory}`
       );
       setCategory(response?.data);
-    
-    }catch(e){
+    } catch (e) {
       console.log("categories api error ");
     }
-    
   }, []);
-  
+
   //get brands
   useEffect(async () => {
-    
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getBrands}`
     );
-    setBrands(response?.data)
-    
+    setBrands(response?.data);
   }, []);
 
   //get products
   useEffect(async () => {
+    setLoader(true)
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
       { params }
     );
     setProducts(response?.data?.results);
+    setLoader(false);
   }, [params]);
 
   //get product by category
   const SelectCategory = (id) => {
-    setParams({ ...params, category: id, });
-    
+    setParams({ category: id });
   };
 
   //get product by brand
   const getProductByBrand = (id) => {
-    setParams({ ...params, brand: id });
+    setParams({ brand: id });
   };
 
   //handle login popup
   const [openLoginModel, setLoginModel] = useState(false);
-
   const loginModelFunction = async (prod) => {
     const userToken = localStorage.getItem("token");
     if (userToken) {
@@ -118,6 +121,7 @@ export default function Index() {
 
   return (
     <>
+      <BounceLoader loading={loader} size={100}/>
       <Navbar />
       <BreadCrumb name={["Home", "Shop"]} />
       {/* shop page start */}
@@ -128,7 +132,7 @@ export default function Index() {
             <Categories
               category_data={category}
               selectCategory={SelectCategory}
-              brands = {brands}
+              brands={brands}
               getProductByBrand={getProductByBrand}
             />
             <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12">

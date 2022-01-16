@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function Category({ category_data, brands, selectCategory,getProductByBrand }) {
+export default function Category({
+  category_data,
+  brands,
+  selectCategory,
+  getProductByBrand,
+}) {
   return (
     <div className="col-xl-3 col-lg-4 col-md-12">
       <div className="sidebar">
@@ -10,7 +15,10 @@ export default function Category({ category_data, brands, selectCategory,getProd
             {category_data.map((item, key) =>
               category_data ? (
                 <li>
-                  <a  href="javascript:void(0)" onClick={()=> selectCategory(item.id)}>
+                  <a
+                    href="javascript:void(0)"
+                    onClick={() => selectCategory(item.id)}
+                  >
                     {item.name} <span>({item.count}) </span>
                   </a>
                 </li>
@@ -18,12 +26,6 @@ export default function Category({ category_data, brands, selectCategory,getProd
                 "Not Category Found "
               )
             )}
-              <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
           </ul>
         </div>
 
@@ -33,7 +35,10 @@ export default function Category({ category_data, brands, selectCategory,getProd
             {brands.map((item, key) =>
               category_data ? (
                 <li>
-                  <a  href="javascript:void(0)" onClick={()=> getProductByBrand(item.id)}>
+                  <a
+                    href="javascript:void(0)"
+                    onClick={() => getProductByBrand(item.id)}
+                  >
                     {item.name} <span>(5)</span>
                   </a>
                 </li>
@@ -41,14 +46,6 @@ export default function Category({ category_data, brands, selectCategory,getProd
                 "Not Category Found "
               )
             )}
-            
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-            <li>askjdbh</li>
-
           </ul>
         </div>
         {/* <div className="product-widget pt-50">

@@ -42,7 +42,7 @@ export default function Navbar() {
                 <div class="gota_lang">
                   <ul>
                     <li>
-                      <Link to="#">
+                      <Link to="/">
                         <h4 style={{color:"white"}}> ENGAGE <span style={{color:"#ed1b33"}}>SPORTS</span></h4>
                         <h3></h3>
                       </Link>

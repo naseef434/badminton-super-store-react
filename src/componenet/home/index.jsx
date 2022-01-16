@@ -8,6 +8,8 @@ import NewArrivals from "../home/NewArrivals";
 import BlogArea from "../home/BlogArea";
 import Gallery from "../home/Gallery";
 import Footer from "../footer/Footer"
+import { ClipLoader } from "react-spinners";
+
 export default function index() {
   return (
     <div>
