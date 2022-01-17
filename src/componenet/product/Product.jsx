@@ -6,13 +6,14 @@ var img = "assets/img/product/test.jpg";
 
 export default function Product({
   products_data,
-  handleLoginPop,
+  // handleLoginPop,
   openLoginModel,
   setLoginModel,
   openModelSingleView,
   setOpen,
   product,
   openModelFunction,
+  addToCart,
 }) {
   return (
     <>
@@ -35,7 +36,7 @@ export default function Product({
                   <div className="col-xl-3">
                     <div className="product product-3">
                       <div className="product__thumb">
-                        <Link to={`/product_view/${item.id}`}>
+                        <Link to={`/products/view/${item.id}`}>
                           <img
                             className="product-primary"
                             src={img}
@@ -86,7 +87,7 @@ export default function Product({
                             <a
                               className="p-absoulute pr-2"
                               href="javascript:void(0)"
-                              onClick={() => handleLoginPop(item)}
+                              onClick={() => addToCart(item)}
                             >
                               add toooo cart
                             </a>

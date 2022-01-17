@@ -1,9 +1,9 @@
 import React from "react";
 var img = "../assets/img/product/test.jpg";
 export default function ProductImagesView({ product }) {
-  product.images?.map((item) => {
-    console.log(item);
-  });
+  // product.images?.map((item) => {
+  //   console.log(item);
+  // });
 
   return (
     <div class="col-xl-6 col-lg-6 col-md-12">

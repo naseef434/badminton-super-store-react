@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "../componenet/navbar/Navbar";
-import ProductBreadCrumb from "../componenet/product/ProductBreadCrumb";
-import ProductImagesView from "../componenet/product/ProductImagesView";
-import ProductDetails from "../componenet/product/ProductDetails";
+import Navbar from "../navbar/Navbar";
+import ProductBreadCrumb from "./ProductBreadCrumb";
+import ProductImagesView from "./ProductImagesView";
+import ProductDetails from "./ProductDetails";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function ProductSinleView() {
-  const { product_id } = useParams(0);
-  const [singleProduct, setSingleProduct] = useState([]);
+export default function ProductSinleView(props) {
+  const { product_id } = useParams();
+  const [singleProduct, setSingleProduct] = useState([0]);
 
   //calling product api
   useEffect(() => {
@@ -21,8 +21,6 @@ export default function ProductSinleView() {
     }
     fetchMyAPI();
   }, []);
-  
-  
 
   return (
     <>
@@ -32,7 +30,10 @@ export default function ProductSinleView() {
           <ProductBreadCrumb />
           <div className="row">
             <ProductImagesView product={singleProduct} />
-            <ProductDetails productdata={singleProduct} />
+            <ProductDetails
+              addToCart={props.addToCart}
+              productdata={singleProduct}
+            />
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ export const userLogin = {
   updatePersonalInfo: "/customer/update_info/",
 };
 export const cart = {
+  getAccessToken:"/customer/get_token/",
   addToCart: "/cart/add_to_cart/",
   getCart: "/cart/get_cart/", 
   

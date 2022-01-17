@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductDetails({productdata}) {
+export default function ProductDetails({productdata, addToCart}) {
   console.log(productdata);
   return (
     <div className="col-xl-6 col-lg-6 col-md-12">
@@ -37,7 +37,7 @@ export default function ProductDetails({productdata}) {
             <input type="number" placeholder="1" />
           </span>
           <span>
-            <a href="">+ add to cart</a>
+            <a href="javascript:void(0)" onClick={()=> addToCart(productdata)}>+ add to cart</a>
           </span>
           <span>
             <i className="fal fa-heart"></i>
