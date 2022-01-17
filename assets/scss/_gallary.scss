@@ -1,0 +1,82 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    10. gallary
+========================
+************************/
+
+.gallary_area{
+    display: flex;
+    @include mq(xs){
+        flex-direction: column;
+    }
+    @include mq(sm){
+        flex-direction: row;
+    }
+    &__thumb{
+        width: 16.66%;
+        @include mq(sm){
+            width: 30%;
+        }
+    }
+}
+.company__info.info2 {
+	padding: 116px 30px;
+    text-align: center;
+    & h3{
+        font-size: 30px;
+        font-weight: 600;
+    }
+    & p{
+        font-family: 'Futura Std Book';
+    }
+}
+.subscribe.subscribe-2{
+    & input{
+        float: none;
+        padding: 10px 100px;
+        @include placeholder{
+            font-size: 10px;
+            padding-left: 10px;
+        }
+        @include mq(xs){
+            padding: 0;
+        }
+        @include mq(xs){
+            float: left;
+        }
+        @include placeholder{
+            padding: 0;
+            text-transform: uppercase;
+        }
+    }
+    & button{
+        margin-left: -5px;
+    }
+}
+
+//image scalling
+
+.gallary__thumb {
+    overflow: hidden;
+    @include mq(xs){
+        margin-bottom: 20px;
+    }
+    & img{
+        @include mq(xs){
+            width: 100%
+        }
+        @include transition(.3s);
+        &:hover{
+            transform: scale(1.1);
+            @include transition(.3s);
+        }
+    }
+  }
+
+  .cover-img {
+      object-fit: cover;
+  }

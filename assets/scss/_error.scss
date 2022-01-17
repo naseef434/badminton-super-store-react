@@ -1,0 +1,36 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    21. error
+========================
+************************/
+
+.error-page{
+    padding: 175px 0 240px 0;
+    background-attachment: fixed;
+}
+.error_inner{
+    & h2{
+        font-size: 220px;
+        letter-spacing: 20PX;
+        font-weight: 600;
+        &::before{
+            width: 0;
+        }
+    }
+    & h3{
+        font-size: 50px;
+        font-weight: 600;
+        color: $white;
+    }
+    & a{
+        display: inline-block;
+        padding: 12px 50px;
+        background: $white;
+        color: $heading;
+        text-transform: capitalize;
+    }
+}

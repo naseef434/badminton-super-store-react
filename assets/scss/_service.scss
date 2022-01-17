@@ -1,0 +1,118 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    22. service
+========================
+************************/
+.service_page{
+    padding: 200px 0 200px 0;
+}
+
+.service-single{
+    color: $white;
+    & h3{
+        color: $white;
+        font-size: 35px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    & p{
+        color: $white;
+        font-size: 17px;
+        font-family: 'Futura Std Book';
+    }
+    & a{
+        display: inline-block;
+        padding: 9px 46px;
+        background: $ligtblue;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+.service__wrapper{
+    & h2{
+        color: #222329;
+        font-size: 35px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+    }
+}
+.m_single_service{
+    & img{
+        width: 100%;
+    }
+    &__content{
+        background: #222329;
+        padding: 50px 25px;
+        text-align: center;
+        & h5{
+            color: $white;
+            font-size: 21px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 25px;
+            &::before{
+                position: absolute;
+                content: "";
+                height: 2px;
+                width: 50px;
+                background: $ligtblue;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        & p{
+            color: $white;
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 01px;
+            padding-top: 20px;
+        }
+    }
+}
+.expertsingle{
+overflow: hidden;
+    &__thumb{
+        float: left;
+        margin-right: 50px;
+        @include mq(xs){
+            float: none;
+            margin-bottom: 30px;
+        }
+        & span{
+            border: 5px solid #E5B034;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            line-height: 100px;
+            text-align: center;
+            color: #E5B034;
+        }
+    }
+    &__content{
+        overflow: hidden;
+        & h5{
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0px;
+            color: $heading;
+        }
+        & p{
+            color: #222329;
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+}
+.service_brand{
+    background: #DFAA0A;
+    padding: 100px 0;
+}

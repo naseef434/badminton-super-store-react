@@ -1,0 +1,106 @@
+@use './variables' as *;
+@use './common' as *;
+@use  './mixins' as *;
+
+/***********************
+========================
+    24. search
+========================
+************************/
+
+.search_area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $white;
+    height: 100%;
+    width: 100%;
+    z-index: 999999;
+    padding-top: 150px;
+    display: none;
+}
+.search-wrapper{
+    & h2{
+        font-size: 30px;
+        padding: 38px 0 5px 0;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+.search_tab{
+    & ul{
+        border: 0;
+        & li{
+            & button{
+                font-size: 18px;
+                color: #333e48;
+                padding: 0 30px;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+.categories__tab .nav-tabs .nav-link {
+	margin-bottom: -1px;
+	background: 0 0;
+	border: 2px solid $ligtblue;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+}
+.categories__tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #2bb9a9;
+	background-color: #fff;
+	border-radius: 0;
+}
+.categories__tab .nav-tabs li button.active {
+	border: 2px solid #2bb9a9 !important;
+}
+.search_tab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #2bb9a9;
+	background-color: #fff;
+	border-radius: 0;
+}
+.shop-tab .nav button.active {
+	opacity: .4;
+}
+.search_tab .nav-tabs .nav-link {
+	margin-bottom: -1px;
+	background: 0 0;
+	border: 0px solid transparent;
+	border-top-left-radius: .25rem;
+	border-top-right-radius: .25rem;
+}
+.main_search{
+    position: relative;
+    & input{
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        padding: 10px 0;
+        text-align: center;
+        @include placeholder{
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+    }
+}
+.m-search {
+	position: absolute;
+	right: 0;
+	background: transparent;
+	border: 0;
+	font-size: 21px;
+	color: #000;
+	font-weight: 600;
+}
+.search_close {
+	position: absolute;
+	top: 8%;
+	right: 4%;
+	font-size: 30px;
+	color: #222;
+    cursor: pointer;
+}

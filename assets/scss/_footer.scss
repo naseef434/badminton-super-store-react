@@ -1,0 +1,220 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    11. footer
+========================
+************************/
+
+.footer_area{
+    background: $footerbg;
+    padding: 100px 0;
+    padding-bottom: 0;
+}
+.footer_area.footer_area_3{
+    padding: 108px 0 85px 0;
+}
+.f-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.company__info{
+    @include mq(sm){
+        padding-top: 30px;
+    }
+    & ul{
+        margin-bottom: 30px;
+        & li{
+            margin-bottom: 10px;
+            color: $smsubheading;
+            font-family: 'Futura Std Book';
+            & a{
+                &:hover{
+                    color: $ligtblue;
+                    @include transition(.3s);
+                }
+            }
+        }
+    }
+    & p{
+        font-size: 16px;
+        color: $smsubheading;
+        & span{
+            color: $white;
+            font-weight: 600;
+            line-height: 2.5;
+            display: inline-block;
+        }
+    }
+}
+.social__media{
+    & a{
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        text-align: center;
+        color: $blogcolor;
+        background: #383b43;
+        @include transition(.3s);
+        & i{
+            @include transition(.3s);
+        }
+        &:hover{
+            background: $ligtblue;
+            @include transition(.3s);
+            color: $white;
+        }
+        &:hover i{
+            transform: translateY(-2px);
+            @include transition(.3s);
+        }
+    }
+}
+.subscribe{
+   & input{
+    width: 100%;
+    height: 50px;
+    float: left;
+    border: 0;
+    padding-left: 15px;
+   }
+   & button{
+        display: inline-block;
+        background: #2bb9a9;
+        color: #ffffff;
+        border: 0;
+        position: absolute;
+        height: 50px;
+        right: 0px;
+        padding: 0 26px;
+        @include mq(xs){
+            right: -26px;
+        }
+   }
+}
+.subscribe {
+    position: relative;
+}
+//footer2
+.fblog{
+    &__thumb{
+        float: left;
+        margin-right: 21px;
+    }
+    &__content{
+        overflow: hidden;
+        & p{
+            color: $smsubheading;
+            font-size: 16px;
+            font-family: 'Futura Std Book';
+        }
+        & span{
+            font-size: 16px;
+            color: $smsubheading;
+            font-family: 'Futura Std Book';
+        }
+    }
+}
+.footer-menu {
+	& ul{
+        & li{
+            display: inline-block;
+        }
+    }
+}
+.footer__bottom{
+    border-top: 1px solid #37393d;
+    padding-top: 26px;
+    & p{
+        font-size: 16px;
+        font-family: 'Futura Std Book';
+        color: $smsubheading;
+        @include mq(xs){
+            font-size: 13px;
+        }
+        @include mq(md){
+            font-size: 15px;
+        }
+        & span{
+            color: $ligtblue;
+        }
+    }
+}
+.footer-menu{
+    & ul{
+        & li{
+            margin-right: 25px;
+            @include mq(md){
+                margin-right: 10px;
+            }
+            @include mq(xl){
+                margin-right: 10px;
+            }
+            & a{
+                font-size: 16px;
+                color: $smsubheading;
+                font-family: 'Futura Std Book';
+                @include transition(.3s);
+                @include mq(md){
+                    font-size: 12px;
+                }
+                &:hover{
+                    color: $ligtblue;
+                    @include transition(.3s);
+                }
+            }
+        }
+    }
+}
+.footer_3{
+    & ul{
+        & li{
+            margin-right: 18px;
+            @include mq(md){
+                margin-right: 7px;
+            }
+            & a{
+                font-size: 16px;
+                color: $white;
+                font-family: 'Futura Std Book';
+                @include mq(md){
+                    font-size: 13px;
+                }
+            }
+        }
+    } 
+}
+.border-left {
+	position: relative;
+    &::before{
+        position: absolute;
+        top: 0;
+        left: -47%;
+        height: 100%;
+        width: 1px;
+        background: #38393e;
+        content: "";
+    }
+}
+.footer-menu {
+	& ul{
+        & li{
+            & a{
+                @include mq(xs){
+                    font-size: 13px;
+                }
+            }
+        }
+        @include mq(xs){
+            text-align: left !important;
+        }
+    }
+}
+

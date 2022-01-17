@@ -1,0 +1,1016 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    3.  header
+========================
+************************/
+
+.gota_top{
+    & li{
+        display: inline-block;
+        margin-right: 35px;
+        position: relative;
+        & a{
+            font-size: 16px;
+            font-weight: 500;
+            color: $smsubheading;
+            text-transform: uppercase;
+            display: block;
+            padding: 12px 0;
+            @include transition(.3s);
+            & i{
+                margin-left: 6px;
+                display: inline-block;
+            }
+            &:hover{
+                color: $ligtblue;
+                @include transition(.3s);
+            }
+            @include mq(sm){
+                font-size: 13px;
+            }
+            @include mq(md){
+                font-size: 13px;
+            }
+        }
+        &:hover .additional_dropdown{
+            transform: scaleY(1);
+            top: 100%;
+            @include transition(.3s);
+        }
+    }
+}
+.gota_lang{
+    @include mq(xs){
+        margin-bottom: 20px;
+    }
+}
+.gota_right{
+    @include mq(xs){
+        float: left;
+    }
+    @include mq(sm){
+        float: none;
+    }
+
+    & ul{
+        & li{
+            margin-left: 18px;
+            margin-right: 0;
+            @include mq(xs){
+                margin-left: 0;
+                margin-right: 10px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+.additional_dropdown{
+    position: absolute;
+    top: 160%;
+    left: 0;
+    min-width: 180px;
+    background: $footerbg;
+    border-radius: 0 05px 5px;
+    padding: 5px;
+    transform: scaleY(0);
+    transform-origin: top;
+    @include transition(.3s);
+    z-index: 99999;
+    & li{
+        width: 100%;
+        margin-right: 0;
+        & a{
+            display: inline-block;
+            padding: 10px;
+            @include transition(.3s);
+            &:hover{
+                color: $ligtblue;
+                @include transition(.3s);
+            }
+        }
+    }
+}
+.search_form{
+    & button{
+        border: 0;
+        padding: 0;
+        background: transparent;
+        @include mq(lg){
+            margin-right: 10px;
+        }
+        & i{
+            color: $heading;
+            font-size: 18px;
+            display: inline-block;
+            margin-right: 2px;
+            font-weight: 500;
+        }
+    }
+    & input{
+        border: 0;
+        font-weight: 600;
+        color: $heading;
+        text-transform: uppercase;
+        @include placeholder{
+            color: $heading;
+            font-weight: 600;
+        }
+    }
+}
+.sidemenu.sidemenu-1 {
+	@include mq(xs){
+        top: 10px;
+    }
+    @include mq(md){
+        top: 2%;
+    }
+}
+.search_form{
+    @include mq(lg){
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+//search responsive
+.gota_search {
+	@include mq(lg){
+        padding-left: 0;
+    }
+}
+.gota_bottom {
+	padding: 0 36px;
+    @include mq(xs){
+        padding: 18px 36px;
+    }
+    @include mq(md){
+        padding: 6px 36px;
+    }
+    @include mq(lg){
+        padding: 20px 36px;
+    }
+}
+.gota_cart {
+	@include mq(xs){
+        float: left;
+    }
+}
+//main menu
+.main-menu.main-menu-3 {
+	padding-left: 60px;
+}
+.main-menu{
+    & ul{
+        text-align: center;
+        & li{
+            display: inline-block;
+            margin-right: 30px;
+            position: relative;
+            @include mq(lg){
+                margin-right: 17px;
+            }
+            @include mq(xl){
+                margin-right: 30px;
+            }
+            & a{
+                font-size: 16px;
+                color: $heading;
+                font-weight: 600;
+                text-transform: uppercase;
+                display: block;
+                padding: 30px 0;
+                @include transition(.3s);
+               & i{
+                    display: inline-block;
+                    margin-left: 10px;
+                    transform: translateY(4px);
+                    color: $heading;
+                    font-weight: 600;
+               }
+               &:hover{
+                   color: $ligtblue;
+                   @include transition(.3s);
+               }
+            }
+            &:hover .sub-menu{
+                transform: scaleY(1);
+                top: 100%;
+                @include transition(.3s);
+            }
+            &:hover .mega_menu{
+                transform: scaleY(1);
+                top: 100%;
+                @include transition(.3s);
+            }
+            &:hover .mega_menu_2{
+                transform: scaleY(1);
+                top: 100%;
+                @include transition(.3s);
+            }
+        }
+    }
+}
+.main-menu .sub-menu{
+    position: absolute;
+    top: 150%;
+    left: 0;
+    min-width: 270px;
+    background: $white;
+    text-align: left;
+    padding: 16px 16px;
+    transform: scaleY(0);
+    transform-origin: top;
+    @include transition(.3s);
+    z-index: 99999;
+    border: 1px solid #ebebeb;
+    & li{
+        display: block;
+        margin-right: 0;
+        & a{
+            padding: 9px 11px;
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-family: 'Futura Std Book';
+        }
+    }
+}
+
+//mega menu
+
+.mega_menu {
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: #FAFAFA;
+	padding: 56px;
+	margin-right: 0;
+	padding-right: 0;
+    padding-left: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scaleY(0);
+    transform-origin: top;
+    @include transition(.3s);
+    z-index: 99999;
+    @include mq(lg){
+        padding-left: 30px;
+    }
+
+}
+.main-menu .mega_menu > li{
+    float: left;
+    width: 20%;
+    margin-right: 0;
+    @include mq(lg){
+        width: 30%;
+    }
+}
+.main-menu .mega_menu > li a{
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: 300;
+    display: block;
+    padding: 0;
+    font-family: 'Futura Std Book';
+}
+.mega_title {
+	text-align: left;
+	font-size: 16px;
+	padding-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.mega_item > li {
+	width: 100%;
+	margin-bottom: 9px;
+	text-align: left;
+}
+
+.product_thumb{
+    & img{
+        width: 100%;
+    }
+}
+
+.gota_cart{
+    & a{
+        font-size: 18px;
+        font-weight: 600;
+        color: $heading;
+        @include mq(md){
+            float: right;
+        }
+        & i{
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 17px;
+        }
+    }
+}
+.gota_cart.gotat_cart_1{
+    & a{
+        @include mq(md){
+            color: $heading;
+        }
+    }
+}
+//mega menu 2
+.mega_menu_2{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: #FAFAFA;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    @include transition(.3s);
+    padding: 0;
+    z-index: 99999;
+}
+.main-menu .mega_menu_2 > li{
+    float: left;
+    width: 33.33%;
+    text-align: left;
+    margin-right: 0;
+}
+.mega_item_2 > li{
+    display: block;
+    width: 100%;
+}
+.mega_menu_2 .mega_item_2{
+    text-align: left !important;
+    padding: 15px 33px 33px 33px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    & li{
+        margin: 0;
+        padding: 0;
+        & a{
+            margin: 0;
+            padding: 8px 0;
+            font-size: 14px;
+            text-transform: capitalize;
+            color: $white;
+            text-transform: capitalize;
+        }
+    }
+}
+.mega_title_2 {
+	padding-left: 5%;
+    padding-top: 10%;
+    color: $white;
+    font-size: 18px;
+}
+//homepage 2 css
+.bgclr2{
+    background: $theme2color;
+}
+.search2{
+    & input{
+        background: transparent;
+        width: 0;
+    }
+}
+.main-menu.white-color{
+    & ul{
+        & li{
+            & a{
+                color: $white;
+                &:hover{
+                    color: $ligtblue;
+                    @include transition(.3s);
+                }
+            }
+        }
+    }
+}
+.sub-menu.white-color{
+    & li{
+        & a {
+            color: $heading !important;
+        }
+    }
+}
+.mega_item.white-color{
+    & li{
+        & a{
+            color: $heading !important;
+        }
+    }
+}
+.search_form.search2{
+    & button{
+        & i{
+            color: $white;
+        }
+    }
+
+}
+.search2{
+    & span{
+        color: $white;
+        text-transform: uppercase;
+    }
+
+}
+.gota_cart.cart-2 {
+    & a{
+        color: $white;
+    }
+
+}
+//homepage 3
+.gota_top_3{
+    background: $themecolor2;
+}
+.popup_offer{
+    & p{
+        font-size: 12px;
+        color: $smsubheading;
+        text-align: center;
+        & span{
+            color: $ligtblue;
+        }
+    }
+}
+.gota_call{
+    & p{
+        font-size: 16px;
+        font-weight: 700;
+        color: $heading;
+        @include mq(lg){
+            font-size: 14px;
+        }
+        & i{
+            display: inline-block;
+            transform: rotate(-40deg);
+            margin-right: 10px;
+        }
+    }
+}
+.gota_vertical_menu{
+    position: relative;
+    & ul{
+        & li{
+            display: inline-block;
+            margin: 0 20px;
+            margin-right: -5px;
+            @include mq(xl){
+                margin: 0 6px;
+            }
+            @include mq(lg){
+                margin: 0 14px 0 0;
+            }
+            @include mq(md){
+                margin-right: 4px;
+                margin-left: 0;
+            }
+            @include mq(sm){
+                margin-right: 8px;
+                margin-left: 0;
+            }
+            & a{
+                font-size: 16px;
+                font-weight: 700;
+                color: $heading;
+                text-transform: uppercase;
+                @include mq(xl){
+                    font-size: 12px;
+                }
+                @include mq(lg){
+                    font-size: 15px !important;
+                }
+                @include mq(lg){
+                    font-size: 12px;
+                }
+                @include mq(sm){
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+   &::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 2px;
+    background: #ebebeb;
+    right: -39px;
+   }
+}
+.sidemenu.sidemenu-3 {
+	top: -58px;
+    @include mq(sm){
+        top: -74px;
+    }
+    @include mq(md){
+        top: -74px;
+    }
+}
+.sidemenu.sidemenu-1{
+    & a{
+        @include mq(md){
+            color: $heading;
+        }
+    }
+}
+.vertical-dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 267px;
+    z-index: 9999;
+    background: $white;
+    padding: 36px 0;
+}
+.gota_vertical_menu .vertical-dropdown li{
+    display: block;
+    border-top: 1px solid #ddd;
+    padding: 13px 15px 10px 34px;
+    margin: 0;
+    @include mq(xl){
+        padding: 8px 15px;
+    }
+}
+.gota_vertical_menu .vertical-dropdown li a{
+    font-size: 13px;
+    color: $heading;
+    font-weight: 400;
+    font-family: 'Futura Std Book';
+    @include transition(.3s);
+    @include mq(xl){
+        font-size: 13px;
+    }
+    &:hover{
+        color: $ligtblue;
+        @include transition(.3s);
+    }
+}
+.c-border {
+    @include mq(md){
+        padding: 30px 0;
+    }
+    @include mq(sm){
+        padding: 30px 0;
+    }
+    @include mq(xs){
+        padding: 30px 0;
+    }
+    &::before{
+        position: absolute;
+        top: 85px;
+        left: 0px;
+        height: 1px;
+        width: 100%;
+        background: #ddd;
+        content: "";
+    }
+}
+.vertical_mega_menu{
+    position: absolute;
+    width: 800px;
+    height: 420px;
+    background: $white;
+    z-index: 999;
+    left: 101%;
+    top: 56px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.05);
+    opacity: 0;
+    visibility: hidden;
+    @include transition(.3s);
+    padding: 40px 0 40px 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+.gota_vertical_menu .vertical-dropdown .vertical_mega_menu .vertical_mega_item li {
+	border: 0;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+}
+.gota_vertical_menu .vertical-dropdown .vertical_mega_menu .vertical_mega_item li a {
+	font-size: 12px;
+	color: $subheading;
+	font-weight: 400;
+    display: block;
+    padding: 1px 0;
+    &:hover{
+        color: $heading;
+    }
+}
+.vertical_mega_menu > li h4{
+    text-transform: uppercase;
+    color: $heading;
+    font-weight: 600;
+}
+.vertical_mega_menu > li{
+    float: left;
+    width: 20.33%;
+    width: 200px;
+}
+.vertical_mega_menu > li img{
+    width: 100%;
+}
+.vertical-dropdown > li > a i{
+    margin-left: 100px;
+}
+.vertical-dropdown > li:hover .vertical_mega_menu{
+    opacity: 1;
+    visibility: visible;
+    @include transition(.3s);
+}
+.vertical-dropdown{
+    display: none;
+}
+//search bar design
+.search__input{
+    position: relative;
+    & input{
+        width: 700px;
+        border-radius: 50px;
+        border: 1px solid #ddd;
+        padding: 10px 58px;
+        background: #f9f9f9;
+        height: 54px;
+        @include mq(xl){
+            width: 480px;
+        }
+        @include mq(lg){
+            width: 400px;
+        }
+        @include mq(md){
+            width: 300px;
+            position: relative;
+            z-index: 9999;
+        }
+        @include placeholder{
+            font-size: 16px;
+            color: $subheading;
+            font-family: 'Futura Std Book';
+        }
+    }
+}
+.search {
+	top: 50%;
+	transform: translateY(-50%);
+	left: 14%;
+}
+.close {
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+    @include mq(xl){
+        right: 76px;
+    }
+    @include mq(lg){
+        right: -97px;
+    }
+    @include mq(md){
+        right: 40%;
+    }
+}
+.gota_lang_3{
+    position: relative;
+    @include mq(md){
+        float: right;
+    }
+    @include mq(lg){
+        margin-left: 0;
+        float: right;
+    }
+    & ul {
+        & li{
+            & a{
+                font-size: 12px;
+            }
+        }
+    }
+}
+.gota_cart_3 {
+    @include mq(sm){
+        right: -142px;
+        top: -54px;
+    }
+    @include mq(xl){
+        right: 45px;
+    }
+    & i{
+        display: inline-block;
+        margin-right: 36px;
+        font-size: 24px;
+        padding-top: 8px;
+        @include mq(md){
+            padding-top: 8px;
+        }
+    }
+    & a{
+        background: $ligtblue;
+        padding: 16px 60px;
+        color: $white;
+        border-radius: 3px;
+        font-size: 16px;
+        @include mq(sm){
+            padding: 10px 25px;
+            font-size: 12px;
+        }
+        @include mq(lg){
+            padding: 23px 50px;
+        }
+        @include mq(xl){
+            padding: 16px 38px;
+        }
+    }
+	right: 51px;
+	top: 0;
+}
+.gota_call {
+	@include mq(xl){
+        margin-left: -37px;
+    }
+}
+.gota_top_bg{
+    & li{
+        margin-right: 30px;
+        @include mq(lg){
+            margin-right: 20px;
+        }
+        @include mq(xl){
+            margin-right: 14px;
+        }
+    }
+}
+input {
+    @include placeholder {
+    color: #c1c1c1;
+    }
+}
+.border-bottomm {
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 20px;
+}
+.gota_bottom_3 {
+	padding: 0px 45px 0px 45px;
+    @include mq(lg){
+        padding: 16px 45px 16px 45px;
+    }
+    @include mq(sm){
+        padding: 13px 45px 14px 45px;
+    }
+}
+.main-menu-3{
+    & ul{
+        text-align: left;
+    }
+}
+
+//homepage-4
+.Message__customer {
+	& li{
+        display: inline-block;
+        color: $smsubheading;
+        font-size: 14px;
+        font-family: 'Futura Std Book';
+        margin-right: 70px;
+        position: relative;
+        @include mq(xl){
+            margin-right: 30px;
+            font-size: 13px;
+        }
+        &:first-child::before{
+            width: 0;
+        }
+        &::before{
+            position: absolute;
+            top: 0;
+            left: -35px;
+            width: 1px;
+            height: 100%;
+            background: #3d4964;
+            content: "";
+            @include mq(xl){
+                left: -17px;
+            }
+        }
+    }
+}
+.header-area.home-4{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+}
+.background-white {
+	background: #ffffff;
+	padding: 18px;
+    position: relative;
+    padding-top: 24px;
+}
+.gota_cart_4{
+    @include mq(xs){
+        margin-top: -29px;
+        margin-left: 38px;
+    }
+    @include mq(sm){
+        margin-top: 0px;
+    }
+    & a{
+        padding: 10px 30px;
+        & i{
+            @include mq(xs){
+                font-size: 12px;
+            }
+        }
+        @include mq(xs){
+            padding: 12px 23px;
+        }
+    }
+}
+//responsive gota cart
+.gota_cart {
+    @include mq(md){
+        position: absolute;
+        right: 100px;
+        top: 9px;
+        & a{
+            @include mq(md){
+                color: $white;
+            }
+        }
+    }
+    &:is(.gota_cart_4) {
+        position: static;
+    }
+}
+.gota_cart.cart-2 {
+	@include mq(md){
+        right: 100px;
+    }
+}
+.gota_bottom.gota_bottom_2 {
+	@include mq(md){
+        padding: 7px 36px;
+    }
+}
+.gota_cart_3{
+    @include mq(md){
+        top: 0;
+        right: -167px;
+    }
+    @include mq(lg){
+        top: 6px;
+        right: -296px;
+    }
+    & a{
+        @include mq(md){
+            padding: 9px 23px;
+        }
+        @include mq(lg){
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        & i{
+           @include mq(md){
+            font-size: 16px;
+           }
+           @include mq(lg){
+            font-size: 13;
+           }
+        }
+    }
+}
+.gota_top_bg_3{
+    @include mq(md){
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    @include mq(lg){
+        padding: 13px 19px;
+    }
+}
+.gota_call {
+    @include mq(lg){
+        padding-top: 7px;
+        float: none;
+    }
+}
+.main-menu-3{
+    & ul{
+        & li{
+            margin-right: 35px;
+            & a{
+                padding: 20px 0;
+            }
+        }
+    }
+
+}
+.background-white.white-1 {
+	padding-bottom: 0;
+}
+
+/* mobile menu css */
+.side-toggle {
+	background: none;
+	border: 0;
+	padding: 0;
+}
+.side-menu-icon i {
+	color: #fff;
+	font-size: 32px;
+	cursor: pointer;
+}
+.side-info {
+	background: #152136;
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	right: -100%;
+	top: 0;
+	padding: 30px;
+	transition: .6s;
+	overflow-y: scroll;
+    z-index: 999999999;
+}
+.side-info.info-open {
+	right: 0;
+}
+.side-info-close {
+	background: none;
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	padding: 0;
+	margin-bottom: 20px;
+}
+.side-info-content h1 {
+	color: #fff;
+	font-size: 29px;
+}
+.offcanvas-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+}
+.offcanvas-overlay.overlay-open {
+	opacity: .5;
+	visibility: visible;
+}
+/* mean menu customize */
+.mean-container a.meanmenu-reveal {
+	display: none;
+}
+.mean-container .mean-nav {
+	background: none;
+	margin-top: 0;
+}
+.mean-container .mean-bar {
+	padding: 0;
+	min-height: auto;
+	background: none;
+}
+.mean-container .mean-nav > ul {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	list-style-type: none;
+	display: block !important;
+}
+.mean-container a.meanmenu-reveal {
+	display: none !important;
+}
+.mean-container .mean-nav ul li a {
+	width: 100%;
+	padding: 10px 0;
+	color: #fff;
+	border-top: 1px solid #2a3a57;
+	font-size: 13px;
+}
+.mean-container .mean-nav ul li a.mean-expand {
+	margin-top: 0px;
+	height: 15px;
+	padding: 12px 12px !important;
+	line-height: 14px;
+}
+.mean-container .mean-nav > ul > li:first-child a{
+	border-top: 0;
+}
+.mobile-menu.mean-container {
+	overflow: hidden;
+	margin-bottom: 40px;
+}

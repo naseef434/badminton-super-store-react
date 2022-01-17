@@ -1,0 +1,118 @@
+@use  './variables' as *;
+@use './common' as *;
+@use './mixins' as *;
+
+/***********************
+========================
+    12. banar
+========================
+************************/
+
+.container-fluid.padding-remove{
+    padding: 0;
+}
+.banar{
+    &__left{
+        position: relative;
+    }
+    &__content{
+        position: absolute;
+        top: 64%;
+        left: 50%;
+        transform: translateX(-50%);
+        & p{
+            color: $white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
+.banarright{
+    position: relative;
+    &__content{
+        position: absolute;
+        top: 5%;
+        left: 56%;
+        pointer-events: none;
+        & span{
+            font-size: 16px;
+            font-weight: 600;
+            color: $white;
+            text-transform: uppercase;
+            @include mq(xs){
+                font-size: 13px;
+            }
+        }
+        & h4{
+            font-size: 18px;
+            font-weight: 600;
+            color: $white;
+            text-transform: uppercase;
+            @include mq(xs){
+                font-size: 13px;
+            }
+        }
+        & p{
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $white;
+            @include mq(xs){
+                font-size: 11px;
+            }
+            & span{
+                color: #a80e0e;
+                font-weight: 600;
+            }
+        }
+    }
+}
+.banar_right_down{
+    position: relative;
+    &__contentt{
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+}
+.position-change{
+    left: 5%;
+    & span{
+        color: #ef601b;
+    }
+    & p{
+        & span{
+            color: #ef601b;
+        }
+    }
+}
+.banar-title{
+    font-size: 36px;
+    font-weight: 600;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 95%;
+    font-family: "Barlow Condensed", Sans-serif;
+    @include mq(xs){
+        font-size: 25px;
+        padding-top: 5px;
+        margin-bottom: 0;
+    }
+    @include mq(sm){
+        font-size: 27px;
+        padding-top: 20px;
+        margin-bottom: 25px;
+    }
+    @include mq(md){
+        padding-top: 22px;
+    }
+    @include mq(lg){
+        font-size: 20px;
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+    @include mq(xl){
+        padding-top: 14px;
+        margin-bottom: 26px;
+    }
+}
