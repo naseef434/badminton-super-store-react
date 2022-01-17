@@ -11,13 +11,12 @@ import { css } from "@emotion/react";
 import { useParams } from "react-router-dom";
 import ProductSinleView from "./ProductSingleView";
 import { v4 as uuidv4 } from "uuid";
+import { succes, error } from "../toaster/Toaster";
 const override = css`
-  display: flex;
-  justify-content: center;
+  display: block;
   margin: 0 auto;
-  border-color: red;
+  border-color: #ff0000;
 `;
-
 export default function Index() {
   const [uuId, setuuId] = useState({
     customer_id: "",
@@ -60,19 +59,15 @@ export default function Index() {
       localStorage.setItem("uuid", uuid);
 
       setuuId({ customer_id: uuid });
-      console.log("if");
-      console.log(uuId);
     } else {
       setuuId({ customer_id: get_uuuId });
-      console.log("else");
-      console.log(uuId);
     }
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
       { params }
     );
     setProducts(response?.data?.results);
-    setLoader(true);
+    setLoader(false);
   }, [params]);
 
   //get product by category
@@ -157,24 +152,17 @@ export default function Index() {
         body
       );
     }
-    alert("added to cart");
+    succes();
   };
 
   const { section } = useParams();
   return (
     <>
-      <PuffLoader
-        loading={loader}
-        color={"blue"}
-        size={150}
-        css={override}
-        speedMultiplier={1}
-      />
+      <PuffLoader color={"blue"} loading={loader} css={override} size={150} />
       {section === "view" ? (
         <ProductSinleView addToCart={addToCart} />
       ) : (
         <>
-          <Navbar />
           <BreadCrumb name={["Home", "Shop"]} />
           {/* shop page start */}
           <div className="shop-page pt-85">

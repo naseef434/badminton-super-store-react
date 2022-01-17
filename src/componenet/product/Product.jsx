@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Signup from "../Customer";
 import ProductPopUp from "./ProductPopUp";
@@ -73,7 +73,7 @@ export default function Product({
                         </div>
                         <div className="product__name">
                           <h4>
-                            <Link to={`/product_view/${item.id}`}>
+                          <Link to={`/products/view/${item.id}`}>
                               {" "}
                               {item.name}
                             </Link>

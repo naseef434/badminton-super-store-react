@@ -1,7 +1,9 @@
 import React, { Suspense } from "react";
-import {  Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 import { css } from "@emotion/react";
+import Navbar from "../componenet/navbar/Navbar";
+import Footer from "../componenet/footer/Footer";
 const override = css`
   display: flex;
   justify-content: center;
@@ -11,12 +13,17 @@ const override = css`
 
 function PublicRoute() {
   return (
-    <>
-      {/* <CircleLoader loading={true} css={override} size={150} /> */}
-      <Suspense fallback={ <PuffLoader color={"blue"} css={override} loading={true} size={150} />}>
+    <div>
+      <Navbar />
+      <Suspense
+        fallback={
+          <PuffLoader color={"blue"} css={override} loading={true} size={150} />
+        }
+      >
         <Outlet />
       </Suspense>
-    </>
+      <Footer />
+    </div>
   );
 }
 

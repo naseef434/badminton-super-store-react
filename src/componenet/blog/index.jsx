@@ -6,10 +6,10 @@ import Footer from "../../componenet/footer/Footer";
 export default function index() {
   return (
     <div>
-      <Navbar />
+   
       <BLogBreadCrumb />
       <BlogArea />
-      <Footer />
+    
     </div>
   );
 }

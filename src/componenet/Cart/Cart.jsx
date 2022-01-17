@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BreadCrumb from "../product/BreadCrumb";
 var img = "assets/img/product/test.jpg";
 function Cart({ cart_item }) {
@@ -81,17 +82,17 @@ function Cart({ cart_item }) {
                       </td>
                     </tr> */}
                     <tr className="first-child">
-                      <td>Total</td>
+                      <td>Totalsssssssss</td>
                       <td>{`${cart_item.total} - AED`}</td>
                     </tr>
                     <tr>
                       <td colSpan={2}>
-                        <a href="checkout.html">
+                        <Link to='/checkout'>
                           <input
                             type="submit"
                             defaultValue="procced to checkout"
                           />
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tbody>

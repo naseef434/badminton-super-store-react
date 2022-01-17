@@ -6,7 +6,7 @@ import accademy from './accademy-1.jpg'
 export default function Accademy() {
     return (
         <div>
-            <Navbar />
+            
       {/* start blog details area */}
       <section className="blog-aread pt-20">
         <div className="container">
@@ -223,7 +223,7 @@ export default function Accademy() {
 <br />
 
       {/* start blog details end */}
-      <Footer />
+   
     </div>
        
     )

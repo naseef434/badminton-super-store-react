@@ -8,12 +8,12 @@ import ExpertArea from './ExpertArea'
 export default function index() {
     return (
         <div>
-           <Navbar />
+          
             <Gallery />     
             <Service /> 
             <ExpertArea />   
             {/* <Brand />   */}
-           <Footer />
+          
         </div>
     )
 }

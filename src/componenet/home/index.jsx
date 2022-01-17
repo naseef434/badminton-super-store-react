@@ -13,7 +13,7 @@ import { ClipLoader } from "react-spinners";
 export default function index() {
   return (
     <div>
-      <Navbar />
+    
       <Carousel />
       <FeaturesArea />
       <Categories />
@@ -21,7 +21,7 @@ export default function index() {
       {/* <NewArrivals /> */}
       <BlogArea />
       <Gallery />
-      <Footer />
+     
     </div>
   );
 }

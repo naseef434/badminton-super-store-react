@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function BadmntonSuperStore() {
   return (
     <div>
-      <Navbar />
+     
       {/* start blog details area */}
       <section className="blog-aread pt-20">
         <div className="container">
@@ -216,7 +216,7 @@ export default function BadmntonSuperStore() {
         </div>
       </section>
       {/* start blog details end */}
-      <Footer />
+      
     </div>
   );
 }

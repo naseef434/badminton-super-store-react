@@ -24,7 +24,7 @@ export default function ProductSinleView(props) {
 
   return (
     <>
-      <Navbar />
+    
       <div className="single_breadcrumb pt-25">
         <div className="container">
           <ProductBreadCrumb />

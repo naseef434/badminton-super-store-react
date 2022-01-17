@@ -8,11 +8,11 @@ import Parallex from './Parallex'
 export default function Index() {
     return (
         <div>
-            <Navbar />
+           
             <Parallex />
             <ContactArea />
             <CompanySocialStart />
-            <Footer />
+           
         </div>
     )
 }
