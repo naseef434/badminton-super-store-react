@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 import ProductSinleView from "./ProductSingleView";
 import { v4 as uuidv4 } from "uuid";
 import { succes, error } from "../toaster/Toaster";
+import { toast } from "react-toastify";
 const override = css`
   display: block;
   margin: 0 auto;
@@ -152,7 +153,7 @@ export default function Index() {
         body
       );
     }
-    succes();
+    toast.success("Added to cart!");
   };
 
   const { section } = useParams();
