@@ -9,7 +9,7 @@ export default function Page404() {
       {/* contact area 2 start */}
       <div
         className=" error-page"
-        style={{ background: `url(${image})` }}
+        style={{ background: `url(${image})`,backgroundAttachment:"fixed" }}
       >
         <div className="container">
           <div className="row">
@@ -21,7 +21,7 @@ export default function Page404() {
                   Sorry for the inconvenience. Go to our homepage or check out
                   our latest collections for Fashion, Chair, Decoration...
                 </p>
-                <Link to="/">back to homepage</Link>
+                <Link to="/" style={{backgroundColor:"#ed1d35",color:"#fff"}}>back to homepage</Link>
               </div>
             </div>
           </div>

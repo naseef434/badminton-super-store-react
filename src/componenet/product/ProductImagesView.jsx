@@ -1,5 +1,7 @@
 import React from "react";
-var img = "../assets/img/product/test.jpg";
+import img from './test.jpg';
+var img1 = "../assets/img/product/test.jpg";
+
 export default function ProductImagesView({ product }) {
   // product.images?.map((item) => {
   //   console.log(item);
@@ -7,6 +9,7 @@ export default function ProductImagesView({ product }) {
 
   return (
     <div class="col-xl-6 col-lg-6 col-md-12">
+    
       <div class="row">
         <div class="col-xl-2 col-lg-2 col-md-2">
           <div class="single_product_tab">

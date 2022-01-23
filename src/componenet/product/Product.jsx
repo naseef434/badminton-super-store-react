@@ -31,7 +31,7 @@ export default function Product({
             aria-labelledby="nav-contact-tab"
           >
             <div className="row">
-              {products_data.map((item, key) => {
+              {products_data?.map((item, key) => {
                 return (
                   <div className="col-xl-3">
                     <div className="product product-3">

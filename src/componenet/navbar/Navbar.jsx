@@ -43,7 +43,11 @@ export default function Navbar() {
                   <ul>
                     <li>
                       <Link to="/">
-                        <h4 style={{color:"white"}}> ENGAGE <span style={{color:"#ed1b33"}}>SPORTS</span></h4>
+                        <h4 style={{ color: "white" }}>
+                          {" "}
+                          ENGAGE{" "}
+                          <span style={{ color: "#ed1b33" }}>SPORTS</span>
+                        </h4>
                         <h3></h3>
                       </Link>
                     </li>
@@ -73,11 +77,7 @@ export default function Navbar() {
                     </button>
                     <input type="text" placeholder="search" />
                   </form> */}
-                  <img
-                            
-                            src="./assets/img/logo.png"
-                            alt="" height={"76px"}
-                          />
+                  <img src="./assets/img/logo.png" alt="" height={"76px"} />
                 </div>
               </div>
               <div className="col-xl-8 col-lg-8 col-md-4 col-sm-4">
@@ -89,7 +89,7 @@ export default function Navbar() {
                 <div className="main-menu">
                   <nav id="mobile-menu" style={{ display: "block" }}>
                     <ul>
-                      <li >
+                      <li>
                         <Link to="/">Home </Link>
                         {/* <ul className="sub-menu">
                           <li>
@@ -173,7 +173,6 @@ export default function Navbar() {
                         <Link to="#">Features</Link>
                         <ul className="mega_menu_2">
                           <li
-                           
                             style={{
                               backgroundImage:
                                 'url("./assets/img/mega-menu/product2.jpg")',
@@ -186,21 +185,7 @@ export default function Navbar() {
                               </li>
                             </ul>
                           </li>
-                          <li
-                           
-                           style={{
-                             backgroundImage:
-                               'url("./assets/img/mega-menu/product2.jpg")',
-                           }}
-                         >
-                           <h4 className="mega_title_2">Basketball</h4>
-                           <ul className="mega_item_2">
-                             <li>
-                               <a href="shop.html">NikeCourts Air Zoom</a>
-                             </li>
-                           </ul>
-                         </li>
-                          
+
                           <li
                             data-background="./assets/img/mega-menu/product3.jpg"
                             style={{
@@ -240,7 +225,7 @@ export default function Navbar() {
                           />
                         </Link>
                       </li> */}
-                        <li>
+                      <li>
                         <Link to="/service">Service</Link>
                       </li>
                       <li>
@@ -250,7 +235,7 @@ export default function Navbar() {
                       <li>
                         <Link to="/about">About</Link>
                       </li>
-                    
+
                       <li>
                         <Link to="/contact">Contact Us </Link>
                       </li>

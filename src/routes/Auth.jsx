@@ -41,12 +41,13 @@ export default function Auth() {
         <Route path="/accademy" element={<Accademy />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckOut />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
       
       <Route element={<PrivateRoutes />}>
       
       </Route>
-      <Route path="*" element={<NotFound />} />
+      
     </Routes>
   );
 }

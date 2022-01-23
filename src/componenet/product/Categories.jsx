@@ -12,7 +12,7 @@ export default function Category({
         <div className="product-widget">
           <h3 className="widget-title mb-30">categories</h3>
           <ul className="product-categories">
-            {category_data.map((item, key) =>
+            {category_data?.map((item, key) =>
               category_data ? (
                 <li>
                   <a
@@ -32,18 +32,18 @@ export default function Category({
         <div className="product-widget">
           <h3 className="widget-title mb-30">Brands</h3>
           <ul className="product-categories">
-            {brands.map((item, key) =>
-              category_data ? (
+            {brands?.map((item, key) =>
+              brands ? (
                 <li>
                   <a
                     href="javascript:void(0)"
                     onClick={() => getProductByBrand(item.id)}
                   >
-                    {item.name} <span>(5)</span>
+                    {item.name} <span>({item.count}) </span>
                   </a>
                 </li>
               ) : (
-                "Not Category Found "
+                <li>ksdjfnksdjn</li>
               )
             )}
           </ul>
@@ -96,6 +96,12 @@ export default function Category({
         <div className="product-widget pt-50">
           <h3 className="widget-title mb-30">Size</h3>
           <div className="layer-size">
+            <span>3XL</span>
+            <span>L</span>
+            <span>M</span>
+            <span>3XL</span>
+            <span>L</span>
+            <span>M</span>
             <span>3XL</span>
             <span>L</span>
             <span>M</span>

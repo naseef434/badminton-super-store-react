@@ -1,5 +1,5 @@
 import React from "react";
-import img from './ssssssss-removebg-preview.png'
+import img from './s-rembg-view.png'
 export default function ProductShowCase() {
   return (
     <div>
@@ -30,7 +30,7 @@ export default function ProductShowCase() {
                 <img
                   class="banar-product"
                   src="./assets/img/product/slider-test.png"
-                  alt=""
+                  
                 />
               </a>
             </div>

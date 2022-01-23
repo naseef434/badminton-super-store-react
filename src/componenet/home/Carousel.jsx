@@ -13,7 +13,7 @@ export default function Carousel() {
                   <img
                     className="back"
                     src="./assets/img/slider/slider-img-1-test.png"
-                    alt=""
+                    alt="slider"
                   />
                   <img
                     className="top"
