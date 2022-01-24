@@ -91,9 +91,9 @@ export default function FeaturesArea() {
               <div className="banarright__content position-change">
                 {/* <span className="d-none d-sm-block">Engage Sports</span> */}
                 <h2 className="banar-title mb-60 pt-80">
+                  Events at <br />
                   Engage <br />
-                  Badminton <br />
-                  Academy
+                  
                   <br />
                 </h2>
                 {/* <h4 className="d-none d-sm-block">Black friday </h4>
@@ -124,8 +124,8 @@ export default function FeaturesArea() {
                 {/* <span className="d-none d-sm-block">Engage Sports</span> */}
                 <h2 className="banar-title mb-60 pt-80">
                   Engage <br />
-                  Events <br />
-                  Management
+                  Cricket <br />
+                  
                 </h2>
                 {/* <br /> for men’s
                 </h2>
