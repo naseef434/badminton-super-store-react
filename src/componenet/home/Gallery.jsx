@@ -9,41 +9,17 @@ import image7 from "./gallery/7.jpeg"
 import image8 from "./gallery/8.jpeg"
 import image9 from "./gallery/9.jpeg"
 import image10 from "./gallery/10.jpeg"
-import image11 from "./gallery/11.jpeg"
+import image11 from "./client-4.png"
 export default function Gallery() {
   return (
     <div>
       <div className="gallary_area">
         <div className="gallary__thumb">
           <a href="shop.html">
-            <img src={image1} />
+            <img src={image11} />
           </a>
         </div>
-        <div className="gallary__thumb">
-          <a href="shop.html">
-          <img src={image2} />
-          </a>
-        </div>
-        <div className="gallary__thumb">
-          <a href="shop.html">
-          <img src={image3} />
-          </a>
-        </div>
-        <div className="gallary__thumb">
-          <a href="shop.html">
-          <img src={image4} />
-          </a>
-        </div>
-        <div className="gallary__thumb">
-          <a href="shop.html">
-          <img src={image5} />
-          </a>
-        </div>
-        <div className="gallary__thumb">
-          <a href="shop.html">
-          <img src={image6} />
-          </a>
-        </div>
+        
       </div>
       {/* <div className="gallary_area">
         <div className="gallary__thumb">

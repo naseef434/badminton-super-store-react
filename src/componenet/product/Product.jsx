@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Signup from "../Customer";
 import ProductPopUp from "./ProductPopUp";
-var img = "assets/img/product/test.jpg";
+var img = "assets/img/product/test2.jpg";
+var img2 = "assets/img/product/test.jpeg";
+var img3 = "assets/img/product/test-1.png";
 
 export default function Product({
   products_data,
@@ -39,7 +41,7 @@ export default function Product({
                         <Link to={`/products/view/${item.id}`}>
                           <img
                             className="product-primary"
-                            src={img}
+                            src={img2}
                             alt="product_image"
                           />
                           <img

@@ -82,7 +82,7 @@ function Cart({ cart_item }) {
                       </td>
                     </tr> */}
                     <tr className="first-child">
-                      <td>Totalsssssssss</td>
+                      <td>Total</td>
                       <td>{`${cart_item.total} - AED`}</td>
                     </tr>
                     <tr>

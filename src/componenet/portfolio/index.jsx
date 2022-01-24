@@ -11,8 +11,9 @@ export default function index() {
           
             <Gallery />     
             <Service /> 
-            <ExpertArea />   
+            {/* <ExpertArea />    */}
             {/* <Brand />   */}
+            
           
         </div>
     )

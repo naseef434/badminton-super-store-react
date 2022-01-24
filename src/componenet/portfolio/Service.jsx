@@ -13,7 +13,9 @@ export default function Service() {
     color:"white"
   }
   return (
+   
     <div>
+      
       {/* service area start  */}
       <div className="m_service__area mb-100">
         <div className="container">
@@ -27,7 +29,7 @@ export default function Service() {
                   <img src={SERVICES1} alt="" />
                 </div>
                 <div className="m_single_service__content">
-                  <h5>TRADING</h5>
+                  <h5>SUPER STORE</h5>
                   <p>
                     Nunc et augue pulvinar, luctus mi non, sagittis odio.
                     Phasellus congue sem nulla.non sodales orci malesu da vel.
@@ -65,7 +67,7 @@ export default function Service() {
                     Phasellus congue sem nulla.non sodales orci malesu da vel.
                     Aliquam mi eros.{" "}
                   </p>
-                  <Link to="/trading" style={style}>read more</Link>
+                  <Link to="/accademy" style={style}>read more</Link>
                 </div>
               </div>
             </div>
@@ -109,7 +111,7 @@ export default function Service() {
                   <img src={SERVICES3} alt="" />
                 </div>
                 <div className="m_single_service__content">
-                  <h5>sTORAGE</h5>
+                  <h5>EQUIPMENT</h5>
                   <p>
                     Nunc et augue pulvinar, luctus mi non, sagittis odio.
                     Phasellus congue sem nulla.non sodales orci malesu da vel.
@@ -124,5 +126,6 @@ export default function Service() {
       </div>
       {/* service area end  */}
     </div>
+    
   );
 }

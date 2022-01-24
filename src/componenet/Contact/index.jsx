@@ -11,7 +11,7 @@ export default function Index() {
            
             <Parallex />
             <ContactArea />
-            <CompanySocialStart />
+            {/* <CompanySocialStart /> */}
            
         </div>
     )

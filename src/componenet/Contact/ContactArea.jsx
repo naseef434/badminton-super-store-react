@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./style.css";
 export default function ContactArea() {
   return (
     <div>
@@ -60,8 +60,38 @@ export default function ContactArea() {
             </div>
           </div>
         </div>
+        <div className="row input-container">
+          <div className="col-xs-12">
+            <div className="styled-input wide">
+              <input type="text" required />
+              <label>Name</label>
+            </div>
+          </div>
+          <div className="col-md-6 col-sm-12">
+            <div className="styled-input">
+              <input type="text" required />
+              <label>Email</label>
+            </div>
+          </div>
+          <div className="col-md-6 col-sm-12">
+            <div className="styled-input" style={{ float: "right" }}>
+              <input type="text" required />
+              <label>Phone Number</label>
+            </div>
+          </div>
+          <div className="col-xs-12">
+            <div className="styled-input wide">
+              <textarea required defaultValue={""} />
+              <label>Message</label>
+            </div>
+          </div>
+          <div className="col-xs-12">
+            <div className="btn-lrg submit-btn">Send Message</div>
+          </div>
+        </div>
+
         {/* contact info area end */}
-        <div className="map-2">
+        {/* <div className="map-2">
           <div className="google-map contact-map">
             <iframe
               className="w-100"
@@ -69,7 +99,7 @@ export default function ContactArea() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.91477055202!2d-74.11976321327155!3d40.69740344214894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1612427122501!5m2!1sen!2sbd"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

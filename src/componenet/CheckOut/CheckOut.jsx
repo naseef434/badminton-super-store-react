@@ -20,108 +20,58 @@ function CheckOut() {
               <div className="checkout_form mb-100">
                 <form action="#">
                   <div className="row mb-30">
-                    <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="col-xl-12 col-lg-12 col-md-6">
                       <div className="checkout__wrap">
                         <label>
-                          First name <span>*</span>
+                          Full Name <span>*</span>
                         </label>
                         <input type="text" name="fname" />
                       </div>
                     </div>
-                    <div className="col-xl-6 col-lg-6 col-md-6">
-                      <div className="checkout__wrap">
-                        <label>
-                          Last name <span>*</span>
-                        </label>
-                        <input type="text" name="lname" />
-                      </div>
-                    </div>
                   </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      Company name (optional) <span />
-                    </label>
-                    <input type="text" name="cname" />
-                  </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      Country / Region <span>*</span>
-                    </label>
-                    <select name="country">
-                      <option value="Bangladesh">Bangladesh</option>
-                      <option value="Bangladesh">Pakistan</option>
-                      <option value="Bangladesh">Arab</option>
-                      <option value="Bangladesh">America</option>
-                      <option value="Bangladesh">Saudi Arabia</option>
-                      <option value="Bangladesh">Israil</option>
-                      <option value="Bangladesh">Irak</option>
-                      <option value="Bangladesh">Netherland</option>
-                    </select>
-                  </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      Street address <span>*</span>
-                    </label>
-                    <input
-                      className="mb-20"
-                      type="text"
-                      name="add1"
-                      placeholder="house number and street number"
-                    />
-                    <input
-                      type="text"
-                      name="add2"
-                      placeholder="apartment,suite,unit,etc.(optional)"
-                    />
-                  </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      Town / City *<span />
-                    </label>
-                    <input type="text" name="town" />
-                  </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      County (optional)
-                      <span />
-                    </label>
-                    <input type="text" name="country" />
-                  </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      Postcode<span>*</span>
-                    </label>
-                    <input type="text" name="postcode" />
-                  </div>
+
                   <div className="checkout__wrap">
                     <label>
                       Phone <span>*</span>
                     </label>
                     <input type="text" name="phone" />
                   </div>
+
+                  <div className="checkout__wrap">
+                    <label>
+                      City <span>*</span>
+                    </label>
+                    <select name="country">
+                      <option value="Dubai">	Dubai</option>
+                      <option value="Abu Dhabi">	Abu Dhabi</option>
+                      <option value="Sharjah">Sharjah</option>
+                      <option value="Ajman">Ajman</option>
+                      <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                      <option value="Fujairah">Fujairah</option>
+                      <option value="Umm al-Quwain">Umm al-Quwain</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
                   <div className="checkout__wrap">
                     <label>
                       Email address <span>*</span>
                     </label>
                     <input type="email" name="email" />
                   </div>
-                  <div className="checkout__wrap-2 pt-20">
-                    <input type="checkbox" name="check1" />
-                    <span>Create an account?</span>
+                  <div className="checkout__wrap">
+                    <label>
+                      Addess <span />
+                    </label>
+                    <textarea
+                      name="ordernote"
+                      placeholder="For faster delivery please fill out your detailed here"
+                      defaultValue={""}
+                    />
                   </div>
                   <div className="checkout__wrap-2 pt-20">
                     <input type="checkbox" name="check2" />
                     <span>Ship to a different address?</span>
-                  </div>
-                  <div className="checkout__wrap">
-                    <label>
-                      Order notes (optional) <span />
-                    </label>
-                    <textarea
-                      name="ordernote"
-                      placeholder="Note about your order, e.g special note for delivery"
-                      defaultValue={""}
-                    />
                   </div>
                 </form>
               </div>
@@ -153,8 +103,6 @@ function CheckOut() {
                 </table>
                 <div className="checkout__accordion mt-30">
                   <div className="accordion" id="accordionExample">
-                   
-             
                     <div className="accordion-item">
                       <h2 className="accordion-header" id="headingThree">
                         <button

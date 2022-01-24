@@ -5,6 +5,7 @@ import product3 from "./product-3.jpg";
 
 export default function Categories() {
   return (
+    
     <div className="categories_area pt-85 mb-150">
       <div className="container-fluid">
         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">

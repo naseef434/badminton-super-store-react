@@ -114,19 +114,13 @@ export default function Navbar() {
                                 <a href="shop.html">Racket</a>
                               </li>
                               <li>
-                                <a href="shop.html">Shoe</a>
+                                <a href="shop.html">Bags</a>
                               </li>
                               <li>
-                                <a href="shop.html">Shuttle</a>
+                                <a href="shop.html">Accessories</a>
                               </li>
                               <li>
-                                <a href="shop.html">Grip</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Shoe</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Racket</a>
+                                <a href="shop.html">Other</a>
                               </li>
                             </ul>
                           </li>
@@ -134,7 +128,16 @@ export default function Navbar() {
                             <h4 className="mega_title">Football</h4>
                             <ul className="mega_item">
                               <li>
-                                <a href="shop-sm.html">Shop — 5 Items</a>
+                                <a href="shop-sm.html">ball</a>
+                              </li>
+                              <li>
+                                <a href="shop-sm.html">Jersey</a>
+                              </li>
+                              <li>
+                                <a href="shop-sm.html">accessories</a>
+                              </li>
+                              <li>
+                                <a href="shop-sm.html">other</a>
                               </li>
                             </ul>
                           </li>
@@ -142,13 +145,22 @@ export default function Navbar() {
                             <h4 className="mega_title">Cricket</h4>
                             <ul className="mega_item">
                               <li>
-                                <a href="single-right.html">Thumbnail Right</a>
+                                <a href="single-right.html">bat</a>
                               </li>
                               <li>
-                                <a href="single-bottom.html">
-                                  {" "}
-                                  Thumbnail Botttom
-                                </a>
+                                <a href="single-right.html">ball</a>
+                              </li>
+                              <li>
+                                <a href="single-right.html">bad</a>
+                              </li>
+                              <li>
+                                <a href="single-right.html">helmet</a>
+                              </li>
+                              <li>
+                                <a href="single-right.html">accessories</a>
+                              </li>
+                              <li>
+                                <a href="single-right.html">other</a>
                               </li>
                             </ul>
                           </li>
@@ -156,13 +168,16 @@ export default function Navbar() {
                             <h4 className="mega_title">SWimming</h4>
                             <ul className="mega_item">
                               <li>
-                                <a href="single-right.html">Thumbnail Right</a>
+                                <a href="single-right.html">googles</a>
                               </li>
                               <li>
-                                <a href="single-bottom.html">
-                                  {" "}
-                                  Thumbnail Botttom
-                                </a>
+                                <a href="single-right.html">swim suite</a>
+                              </li>
+                              <li>
+                                <a href="single-right.html">accessorie</a>
+                              </li>
+                              <li>
+                                <a href="single-right.html">others</a>
                               </li>
                             </ul>
                           </li>
@@ -243,7 +258,7 @@ export default function Navbar() {
                   </nav>
                 </div>
               </div>
-              {/* <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+              <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4">
                 <div className="gota_cart gotat_cart_1 text-end">
                   <a
                     onClick={() => {
@@ -254,7 +269,7 @@ export default function Navbar() {
                     My Bag<span className="counter"> (2)</span>
                   </a>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

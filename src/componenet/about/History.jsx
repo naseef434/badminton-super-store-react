@@ -10,7 +10,7 @@ export default function History() {
           <div className="row">
             <div className="col-xl-12 col-lg-12 col-md-12">
               <div className="g_history mb-100">
-                <h4 className="pl-130">our history</h4>
+                <h4 className="pl-130">our story</h4>
                 <h2 className="title-3 pl-130 pt-20 mb-70">GET ENGAGED</h2>
                 <p>
                   Founded by Jamal Backer in the year of 2016 the engage sports

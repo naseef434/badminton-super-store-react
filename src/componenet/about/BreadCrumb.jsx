@@ -15,7 +15,7 @@ export default function BreadCrumb() {
           <div className="row">
             <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
               <div className="breadcrumb-area text-center">
-                <h2 className="page-title">about us</h2>
+                <h2 className="page-title">OUR STORY</h2>
                 <div className="breadcrumb-menu">
                   <nav aria-label="breadcrumb">
                     <ol className="breadcrumb justify-content-center">

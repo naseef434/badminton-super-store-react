@@ -10,6 +10,9 @@ import kawaski from "./kawaski.png";
 import restring from "./re-string.jpg";
 
 export default function FeaturesArea() {
+  const style = {
+    
+  }
   return (
     <div className="banar_area">
       <div className="container-fluid padding-remove">
@@ -36,10 +39,12 @@ export default function FeaturesArea() {
                   Super Store
                   {/* <br /> for men’s */}
                 </h2>
-                <h4 className="d-none d-sm-block">Black friday </h4>
+                {/* <div className="button_cont" align="center"><a className="example_f" href="add-website-here" target="_blank" rel="nofollow"><span>Add Call To Action</span></a></div> */}
+                <button className="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
+                {/* <h4 className="d-none d-sm-block">Black friday </h4>
                 <p className="d-none d-sm-block">
                   <span>up to 20% off</span> All products
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -93,7 +98,6 @@ export default function FeaturesArea() {
                 <h2 className="banar-title mb-60 pt-80">
                   Events at <br />
                   Engage <br />
-                  
                   <br />
                 </h2>
                 {/* <h4 className="d-none d-sm-block">Black friday </h4>
@@ -125,7 +129,6 @@ export default function FeaturesArea() {
                 <h2 className="banar-title mb-60 pt-80">
                   Engage <br />
                   Cricket <br />
-                  
                 </h2>
                 {/* <br /> for men’s
                 </h2>
@@ -195,7 +198,12 @@ export default function FeaturesArea() {
                 <p className="d-none d-sm-block">
                   <span>up to 20% off</span> All products
                 </p> */}
-                <img src={kawaski} alt=""  height={"60px"} style={{marginTop:"70px",marginLeft:"190px"}}/>
+                <img
+                  src={kawaski}
+                  alt=""
+                  height={"60px"}
+                  style={{ marginTop: "70px", marginLeft: "190px" }}
+                />
               </div>
             </div>
           </div>
@@ -219,7 +227,8 @@ export default function FeaturesArea() {
 
                 <h2 className="banar-title mb-60 pt-80 ">
                   Engage <br />
-                  Re String<br />
+                  Re String
+                  <br />
                   Service
                 </h2>
                 {/* Sport

@@ -39,7 +39,7 @@ export default function Footer() {
                   <a href="https://www.youtube.com/channel/UCp-oDBaVYF3PlhQ5Sz7fLbw">
                   <i className="fab fa-youtube"></i>
                   </a>
-                  <a href="">
+                  <a href="https://www.linkedin.com/company/engagesports/">
                     <i className="fab fa-linkedin" />
                   </a>
                   
