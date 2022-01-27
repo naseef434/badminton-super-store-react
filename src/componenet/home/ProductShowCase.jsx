@@ -10,7 +10,7 @@ export default function ProductShowCase() {
               <div class="section-wrapper text-center mb-35">
                 <h4 class="sub-title">Bestseller products</h4>
                 <h2 class="section-title text-white">
-                  Nike Air Force 1 Sage Low LX
+                  The products are worldclass 
                 </h2>
                 {/* <p class="d-none d-lg-block">
                   Commodo sociosqu venenatis cras dolor sagittis integer luctus
@@ -23,8 +23,8 @@ export default function ProductShowCase() {
               <span class="offer-text d-none d-lg-block">
                 hot deal<i class="far fa-stars"></i>
               </span>
-              <h2 class="back1-text d-none d-lg-block">top</h2>
-              <h2 class="back-text d-none d-lg-block">limited</h2>
+              <h2 class="back1-text d-none d-lg-block">Hot DEALS</h2>
+              {/* <h2 class="back-text d-none d-lg-block">Deals</h2> */}
 
               <a href="shop.html">
                 <img

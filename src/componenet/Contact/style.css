@@ -42,14 +42,14 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 
 input,
 textarea {
-    padding: 30px;
+    padding: 25px;
     border: 0;
     width: 100%;
     font-size: 1rem;
     background-color: #132348;
     color: white;
     border-radius: 4px;
-}
+} 
 
 input:focus,
 textarea:focus { outline: 0; }

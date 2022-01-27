@@ -181,10 +181,29 @@ export default function Navbar() {
                               </li>
                             </ul>
                           </li>
-                          <li></li>
+                          <li>
+                            <h4 className="mega_title">Sports Support</h4>
+                            <ul className="mega_item">
+                              <li>
+                                <a href="shop.html">Wrist</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Leg</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Hand</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Shoulder</a>
+                              </li>
+                              <li>
+                                <a href="shop.html">Other</a>
+                              </li>
+                            </ul>
+                          </li>
                         </ul>
                       </li>
-                      <li className="position-static menu-item-has-children">
+                      {/* <li className="position-static menu-item-has-children">
                         <Link to="#">Features</Link>
                         <ul className="mega_menu_2">
                           <li
@@ -193,7 +212,20 @@ export default function Navbar() {
                                 'url("./assets/img/mega-menu/product2.jpg")',
                             }}
                           >
-                            <h4 className="mega_title_2">Basketball</h4>
+                            <h4 className="mega_title_2">Badminton</h4>
+                            <ul className="mega_item_2">
+                              <li>
+                                <a href="shop.html">NikeCourts Air Zoom</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li
+                            style={{
+                              backgroundImage:
+                                'url("./assets/img/mega-menu/product2.jpg")',
+                            }}
+                          >
+                            <h4 className="mega_title_2">Badminton</h4>
                             <ul className="mega_item_2">
                               <li>
                                 <a href="shop.html">NikeCourts Air Zoom</a>
@@ -230,7 +262,7 @@ export default function Navbar() {
                             </ul>
                           </li>
                         </ul>
-                      </li>
+                      </li> */}
                       {/* <li>
                         <Link className="d-none d-xl-block" to="/">
                           <img

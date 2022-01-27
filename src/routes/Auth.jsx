@@ -23,15 +23,10 @@ export default function Auth() {
     <Routes>
       <Route element={<PublicRoute />}>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/sports/:section/:sports_id" element={<Products />} /> */}
         <Route path="/products" element={<Products />} />
-        <Route
-          path="/products/:section"
-          element={<Products />}
-        />
-        <Route
-          path="/products/:section/:product_id"
-          element={<Products />}
-        />
+        <Route path="/products/:section" element={<Products />}/>
+        <Route path="/products/:section/:product_id" element={<Products />}/>
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Portfolio />} />
         <Route path="/events" element={<Blog />} />

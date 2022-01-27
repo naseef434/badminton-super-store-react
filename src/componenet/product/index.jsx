@@ -8,11 +8,13 @@ import ProductFilter from "./ProductFilter";
 import Product from "./Product";
 import { PuffLoader } from "react-spinners";
 import { css } from "@emotion/react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import ProductSinleView from "./ProductSingleView";
 import { v4 as uuidv4 } from "uuid";
 import { succes, error } from "../toaster/Toaster";
 import { toast } from "react-toastify";
+import qs from "query-string";
+
 const override = css`
   display: block;
   margin: 0 auto;
@@ -22,33 +24,54 @@ export default function Index() {
   const [uuId, setuuId] = useState({
     customer_id: "",
   });
+  const [sports, setSports] = useState([])
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [brands, setBrands] = useState([]);
   const [params, setParams] = useState({
     category: null,
     brand: null,
+    sports: null,
   });
   const [loader, setLoader] = useState(true);
-  //get categories
+  const { search } = useLocation();
+  //loading spots Name nd passing Feautures component
+  
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
-        `${serviceEndPoint.productsEndpoints.getCategory}`
+        `${serviceEndPoint.sportsEndpoints.getSports}`
+      );
+        console.log(response);
+      setSports(response?.data);
+    } catch (error) {
+      console.log("sport api rice an error ", error);
+    }
+  }, []);
+  //get categories
+  useEffect(async () => {
+    
+    const query = qs.parse(search);
+    try {
+      const response = await urlGateWay.get(
+        `${serviceEndPoint.productsEndpoints.getCategory}`,
+        { params: query }
       );
       setCategory(response?.data);
     } catch (e) {
       console.log("categories api error ");
     }
-  }, []);
+  }, [search]);
 
   //get brands
   useEffect(async () => {
+    const query = qs.parse(search);
+
     const response = await urlGateWay.get(
-      `${serviceEndPoint.productsEndpoints.getBrands}`
+      `${serviceEndPoint.productsEndpoints.getBrands}`, {params: query}
     );
     setBrands(response?.data);
-  }, []);
+  }, [search]);
 
   //get products
   useEffect(async () => {
@@ -63,12 +86,19 @@ export default function Index() {
     } else {
       setuuId({ customer_id: get_uuuId });
     }
-    const response = await urlGateWay.get(
-      `${serviceEndPoint.productsEndpoints.getProducts}`,
-      { params }
-    );
-    setProducts(response?.data?.results);
-    setLoader(false);
+
+    const query = qs.parse(search);
+    let prodParams = params;
+    if (query.sports) {
+      prodParams.sports = query.sports;
+      const response = await urlGateWay.get(
+        `${serviceEndPoint.productsEndpoints.getProducts}`,
+        { params: prodParams }
+      );
+      setProducts(response?.data?.results);
+      setLoader(false);
+    }
+    // console.log({ prodParams });
   }, [params]);
 
   //get product by category
@@ -172,6 +202,7 @@ export default function Index() {
                 {/* categories area */}
                 <Categories
                   category_data={category}
+                  sports = {sports}
                   selectCategory={SelectCategory}
                   brands={brands}
                   getProductByBrand={getProductByBrand}

@@ -12943,10 +12943,10 @@ input:-ms-input-placeholder {
 }
 
 .back1-text {
-  font-size: 250px;
+  font-size: 200px;
   position: absolute;
-  top: 33%;
-  left: 35%;
+  top: 23%;
+  left: 2%;
   color: #fff;
   font-family: "Barlow Condensed", Sans-serif;
   letter-spacing: 60px;
@@ -12977,7 +12977,7 @@ input:-ms-input-placeholder {
   text-transform: uppercase;
   line-height: 1;
   display: grid;
-  left: 29%;
+  left: 1%;
   place-items: center;
   font-weight: 600;
 }
@@ -14704,8 +14704,8 @@ input:-ms-input-placeholder {
 
 .offer-text {
   position: absolute;
-  top: 42%;
-  left: 40%;
+  top: 31%;
+  left: 33px;
   z-index: 99;
 }
 @media (max-width: 767px) {

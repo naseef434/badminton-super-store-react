@@ -113,6 +113,7 @@ export default function Footer() {
                     <input
                       type="email"
                       placeholder="Enter your email here..."
+                      style={{backgroundColor:"#fff"}}
                     />
                     <button>Subscribe</button>
                   </form>

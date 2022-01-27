@@ -15,9 +15,7 @@ export default function Parallex() {
               <div className="contact__inner_2 text-center">
                 <h2 className="mb-80">contact us</h2>
                 <p>
-                  Need an expert? you are more than welcomed to leave your
-                  contact info
-                  <br /> and we will be in touch shortly
+                We'd love to hear from you!
                 </p>
               </div>
             </div>

@@ -1,7 +1,13 @@
+export const sportsEndpoints = {
+  getSports :"/sport"
+}
+
+
 export const productsEndpoints = {
-  getCategory: "/category/",
-  getProducts: "/product/",
+  getCategory: "/category",
+  getProducts: "/product",
   getBrands : "/brand",
+  
   // getProductCategoryWise : "/product/"
 };
 export const userLogin = {

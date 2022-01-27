@@ -1,24 +1,57 @@
 import React from "react";
-import image1 from "./gallery/1.jpeg"
-import image2 from "./gallery/2.jpeg"
-import image3 from "./gallery/3.jpeg"
-import image4 from "./gallery/4.jpeg"
-import image5 from "./gallery/5.jpeg"
-import image6 from "./gallery/6.jpeg"
-import image7 from "./gallery/7.jpeg"
-import image8 from "./gallery/8.jpeg"
-import image9 from "./gallery/9.jpeg"
-import image10 from "./gallery/10.jpeg"
-import image11 from "./client-4.png"
+
+import flypower from "./gallery/11.jpg"
+import infinite from "./gallery/INFINITE.jpg"
+import blinders from './gallery/BLINDERS.jpeg'
+import young from './gallery/YOUNG.png'
+import protech from './gallery/PROTECH.png'
+import victor from './gallery/victor.jpeg'
+import aeroplane from './gallery/airo-plane.jpg'
+import mizuno from './gallery/MIZUNO 2.jpg'
+import kawasaki from './gallery/kawasaki.png'
+import apecs from './gallery/appecs.jpg'
 export default function Gallery() {
   return (
     <div>
       <div className="gallary_area">
         <div className="gallary__thumb">
           <a href="shop.html">
-            <img src={image11} />
+            <img src={victor} />
           </a>
         </div>
+        <div className="gallary__thumb">
+          <a href="shop.html">
+            <img src={aeroplane} />
+          </a>
+        </div>
+        <div className="gallary__thumb">
+          <a href="shop.html">
+            <img src={flypower} />
+          </a>
+        </div>
+        <div className="gallary__thumb">
+          <a href="shop.html">
+            <img src={infinite} />
+          </a>
+        </div>
+        
+        <div className="gallary__thumb">
+          <a href="shop.html">
+            <img src={mizuno} />
+          </a>
+        </div>
+        <div className="gallary__thumb">
+          <a href="shop.html">
+            <img src={kawasaki} />
+          </a>
+        </div>
+        <div className="gallary__thumb">
+          <a href="shop.html">
+            <img src={apecs} />
+          </a>
+        </div>
+      
+     
         
       </div>
       {/* <div className="gallary_area">

@@ -1,27 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../navbar/Navbar";
-import Carousel from "../home/Carousel";
-import FeaturesArea from "../home/FeaturesArea";
-import Categories from "../home/Categories";
-import ProductShowCase from "../home/ProductShowCase";
-import NewArrivals from "../home/NewArrivals";
-import BlogArea from "../home/BlogArea";
-import Gallery from "../home/Gallery";
-import Footer from "../footer/Footer"
+import Carousel from "./Carousel";
+import FeaturesArea from "./FeaturesArea";
+import Categories from "./Categories";
+import ProductShowCase from "./ProductShowCase";
+import NewArrivals from "./NewArrivals";
+import BlogArea from "./BlogArea";
+import Gallery from "./Gallery";
+import Footer from "../footer/Footer";
 import { ClipLoader } from "react-spinners";
+import { useEffect } from "react/cjs/react.development";
+import axios from "axios";
+import * as serviceEndPoint from "../../services/serviceEndPoint";
+import { urlGateWay } from "../../services/service";
+import LogoSlider from "./LogoSlider";
+export default function Index() {
 
-export default function index() {
+//loading spots Name nd passing Feautures component
+  const [sports, setSports] = useState([]);
+  useEffect(async () => {
+    try {
+      const response = await urlGateWay.get(
+        `${serviceEndPoint.sportsEndpoints.getSports}`
+      );
+        console.log(response);
+      setSports(response?.data);
+    } catch (error) {
+      console.log("sport api rice an error ", error);
+    }
+  }, []);
+
   return (
     <div>
-    
       <Carousel />
-      <FeaturesArea />
+      <FeaturesArea sports={sports} />
       {/* <Categories /> */}
       <ProductShowCase />
       {/* <NewArrivals /> */}
       <BlogArea />
-      <Gallery />
-     
+      <LogoSlider />
+      {/* <Gallery /> */}
     </div>
   );
 }
