@@ -33,7 +33,7 @@ export default function Index() {
   return (
     <div>
       <Carousel />
-      {/* <FeaturesArea sports={sports} /> */}
+      <FeaturesArea sports={sports} />
       {/* <Categories /> */}
       <ProductShowCase />
       {/* <NewArrivals /> */}

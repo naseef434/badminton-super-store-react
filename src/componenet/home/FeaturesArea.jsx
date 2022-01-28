@@ -12,9 +12,9 @@ import test from "./test.jpg";
 export default function FeaturesArea({ sports }) {
   console.log(sports);
   const [staticCards, setStaticCard] = useState([
-    {id: "", name:"", isStatic: true},
-    {id: "", name:"", isStatic: true},
-    {id: "", name:"", isStatic: true},
+    {id: "", name:"ENGAGE SPORTS ARENA", isStatic: true},
+    {id: "", name:"ENGAGE SPORTS ACCADEMY", isStatic: true},
+    {id: "", name:"Engage Sports EVENTS", isStatic: true},
 
   ])
   return (
