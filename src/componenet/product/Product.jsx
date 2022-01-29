@@ -16,7 +16,10 @@ export default function Product({
   product,
   openModelFunction,
   addToCart,
-}) {
+})
+{
+// console.log(products_data) 
+
   return (
     <>
       {/* if model is true run the component */}
@@ -41,12 +44,12 @@ export default function Product({
                         <Link to={`/products/view/${item.id}`}>
                           <img
                             className="product-primary"
-                            src={img2}
+                            src={item.thumbnail}
                             alt="product_image"
                           />
                           <img
                             className="product-secondary"
-                            src={img}
+                            src={item.thumbnail}
                             alt="product_image"
                           />
                         </Link>

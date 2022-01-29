@@ -23,7 +23,7 @@ export default function Category({
 
               <li className="">
                 <Link
-                  to={`/products?sports=${item.id}`}
+                  to={`/products?sport=${item.id}`}
                   style={{ color: query.sports == item.id ? "red" : "" }}
                 >
                   {item.name}

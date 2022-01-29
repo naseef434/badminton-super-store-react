@@ -31,7 +31,6 @@ export default function Index() {
   const [params, setParams] = useState({
     category: null,
     brand: null,
-    sports: null,
   });
   const [loader, setLoader] = useState(true);
   const { search } = useLocation();
@@ -88,27 +87,33 @@ export default function Index() {
     }
 
     const query = qs.parse(search);
-    let prodParams = params;
-    if (query.sports) {
-      prodParams.sports = query.sports;
       const response = await urlGateWay.get(
         `${serviceEndPoint.productsEndpoints.getProducts}`,
-        { params: prodParams }
+        { params: {sport: query.sport} }
       );
       setProducts(response?.data?.results);
       setLoader(false);
-    }
     // console.log({ prodParams });
-  }, [params]);
+  }, [search]);
+  
 
   //get product by category
-  const SelectCategory = (id) => {
-    setParams({ category: id });
+  const SelectCategory = async(id) => {
+    const response = await urlGateWay.get(
+      `${serviceEndPoint.productsEndpoints.getProducts}`,
+      { params: {category: id} }
+    );
+    setProducts(response?.data?.results);
   };
 
   //get product by brand
-  const getProductByBrand = (id) => {
-    setParams({ brand: id });
+  const getProductByBrand = async(id) => {
+    console.log("brand clicked")
+    const response = await urlGateWay.get(
+      `${serviceEndPoint.productsEndpoints.getProducts}`,
+      { params: {brand : id} }
+    );
+    setProducts(response?.data?.results);
   };
 
   //handle login popup

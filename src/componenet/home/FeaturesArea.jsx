@@ -51,8 +51,8 @@ export function Card({ details, isStatic }) {
           animationName: "fadeIn",
         }}
       >
-        <Link to={`/products?sports=${details.id}`}>
-          <img src={details?.thumbNail || tournament} height={"300px"} alt="" />
+        <Link to={`/products?sport=${details.id}`}>
+          <img src={details?.thumbnail || tournament} height={"300px"} alt="" />
         </Link>
         <div className="banarright__content position-change">
           {/* <span className="d-none d-sm-block">Engage Sports</span> */}

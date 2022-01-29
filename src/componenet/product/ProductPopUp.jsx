@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-var img = "assets/img/product/test.jpg";
+
 
 export default function ProductPopUp({ closeModel, item }) {
   return (
@@ -12,7 +12,7 @@ export default function ProductPopUp({ closeModel, item }) {
             <div className="col-xl-5 col-lg-5 col-md-5">
               <div className="quickview">
                 <div className="quickview__thumb">
-                  <img src={img} alt="" />
+                  <img src={item.thumbnail} alt="product thumbnail" />
                 </div>
               </div>
             </div>
