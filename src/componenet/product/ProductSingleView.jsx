@@ -14,7 +14,7 @@ export default function ProductSinleView(props) {
   useEffect(() => {
     async function fetchMyAPI() {
       let response = await fetch(
-        "http://localhost:8000/api/product/" + product_id
+        "http://ec2-18-191-207-113.us-east-2.compute.amazonaws.com/api/product/" + product_id
       );
       response = await response.json();
       setSingleProduct(response);

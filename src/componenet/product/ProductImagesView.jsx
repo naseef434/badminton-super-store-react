@@ -6,8 +6,9 @@ export default function ProductImagesView({ product }) {
   // product.images?.map((item) => {
   //   console.log(item);
   // });
-
+console.log({product})
   return (
+    
     <div class="col-xl-6 col-lg-6 col-md-12">
     
       <div class="row">
@@ -18,7 +19,7 @@ export default function ProductImagesView({ product }) {
                 class="nav nav-tabs justify-content-center mb-55"
                 id="dfde"
                 role="tablist"
-              >
+              > {product?.images?.map((img,inx)=>(
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link active"
@@ -32,58 +33,9 @@ export default function ProductImagesView({ product }) {
                     <img src={img} alt="" />
                   </button>
                 </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#homde"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    <img src={img} alt="" />
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#homde"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    <img src={img} alt="" />
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#homde"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    <img src={img} alt="" />
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#homde"
-                    type="button"
-                    role="tab"
-                    aria-selected="true"
-                  >
-                    <img src={img} alt="" />
-                  </button>
-                </li>
+              ))}
+                
+                
               </ul>
             </div>
           </div>
