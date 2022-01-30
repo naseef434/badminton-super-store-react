@@ -19,7 +19,7 @@ console.log({product})
                 class="nav nav-tabs justify-content-center mb-55"
                 id="dfde"
                 role="tablist"
-              > {product?.images?.map((img,inx)=>(
+              > {product?.images?.map((image,inx)=>(
                 <li class="nav-item" role="presentation">
                   <button
                     class="nav-link active"
@@ -30,7 +30,7 @@ console.log({product})
                     role="tab"
                     aria-selected="true"
                   >
-                    <img src={img} alt="" />
+                    <img src={image} alt="" />
                   </button>
                 </li>
               ))}
@@ -53,21 +53,7 @@ console.log({product})
                   <img src={img} alt="" />
                 </div>
               </div>
-              <div class="tab-pane fade" id="profidfdle" role="tabpanel">
-                <div class="full-view">
-                  <img src={img} alt="" />
-                </div>
-              </div>
-              <div class="tab-pane fade" id="contadfdct" role="tabpanel">
-                <div class="full-view">
-                  <img src={img} alt="" />
-                </div>
-              </div>
-              <div class="tab-pane fade" id="kidsdfd" role="tabpanel">
-                <div class="full-view">
-                  <img src={img} alt="" />
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
