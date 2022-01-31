@@ -21,3 +21,7 @@ export const cart = {
   getCart: "/cart/get_cart/", 
   
 };
+
+export const productSearch = {
+  psearch : "product/search/",
+}

@@ -31,6 +31,8 @@ export default function Index() {
   const [params, setParams] = useState({
     category: null,
     brand: null,
+    search: null,
+    q: "",
   });
   const [loader, setLoader] = useState(true);
   const { search } = useLocation();
@@ -116,30 +118,20 @@ export default function Index() {
     setProducts(response?.data?.results);
   };
 
-  //handle login popup
-  // const [openLoginModel, setLoginModel] = useState(false);
-  // const loginModelFunction = async (prod) => {
-  //   const userToken = localStorage.getItem("token");
-  //   if (userToken) {
-  //     let body = {
-  //       product_id: prod.id,
-  //       quantity: 1,
-  //     };
-  //     const response = await urlGateWay.post(
-  //       serviceEndPoint.cart.addToCart,
-  //       body
-  //     );
-  //     const { data, status } = response;
-  //     if (status === 200) {
-  //       alert("added item  cart");
-  //     } else {
-  //       window.alert("something went wrong");
-  //     }
-  //   } else {
-  //     setLoginModel(true);
-  //   }
-  // };
+ 
+  //search 
+  const searchInput = (event) => {
+    // console.log(event.target.value);
+    setParams({...params, q:event.target.value})
+  }
 
+ const buttonSerach = async() => {
+   const result = await urlGateWay.get(
+    `${serviceEndPoint.productSearch.psearch}`,
+    {params : {q: params.q}}
+   )
+   
+ }
   //single product
   const [openModel, setOpen] = useState(false);
   const [product, setProduct] = useState({
@@ -211,9 +203,10 @@ export default function Index() {
                   selectCategory={SelectCategory}
                   brands={brands}
                   getProductByBrand={getProductByBrand}
+                  
                 />
                 <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12">
-                  <ProductFilter />
+                  <ProductFilter searchInput={searchInput} buttonSerach={buttonSerach}/>
                   {/* product listing start with xl-3 */}
                   <div className="shop-page-product pt-50 pb-100">
                     <div className="row">
