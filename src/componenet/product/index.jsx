@@ -126,12 +126,16 @@ export default function Index() {
   }
 
  const buttonSerach = async() => {
-   const result = await urlGateWay.get(
+  
+   const response = await urlGateWay.get(
     `${serviceEndPoint.productSearch.psearch}`,
     {params : {q: params.q}}
-   )
-   
+   );
+   setProducts(response?.data?.results);
+  console.log("response",products);
+
  }
+
   //single product
   const [openModel, setOpen] = useState(false);
   const [product, setProduct] = useState({

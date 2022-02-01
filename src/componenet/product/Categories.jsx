@@ -118,7 +118,7 @@ export default function Category({
             </div>
           </form>
         </div> */}
-        <div className="product-widget pt-50">
+        {/*<div className="product-widget pt-50">
           <h3 className="widget-title mb-30">Size</h3>
           <div className="layer-size">
             <span>3XL</span>
@@ -152,7 +152,7 @@ export default function Category({
             </a>
           </div>
         </div>
-        <div className="product_list_widget">
+         <div className="product_list_widget">
           <h3 className="widget-title mb-30 pt-50">Top rated</h3>
           <div className="item-widget">
             <div className="img-left">
@@ -206,8 +206,8 @@ export default function Category({
               <span>$55.00</span>
             </div>
           </div>
-        </div>
-        <div className="product-widget pt-50">
+        </div> */}
+        {/* <div className="product-widget pt-50">
           <h3 className="widget-title mb-30">Product tags</h3>
           <div className="tags mb-50">
             <a href="shop.html">Basketball</a>
@@ -217,7 +217,8 @@ export default function Category({
             <a href="shop.html">Training Wear</a>
             <a href="shop.html">Women’s</a>
           </div>
-        </div>
+        </div> */}
+        <br /><br />
       </div>
     </div>
   );

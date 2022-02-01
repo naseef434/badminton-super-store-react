@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductDetails({productdata, addToCart}) {
+export default function ProductDetails({ productdata, addToCart }) {
   console.log(productdata);
   return (
     <div className="col-xl-6 col-lg-6 col-md-12">
@@ -32,12 +32,42 @@ export default function ProductDetails({productdata, addToCart}) {
         <div className="s-des">
           <p>{productdata.long_desc}</p>
         </div>
+        <div class="product-widget pt-50">
+          <h3 class="widget-title mb-30">Size</h3>
+          <div class="layer-size">
+            <a href="shop.html">
+              <span>3XL</span>
+            </a>
+          </div>
+        </div>
+        <div class="product-widget pt-50">
+          <h3 class="widget-title mb-30">Color Options</h3>
+          <div class="colors-layer">
+            <a href="shop.html">
+              <span class="blue"></span>
+            </a>
+            <a href="shop.html">
+              <span class="gray"></span>
+            </a>
+            <a href="shop.html">
+              <span class="skyblue"></span>
+            </a>
+            <a href="shop.html">
+              <span class="red"></span>
+            </a>
+            <a href="shop.html">
+              <span class="yellow"></span>
+            </a>
+          </div>
+        </div>
         <div className="viewcontent__action single_action pt-30">
           <span>
             <input type="number" placeholder="1" />
           </span>
           <span>
-            <a href="javascript:void(0)" onClick={()=> addToCart(productdata)}>+ add to cart</a>
+            <a href="javascript:void(0)" onClick={() => addToCart(productdata)}>
+              + add to cart
+            </a>
           </span>
           <span>
             <i className="fal fa-heart"></i>
