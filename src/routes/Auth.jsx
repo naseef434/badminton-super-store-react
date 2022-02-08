@@ -30,7 +30,7 @@ export default function Auth() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Portfolio />} />
         <Route path="/events" element={<Blog />} />
-        <Route path="/blog_details" element={<BlogDetails />} />
+        <Route path="/events/:id" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/trading" element={<Trading />} />
         <Route path="/accademy" element={<Accademy />} />

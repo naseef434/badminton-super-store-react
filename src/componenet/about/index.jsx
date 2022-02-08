@@ -15,8 +15,8 @@ export default function index() {
             <BreadCrumb  />
             <History />
             <Award />
-            <Shipping />
-            <Team />
+            {/* <Shipping /> */}
+            {/* <Team /> */}
           
         </div>
     )

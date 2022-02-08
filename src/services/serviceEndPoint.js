@@ -1,7 +1,10 @@
 export const sportsEndpoints = {
-  getSports :"/sport"
+  getSports :"/sport",
+  
 }
-
+ export const homePageEndpoints = {
+  getShoweCase : "/homeimages",
+ }
 
 export const productsEndpoints = {
   getCategory: "/category",
@@ -24,4 +27,8 @@ export const cart = {
 
 export const productSearch = {
   psearch : "product/search/",
+}
+
+export const blogsEndpoints = {
+  blogs : "/blog"
 }

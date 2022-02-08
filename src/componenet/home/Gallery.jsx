@@ -49,10 +49,7 @@ export default function Gallery() {
           <a href="shop.html">
             <img src={apecs} />
           </a>
-        </div>
-      
-     
-        
+        </div>   
       </div>
       {/* <div className="gallary_area">
         <div className="gallary__thumb">

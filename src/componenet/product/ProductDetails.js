@@ -46,18 +46,6 @@ export default function ProductDetails({ productdata, addToCart }) {
             <a href="shop.html">
               <span class="blue"></span>
             </a>
-            <a href="shop.html">
-              <span class="gray"></span>
-            </a>
-            <a href="shop.html">
-              <span class="skyblue"></span>
-            </a>
-            <a href="shop.html">
-              <span class="red"></span>
-            </a>
-            <a href="shop.html">
-              <span class="yellow"></span>
-            </a>
           </div>
         </div>
         <div className="viewcontent__action single_action pt-30">
