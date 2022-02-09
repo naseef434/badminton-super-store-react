@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function BlogArea() {
+export default function BlogArea({ blog }) {
+  const first_blog = blog ? blog && blog[0] : "nothing found";
+  const first_three = blog.slice(1, 3);
+ 
   return (
     <div>
       <div className="blog-area mb-100">
@@ -24,81 +28,46 @@ export default function BlogArea() {
                 alt=""
                 loading="lazy"
                 style={{
-                  backgroundImage:
-                    'url("https://demo.lion-themes.net/gota/wp-content/uploads/2020/08/blog11-685x450.jpg")',
-                }}
+                  backgroundImage: `url(${first_blog?.thumbnail})`}}
               >
                 <div className="blog__content">
-                  <span className="mb-15">Shoes, Clothing</span>
                   <h3 className="blog-title ">
-                    <a href="blog.html">Mauris rhoncus aliquet purus</a>
+                    <Link to={`/events/${first_blog?.id}`}>
+                      {first_blog?.title}
+                    </Link>
                   </h3>
                   <p>
-                    By Erentheme /<span>September 16, 2019</span>
+                    {first_blog?.created_by} /
+                    <span> {first_blog?.date_posted}</span>
                   </p>
-                  <a href="blog.html">Continue reading</a>
+                  <Link to={`/events/${first_blog?.id}`}>Continue reading</Link>
                 </div>
               </div>
             </div>
             <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-              <div className="bpost">
-                <div className="bpost__thumb">
-                  <img
-                    width="198"
-                    height="130"
-                    src="https://demo.lion-themes.net/gota/wp-content/uploads/2020/08/blog22-685x450.jpg"
-                    class="attachment-gota-post-thumbwide size-gota-post-thumbwide wp-post-image"
-                    alt=""
-                    loading="lazy"
-                  />
+              {first_three?.map((item, idx) => (
+                <div className="bpost m-0">
+                  <div className="bpost__thumb">
+                    <img
+                      src={item.thumbnail}
+                      alt="blog_post"
+                      height={"198px"}
+                      width={"250px"}
+                    />
+                  </div>
+                  <div className="bpost__content">
+                    <h3 className="blog-title title-2">
+                      <Link to={`/events/${item?.id}`}>{item.title}</Link>
+                    </h3>
+                    <p>
+                      By <span>{item?.created_by} </span>/{item?.date_posted}
+                    </p>
+                    <p>
+                      Sapien luctus id justo suscipit nonummy eget hymenaeos...
+                    </p>
+                  </div>
                 </div>
-                <div className="bpost__content">
-                  <span>Shoes, Clothing</span>
-                  <h3 className="blog-title title-2">
-                    <a href="blog.html">Simple &amp; Easy DIY Flower Deco</a>
-                  </h3>
-                  <p>
-                    By <span>Erentheme </span>/September 16, 2019
-                  </p>
-                  <p>
-                    Sapien luctus id justo suscipit nonummy eget hymenaeos...
-                  </p>
-                </div>
-              </div>
-              <div className="bpost">
-                <div className="bpost__thumb">
-                  <img src="./assets/img/blog/blog2.jpg" alt="blog_post" />
-                </div>
-                <div className="bpost__content">
-                  <span>Shoes, Clothing</span>
-                  <h3 className="blog-title title-2">
-                    <a href="blog.html">Take A Look At The Most Photo</a>
-                  </h3>
-                  <p>
-                    By <span>Erentheme </span>/September 16, 2019
-                  </p>
-                  <p>
-                    Sapien luctus id justo suscipit nonummy eget hymenaeos...
-                  </p>
-                </div>
-              </div>
-              <div className="bpost m-0">
-                <div className="bpost__thumb">
-                  <img src="./assets/img/blog/blog3.jpg" alt="blog_post" />
-                </div>
-                <div className="bpost__content">
-                  <span>Shoes, Clothing</span>
-                  <h3 className="blog-title title-2">
-                    <a href="blog.html">Mauris rhoncus aliquet purus</a>
-                  </h3>
-                  <p>
-                    By <span>Erentheme </span>/September 16, 2019
-                  </p>
-                  <p>
-                    Sapien luctus id justo suscipit nonummy eget hymenaeos...
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

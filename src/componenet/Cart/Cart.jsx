@@ -27,7 +27,7 @@ function Cart({ cart_item }) {
                     {cart_item?.items?.map((item, index) => (
                       <tr className="max-width-set">
                         <td>
-                          <img src={img} alt="" />
+                          <img src={item.thumbnail} alt="" />
                         </td>
                         <td>{item.product}</td>
                         <td>{item.price} - AED</td>

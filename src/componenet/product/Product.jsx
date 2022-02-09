@@ -56,7 +56,7 @@ export default function Product({
 
                         <div className="product-info mb-10">
                           <div className="product_category">
-                            <span>Shoes, Clothing</span>
+                            {/* <span>Shoes, Clothing</span> */}
                           </div>
                           <div className="product_rating">
                             <a href="#">

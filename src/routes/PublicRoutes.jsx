@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 import { css } from "@emotion/react";
-import Navbar from "../componenet/navbar/Navbar";
+import Navbar from "../componenet/navbar";
 import Footer from "../componenet/footer/Footer";
 const override = css`
   display: flex;

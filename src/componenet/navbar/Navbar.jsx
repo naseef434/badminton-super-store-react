@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import CartSideBar from "../Cart/CartSideBar";
 
-export default function Navbar() {
+export default function Navbar({ shopMenu }) {
+
   const [openCartModel, setCartOpen] = useState(false);
   return (
     <>
@@ -71,7 +72,6 @@ export default function Navbar() {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 d-none d-sm-block">
                 <div className="gota_search">
-                  
                   {/* <form className="search_form">
                     <button className="search_action">
                       <i className="fal fa-search d-sm-none d-md-block" />
@@ -108,171 +108,21 @@ export default function Navbar() {
                               'url("./assets/img/mega-menu/product.jpg")',
                           }}
                         >
-                          <li>
-                            <h4 className="mega_title">Badminton</h4>
-                            <ul className="mega_item">
-                              <li>
-                                <a href="shop.html">Racket</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Bags</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Accessories</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Other</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <h4 className="mega_title">Football</h4>
-                            <ul className="mega_item">
-                              <li>
-                                <a href="shop-sm.html">ball</a>
-                              </li>
-                              <li>
-                                <a href="shop-sm.html">Jersey</a>
-                              </li>
-                              <li>
-                                <a href="shop-sm.html">accessories</a>
-                              </li>
-                              <li>
-                                <a href="shop-sm.html">other</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <h4 className="mega_title">Cricket</h4>
-                            <ul className="mega_item">
-                              <li>
-                                <a href="single-right.html">bat</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">ball</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">bad</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">helmet</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">accessories</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">other</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <h4 className="mega_title">SWimming</h4>
-                            <ul className="mega_item">
-                              <li>
-                                <a href="single-right.html">googles</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">swim suite</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">accessorie</a>
-                              </li>
-                              <li>
-                                <a href="single-right.html">others</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <h4 className="mega_title">Sports Support</h4>
-                            <ul className="mega_item">
-                              <li>
-                                <a href="shop.html">Wrist</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Leg</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Hand</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Shoulder</a>
-                              </li>
-                              <li>
-                                <a href="shop.html">Other</a>
-                              </li>
-                            </ul>
-                          </li>
+                          {shopMenu?.map((menu, idx) => (
+                            <li>
+                              <h4 className="mega_title">{menu.name}</h4>
+                              <ul className="mega_item">
+                                {menu?.category?.map((item, idx) => (
+                                  <li>
+                                    <Link to={`/products?sport=${menu.id}&category=${item.id}`}>{item.name}</Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))}
                         </ul>
                       </li>
-                      {/* <li className="position-static menu-item-has-children">
-                        <Link to="#">Features</Link>
-                        <ul className="mega_menu_2">
-                          <li
-                            style={{
-                              backgroundImage:
-                                'url("./assets/img/mega-menu/product2.jpg")',
-                            }}
-                          >
-                            <h4 className="mega_title_2">Badminton</h4>
-                            <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">NikeCourts Air Zoom</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            style={{
-                              backgroundImage:
-                                'url("./assets/img/mega-menu/product2.jpg")',
-                            }}
-                          >
-                            <h4 className="mega_title_2">Badminton</h4>
-                            <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">NikeCourts Air Zoom</a>
-                              </li>
-                            </ul>
-                          </li>
 
-                          <li
-                            data-background="./assets/img/mega-menu/product3.jpg"
-                            style={{
-                              backgroundImage:
-                                'url("./assets/img/mega-menu/product3.jpg")',
-                            }}
-                          >
-                            <h4 className="mega_title_2">Helmet for Women’s</h4>
-                            <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">WordPress Pennant</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li
-                            data-background="./assets/img/mega-menu/product4.jpg"
-                            style={{
-                              backgroundImage:
-                                'url("./assets/img/mega-menu/product4.jpg")',
-                            }}
-                          >
-                            <h4 className="mega_title_2">Basketball</h4>
-                            <ul className="mega_item_2">
-                              <li>
-                                <a href="shop.html">NikeCourts Air Zoom</a>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li> */}
-                      {/* <li>
-                        <Link className="d-none d-xl-block" to="/">
-                          <img
-                            className="pl-50 pr-50"
-                            src="./assets/img/engage-logo.png"
-                            alt=""
-                          />
-                        </Link>
-                      </li> */}
                       <li>
                         <Link to="/service">Service</Link>
                       </li>

@@ -1,7 +1,7 @@
 import React from "react";
 import img from "./s-rembg-view.png";
 export default function ProductShowCase({ showCase }) {
-  console.log("showcase page  : ", showCase);
+  
   return (
     <div>
       <div class="show-case lightblue pt-125">

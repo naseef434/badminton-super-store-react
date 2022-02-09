@@ -24,7 +24,7 @@ export default function Index() {
   const [uuId, setuuId] = useState({
     customer_id: "",
   });
-  const [sports, setSports] = useState([])
+  const [sports, setSports] = useState([]);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [brands, setBrands] = useState([]);
@@ -37,13 +37,13 @@ export default function Index() {
   const [loader, setLoader] = useState(true);
   const { search } = useLocation();
   //loading spots Name nd passing Feautures component
-  
+
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
         `${serviceEndPoint.sportsEndpoints.getSports}`
       );
-        console.log(response);
+      console.log(response);
       setSports(response?.data);
     } catch (error) {
       console.log("sport api rice an error ", error);
@@ -51,12 +51,11 @@ export default function Index() {
   }, []);
   //get categories
   useEffect(async () => {
-    
     const query = qs.parse(search);
     try {
       const response = await urlGateWay.get(
         `${serviceEndPoint.productsEndpoints.getCategory}`,
-        { params: query }
+        { params: { sport: query.sport } }
       );
       setCategory(response?.data);
     } catch (e) {
@@ -69,7 +68,8 @@ export default function Index() {
     const query = qs.parse(search);
 
     const response = await urlGateWay.get(
-      `${serviceEndPoint.productsEndpoints.getBrands}`, {params: query}
+      `${serviceEndPoint.productsEndpoints.getBrands}`,
+      { params: { sport: query.sport } }
     );
     setBrands(response?.data);
   }, [search]);
@@ -89,52 +89,48 @@ export default function Index() {
     }
 
     const query = qs.parse(search);
-      const response = await urlGateWay.get(
-        `${serviceEndPoint.productsEndpoints.getProducts}`,
-        { params: {sport: query.sport} }
-      );
-      setProducts(response?.data?.results);
-      setLoader(false);
-    // console.log({ prodParams });
-  }, [search]);
-  
-
-  //get product by category
-  const SelectCategory = async(id) => {
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
-      { params: {category: id} }
+      { params: { sport: query.sport, category: query.category } }
+    );
+    setProducts(response?.data?.results);
+    setLoader(false);
+    // console.log({ prodParams });
+  }, [search]);
+
+  //get product by category
+  const SelectCategory = async (id) => {
+    const response = await urlGateWay.get(
+      `${serviceEndPoint.productsEndpoints.getProducts}`,
+      { params: { category: id } }
     );
     setProducts(response?.data?.results);
   };
 
   //get product by brand
-  const getProductByBrand = async(id) => {
-    console.log("brand clicked")
+  const getProductByBrand = async (id) => {
+    console.log("brand clicked");
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
-      { params: {brand : id} }
+      { params: { brand: id } }
     );
     setProducts(response?.data?.results);
   };
 
- 
-  //search 
+  //search
   const searchInput = (event) => {
     // console.log(event.target.value);
-    setParams({...params, q:event.target.value})
-  }
+    setParams({ ...params, q: event.target.value });
+  };
 
- const buttonSerach = async() => {
-  
-   const response = await urlGateWay.get(
-    `${serviceEndPoint.productSearch.psearch}`,
-    {params : {q: params.q}}
-   );
-   setProducts(response?.data?.results);
-  console.log("response",products);
-
- }
+  const buttonSerach = async () => {
+    const response = await urlGateWay.get(
+      `${serviceEndPoint.productSearch.psearch}`,
+      { params: { q: params.q } }
+    );
+    setProducts(response?.data?.results);
+    console.log("response", products);
+  };
 
   //single product
   const [openModel, setOpen] = useState(false);
@@ -203,14 +199,16 @@ export default function Index() {
                 {/* categories area */}
                 <Categories
                   category_data={category}
-                  sports = {sports}
+                  sports={sports}
                   selectCategory={SelectCategory}
                   brands={brands}
                   getProductByBrand={getProductByBrand}
-                  
                 />
                 <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12">
-                  <ProductFilter searchInput={searchInput} buttonSerach={buttonSerach}/>
+                  <ProductFilter
+                    searchInput={searchInput}
+                    buttonSerach={buttonSerach}
+                  />
                   {/* product listing start with xl-3 */}
                   <div className="shop-page-product pt-50 pb-100">
                     <div className="row">

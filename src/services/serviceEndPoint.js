@@ -1,5 +1,7 @@
+
 export const sportsEndpoints = {
   getSports :"/sport",
+  getNavbarItems: "/sport?homepage=true"
   
 }
  export const homePageEndpoints = {

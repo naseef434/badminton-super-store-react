@@ -11,7 +11,21 @@ import LogoSlider from "./LogoSlider";
 export default function Index() {
   //loading spots Name nd passing Feautures component
   const [sports, setSports] = useState([]);
-  const [shoCase, setShowCase] = useState([]);
+  const [blog, setBlog] = useState([]);
+
+  useEffect(async () => {
+    try {
+      const response = await urlGateWay.get(
+        `${serviceEndPoint.blogsEndpoints.blogs}`
+      );
+
+      setBlog(response?.data?.results);
+    } catch (error) {
+      console.log("blog api rice an error ", error);
+    }
+  }, []);
+  
+  const [showCase, setShowCase] = useState([]);
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -24,7 +38,7 @@ export default function Index() {
     }
   }, []);
 
-  console.log({ showcasedata: shoCase });
+
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -42,9 +56,9 @@ export default function Index() {
       <Carousel />
       <FeaturesArea sports={sports} />
       {/* <Categories /> */}
-      <ProductShowCase showCase={shoCase} />
+      <ProductShowCase showCase={showCase} />
       {/* <NewArrivals /> */}
-      <BlogArea />
+      <BlogArea  blog={blog}/>
       <LogoSlider />
       {/* <Gallery /> */}
     </div>

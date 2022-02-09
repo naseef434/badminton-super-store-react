@@ -10,7 +10,7 @@ import kawaski from "./kawaski.png";
 import restring from "./re-string.jpg";
 import test from "./test.jpg";
 export default function FeaturesArea({ sports }) {
-  console.log(sports);
+  
   const [staticCards, setStaticCard] = useState([
     {id: "", name:"ENGAGE SPORTS ARENA", isStatic: true },
     {id: "", name:"ENGAGE SPORTS ACCADEMY", isStatic: true ,link:"/accademy"},
