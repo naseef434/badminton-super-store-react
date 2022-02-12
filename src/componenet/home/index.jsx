@@ -24,7 +24,7 @@ export default function Index() {
       console.log("blog api rice an error ", error);
     }
   }, []);
-  
+  const [myCurousal, setmyCarousel] = useState([])
   const [showCase, setShowCase] = useState([]);
   useEffect(async () => {
     try {
@@ -33,12 +33,12 @@ export default function Index() {
       );
 
       setShowCase(response?.data?.showcase);
+      setmyCarousel(response?.data?.curosal);
     } catch (error) {
       console.log("showcase api rice an error ", error);
     }
   }, []);
-
-
+console.log(myCurousal);
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -53,12 +53,13 @@ export default function Index() {
 
   return (
     <div>
-      <Carousel />
+      {/* <CarouselNew /> */}
+      <Carousel customCarousels={myCurousal} />
       <FeaturesArea sports={sports} />
       {/* <Categories /> */}
       <ProductShowCase showCase={showCase} />
       {/* <NewArrivals /> */}
-      <BlogArea  blog={blog}/>
+      <BlogArea blog={blog} />
       <LogoSlider />
       {/* <Gallery /> */}
     </div>

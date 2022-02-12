@@ -13,7 +13,7 @@ export default function Index() {
       setshop(response?.data)
       
     } catch (error) {
-      console.log("blog api rice an error ", error);
+      console.log("navbaritems api rice an error ", error);
     }
   }, []);
 

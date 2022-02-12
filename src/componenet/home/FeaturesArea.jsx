@@ -1,34 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import img2 from "./asset15.jpeg";
-import academy from "./accademy.jpg";
-import kick from "./kick.jpg";
 import tournament from "./tournament.jpg";
-import sportsAreana from "./sports-areana.jpg";
-import swimming from "./swimming.jpg";
-import kawaski from "./kawaski.png";
-import restring from "./re-string.jpg";
-import test from "./test.jpg";
+import academy from "./accademy.jpg";
 export default function FeaturesArea({ sports }) {
-  
   const [staticCards, setStaticCard] = useState([
-    {id: "", name:"ENGAGE SPORTS ARENA", isStatic: true },
-    {id: "", name:"ENGAGE SPORTS ACCADEMY", isStatic: true ,link:"/accademy"},
-    {id: "", name:"Engage Sports EVENTS", isStatic: true},
-
-  ])
+    { id: "", name: "ENGAGE SPORTS ARENA", isStatic: true },
+    {
+      id: "",
+      name: "ENGAGE SPORTS ACCADEMY",
+      isStatic: true,
+      link: "accademy",
+      image: academy,
+    },
+    { id: "", name: "Engage Sports EVENTS", isStatic: true },
+  ]);
   return (
     <div className="banar_area">
       <div className="container-fluid padding-remove">
         <div className="row g-0">
           {sports?.map((item, idx) => (
             <>
-                <Card key={idx} details={item} />
+              <Card key={idx} details={item} />
             </>
           ))}
           {staticCards?.map((item, idx) => (
             <>
-                <Card key={idx} details={item} isStatic />
+              <Card key={idx} details={item} isStatic />
             </>
           ))}
         </div>
@@ -51,12 +48,30 @@ export function Card({ details, isStatic }) {
           animationName: "fadeIn",
         }}
       >
-        <Link to={`/products?sport=${details.id}`}>
-          <img src={details?.thumbnail || tournament} height={"300px"} alt="" />
-        </Link>
+        {isStatic ? (
+          <>
+            <Link to={`/${details.link}`}>
+              <img src={details?.image || tournament} height={"300px"} alt="" />
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to={`/products?sport=${details.id}`}>
+              <img
+                src={details?.thumbnail || tournament}
+                height={"300px"}
+                alt=""
+              />
+            </Link>
+          </>
+        )}
+
         <div className="banarright__content position-change">
           {/* <span className="d-none d-sm-block">Engage Sports</span> */}
-          <h2 className="banar-title mb-60 pt-80"> {isStatic ? details.name: details.name}</h2>
+          <h2 className="banar-title mb-60 pt-80">
+            {" "}
+            {isStatic ? details.name : details.name}
+          </h2>
         </div>
       </div>
     </div>
