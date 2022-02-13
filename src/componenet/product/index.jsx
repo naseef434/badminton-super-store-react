@@ -89,8 +89,11 @@ export default function Index() {
     }
 
     const query = qs.parse(search);
+    console.log(query);
+
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
+      // { params: {category: query.category } }
       { params: { sport: query.sport, category: query.category } }
     );
     setProducts(response?.data?.results);

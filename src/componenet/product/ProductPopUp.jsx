@@ -19,7 +19,7 @@ export default function ProductPopUp({ closeModel, item }) {
             <div className="col-xl-7 col-lg-7 col-md-7">
               <div className="viewcontent">
                 <div className="viewcontent__header">
-                  <Link to={`/product_view/${item.id}`}>
+                <Link to={`/products/view/${item.id}`}>
                     <h2> {item.name}</h2>
                   </Link>
 
