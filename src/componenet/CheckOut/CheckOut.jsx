@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CheckOut() {
   return (
@@ -113,7 +114,7 @@ function CheckOut() {
                           aria-expanded="false"
                           aria-controls="collapseThree"
                         >
-                          PayPal
+                          Network
                         </button>
                       </h2>
                       <div
@@ -141,7 +142,10 @@ function CheckOut() {
                     </p>
                   </div>
                   <div className="order-button">
-                    <button type="submit">place order</button>
+                    <Link to="/thankyou">
+                      <button type="submit">place order</button>
+                    </Link>
+                    
                   </div>
                 </div>
               </div>

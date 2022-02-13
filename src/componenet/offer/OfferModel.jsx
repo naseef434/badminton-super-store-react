@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import offer from "./offer1.PNG";
+import { Link } from "react-router-dom";
 export default function OfferModel({ closeModal }) {
   return (
     <div>
@@ -20,7 +21,9 @@ export default function OfferModel({ closeModal }) {
         <div className="modal">
           <div className="modal-wrap">
             <button onClick={()=>closeModal(false)}>X</button>
+            <Link to="/products?offerProd=true">
             <img src={offer} alt="" />
+            </Link>
           </div>
         </div>
       </div>

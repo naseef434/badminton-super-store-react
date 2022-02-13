@@ -5,6 +5,7 @@ import PrivateRoutes from "../routes/PrivateRoutes";
 import react from "react";
 import PublicRoute from "./PublicRoutes";
 import NotFound from '../componenet/404/Page404'
+import ThankYou from "../componenet/CheckOut/ThankYou";
 const Home = react.lazy(() => import("../componenet/home"));
 const Products = react.lazy(() => import("../componenet/product"));
 const ProductSinleView = react.lazy(() =>
@@ -36,6 +37,7 @@ export default function Auth() {
         <Route path="/accademy" element={<Accademy />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/thankyou" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       

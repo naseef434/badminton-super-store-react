@@ -8,6 +8,7 @@ import * as serviceEndPoint from "../../services/serviceEndPoint";
 import { urlGateWay } from "../../services/service";
 import LogoSlider from "./LogoSlider";
 import OfferModel from "../offer/OfferModel";
+import OfferModal from "../offer/OfferModal";
 
 export default function Index() {
   //loading spots Name nd passing Feautures component
@@ -59,7 +60,7 @@ export default function Index() {
   useEffect(() => {
     setTimeout(() => {
       x();
-    }, 2000);
+    }, 10000);
   }, []);
   return (
     <div>
