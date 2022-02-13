@@ -32,7 +32,7 @@ export default function ProductDetails({ productdata, addToCart }) {
         <div className="s-des">
           <p>{productdata.long_desc}</p>
         </div>
-        <div class="product-widget pt-50">
+        {/* <div class="product-widget pt-50">
           <h3 class="widget-title mb-30">Size</h3>
           <div class="layer-size">
             <a href="shop.html">
@@ -47,7 +47,7 @@ export default function ProductDetails({ productdata, addToCart }) {
               <span class="blue"></span>
             </a>
           </div>
-        </div>
+        </div> */}
         <div className="viewcontent__action single_action pt-30">
           <span>
             <input type="number" placeholder="1" />
