@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { urlGateWay } from "../../services/service";
+import * as serviceEndPoint from "../../services/serviceEndPoint"
 
 function CartSideBar({ closeModel }) {
+  const [cart, setCart] = useState({});
+
+  useEffect(async () => {
+    const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
+    setCart(response?.data);
+  }, []);
   return (
     <div>
       {/* cart area start  */}

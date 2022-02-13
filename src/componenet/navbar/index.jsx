@@ -17,9 +17,17 @@ export default function Index() {
     }
   }, []);
 
+  const [cart, setCart] = useState({});
+
+  const myBag = (async () => {
+    const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
+    setCart(response?.data);
+  }, []);
+  console.log({ cart: cart });
+
   return (
     <div>
-      <Navbar  shopMenu = {shop}/>
+      <Navbar  shopMenu = {shop} myBag={myBag}/>
     </div>
   );
 }

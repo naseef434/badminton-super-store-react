@@ -1,13 +1,14 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import qs from "query-string";
-
+import "./offerbtn.css";
 export default function Category({
   category_data,
   sports,
   brands,
   selectCategory,
   getProductByBrand,
+  params,
 }) {
   const { search } = useLocation();
   let query = qs.parse(search);
@@ -36,29 +37,27 @@ export default function Category({
         <div className="product-widget">
           <h3 className="widget-title mb-30">categories</h3>
           <ul className="product-categories">
-            {category_data?.map((item, key) =>
-              category_data ? (
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    onClick={() => selectCategory(item.id)}
-                    style={{ color: query.category == item.id ? "red" : "" }}
-                  >
-                    {item.name} <span>( {item.count} ) </span>
-                  </a>
-                </li>
-              ) : (
-                "Not Category Found "
-              )
-            )}
+            {query.sport && category_data?.length
+              ? category_data?.map((item, key) => (
+                  <li>
+                    <a
+                      href="javascript:void(0)"
+                      onClick={() => selectCategory(item.id)}
+                      style={{ color: query.category == item.id ? "red" : "" }}
+                    >
+                      {item.name} <span>( {item.count} ) </span>
+                    </a>
+                  </li>
+                ))
+              : <li>-</li>}
           </ul>
         </div>
 
         <div className="product-widget">
           <h3 className="widget-title mb-30">Brands</h3>
           <ul className="product-categories">
-            {brands?.map((item, key) =>
-              brands ? (
+            {query.sport && brands?.length ? (
+              brands?.map((item, key) => (
                 <li>
                   <a
                     href="javascript:void(0)"
@@ -67,14 +66,19 @@ export default function Category({
                     {item.name} <span>({item.count}) </span>
                   </a>
                 </li>
-              ) : (
-                <li>ksdjfnksdjn</li>
-              )
+              ))
+            ) : (
+              <li>-</li>
             )}
           </ul>
         </div>
         <br />
         <br />
+        <div className="product-widget">
+          <Link to="/products?offerProd=true">
+            <h3 className="widget-title mb-30">OfferZone</h3>
+          </Link>
+        </div>
       </div>
     </div>
   );

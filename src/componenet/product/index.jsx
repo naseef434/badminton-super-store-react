@@ -90,11 +90,17 @@ export default function Index() {
 
     const query = qs.parse(search);
     console.log(query);
-
+    let prodParams = {};
+    if (query.category) {
+      prodParams.category = query.category;
+    } else if (query.sport) {
+      prodParams.sport = query.sport;
+    } else if (query.offerProd){
+      prodParams.on_offer= true
+    }
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
-      // { params: {category: query.category } }
-      { params: { sport: query.sport, category: query.category } }
+      { params: prodParams }
     );
     setProducts(response?.data?.results);
     setLoader(false);
@@ -206,6 +212,7 @@ export default function Index() {
                   selectCategory={SelectCategory}
                   brands={brands}
                   getProductByBrand={getProductByBrand}
+                  params={params}
                 />
                 <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12">
                   <ProductFilter

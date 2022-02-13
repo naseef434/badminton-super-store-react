@@ -7,6 +7,7 @@ import { useEffect } from "react/cjs/react.development";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
 import { urlGateWay } from "../../services/service";
 import LogoSlider from "./LogoSlider";
+import OfferModel from "../offer/OfferModel";
 
 export default function Index() {
   //loading spots Name nd passing Feautures component
@@ -24,7 +25,7 @@ export default function Index() {
       console.log("blog api rice an error ", error);
     }
   }, []);
-  const [myCurousal, setmyCarousel] = useState([])
+  const [myCurousal, setmyCarousel] = useState([]);
   const [showCase, setShowCase] = useState([]);
   useEffect(async () => {
     try {
@@ -38,7 +39,7 @@ export default function Index() {
       console.log("showcase api rice an error ", error);
     }
   }, []);
-console.log(myCurousal);
+  console.log(myCurousal);
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -50,9 +51,19 @@ console.log(myCurousal);
       console.log("sport api rice an error ", error);
     }
   }, []);
+  const x = () => {
+    setOpenModal(true);
+  };
+  const [modal, setOpenModal] = useState(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      x();
+    }, 2000);
+  }, []);
   return (
     <div>
+      {modal && <OfferModel closeModal={setOpenModal} />}
       {/* <CarouselNew /> */}
       <Carousel customCarousels={myCurousal} />
       <FeaturesArea sports={sports} />

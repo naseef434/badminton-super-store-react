@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import CartSideBar from "../Cart/CartSideBar";
 
-export default function Navbar({ shopMenu }) {
+export default function Navbar({ shopMenu ,myBag}) {
 
   const [openCartModel, setCartOpen] = useState(false);
   return (
