@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CheckOut() {
+function CheckOut({ cart }) {
   return (
     <div>
       <div className="checkout_area pt-80">
@@ -43,8 +43,8 @@ function CheckOut() {
                       City <span>*</span>
                     </label>
                     <select name="country">
-                      <option value="Dubai">	Dubai</option>
-                      <option value="Abu Dhabi">	Abu Dhabi</option>
+                      <option value="Dubai"> Dubai</option>
+                      <option value="Abu Dhabi"> Abu Dhabi</option>
                       <option value="Sharjah">Sharjah</option>
                       <option value="Ajman">Ajman</option>
                       <option value="Ras Al Khaimah">Ras Al Khaimah</option>
@@ -82,23 +82,26 @@ function CheckOut() {
                 <h5>Your order</h5>
                 <table>
                   <tbody>
-                    <tr className="first-child-2">
-                      <td>product</td>
-                      <td>
-                        NikeCourts Air Zoom <span>× 1</span>
-                      </td>
-                    </tr>
+                    {cart?.items?.map((item) => (
+                      <tr className="first-child-2">
+                        <td>Product</td>
+                        <td>
+                          {item.product} <span>× {item.quantity}</span>
+                        </td>
+                      </tr>
+                    ))}
+
                     <tr className="first-child-2">
                       <td>Subtotal</td>
-                      <td className="lightbluee">$18.00</td>
+                      <td className="lightbluee">{cart?.total} - AED</td>
                     </tr>
                     <tr className="first-child lastchild">
                       <td>Shipping</td>
-                      <td>Enter your address to view shipping options. </td>
+                      <td>40 - AED. </td>
                     </tr>
                     <tr className="first-child-2">
                       <td>Total</td>
-                      <td className="lightbluee">$47.00</td>
+                      <td className="lightbluee">----</td>
                     </tr>
                   </tbody>
                 </table>
@@ -117,14 +120,6 @@ function CheckOut() {
                           Network
                         </button>
                       </h2>
-                      <div
-                        id="collapseThree"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample"
-                      >
-                        <div className="accordion-body">Cash on delivery</div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -135,17 +130,16 @@ function CheckOut() {
                     other purposes described in our privacy policy
                   </p>
                   <div className="check_term">
-                    <input type="checkbox" />
+                    <input type="checkbox" /> &nbsp;&nbsp;&nbsp;<a href="#"><span>click here to read terms</span></a>
                     <p>
                       I have read and agree to the website terms and conditions{" "}
-                      <span>*</span>
+                     
                     </p>
                   </div>
                   <div className="order-button">
                     <Link to="/thankyou">
                       <button type="submit">place order</button>
                     </Link>
-                    
                   </div>
                 </div>
               </div>

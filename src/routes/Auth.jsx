@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import CheckOut from "../componenet/CheckOut/CheckOut";
+import Checkout from "../componenet/CheckOut";
 import Cart from "../componenet/Cart";
 import PrivateRoutes from "../routes/PrivateRoutes";
 import react from "react";
@@ -36,7 +36,7 @@ export default function Auth() {
         <Route path="/trading" element={<Trading />} />
         <Route path="/accademy" element={<Accademy />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/thankyou" element={<ThankYou />} />
         <Route path="*" element={<NotFound />} />
       </Route>
