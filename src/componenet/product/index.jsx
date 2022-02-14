@@ -95,8 +95,8 @@ export default function Index() {
       prodParams.category = query.category;
     } else if (query.sport) {
       prodParams.sport = query.sport;
-    } else if (query.offerProd){
-      prodParams.on_offer= true
+    } else if (query.offerProd) {
+      prodParams.on_offer = true;
     }
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,

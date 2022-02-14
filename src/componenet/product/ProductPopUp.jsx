@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 
 export default function ProductPopUp({ closeModel, item }) {
+  console.log(item);
   return (
     <div>
       <div className="overlay show-popup" />
@@ -47,7 +48,7 @@ export default function ProductPopUp({ closeModel, item }) {
                 </div>
                 <div className="viewcontent__stock">
                   <h4>
-                    Available :<span> In stock</span>
+                  Available :<span> {item.quantity} In stock</span>
                   </h4>
                 </div>
                 <div className="viewcontent__details">

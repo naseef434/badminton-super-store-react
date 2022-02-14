@@ -27,8 +27,13 @@ export default function ProductDetails({ productdata, addToCart }) {
           <span className="pl-left">(1 customer review)</span>
         </div>
         <div className="s-price pt-30 mb-30">
-          <span>{productdata.price} - AED</span>
+          <span>PRICE - {productdata.price} - AED </span> | <span>SALE PRICE -{productdata.sale_price} - AED </span>
         </div>
+        <div className="viewcontent__stock">
+                  <h4>
+                    Available :<span> {productdata.quantity} In stock</span>
+                  </h4>
+                </div>
         <div className="s-des">
           <p>{productdata.long_desc}</p>
         </div>
