@@ -27,7 +27,7 @@ export default function Footer() {
                   <li>(971) 55 778 4141</li>
                  
                 </ul>
-                <div className="social__media mb-30">
+                {/* <div className="social__media mb-30">
                   <h3 className="f-title">FOLLOW US ON</h3>
                   <a href="https://www.facebook.com/getengage/">
                     <i className="fab fa-facebook-f" />
@@ -43,7 +43,7 @@ export default function Footer() {
                     <i className="fab fa-linkedin" />
                   </a>
                   
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-xl-2 col-lg-6 col-md-6 col-sm-12">
@@ -100,15 +100,29 @@ export default function Footer() {
                   animationName: "fadeInUp",
                 }}
               >
-                <h3 className="f-title">get in touch</h3>
+                <h3 className="f-title">Our Policy</h3>
                 <p>
-                  Sign up for all the news about our latest arrivals and
-                  <br />
-                  get an exclusive early access shopping. Join <br />
-                  <span>60.000+ Subscribers</span> and get a new discount coupon
-                  <br /> on every Saturday.
+                  Click here to read our policy
+                 
                 </p>
-                <div className="subscribe pt-20">
+                <div className="social__media mb-30">
+                  <h3 className="f-title">FOLLOW US ON</h3>
+                  <a href="https://www.facebook.com/getengage/">
+                    <i className="fab fa-facebook-f" />
+                  </a>
+                 
+                  <a href="https://www.instagram.com/explore/locations/952109704944354/engage-sports-academy/?hl=en">
+                    <i className="fab fa-instagram" />
+                  </a>
+                  <a href="https://www.youtube.com/channel/UCp-oDBaVYF3PlhQ5Sz7fLbw">
+                  <i className="fab fa-youtube"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/company/engagesports/">
+                    <i className="fab fa-linkedin" />
+                  </a>
+                  
+                </div>
+                {/* <div className="subscribe pt-20">
                   <form action="#">
                     <input
                       type="email"
@@ -117,7 +131,7 @@ export default function Footer() {
                     />
                     <button>Subscribe</button>
                   </form>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
