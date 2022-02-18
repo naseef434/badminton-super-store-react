@@ -86,7 +86,7 @@ export default function Product({
                           {/* <h4><Link to=""> {item.name}</Link></h4> */}
                           <div className="pro-price">
                             <p className="p-absoulute pr-1">
-                              <span>AED - {item.price} </span>
+                              <span style={{textDecoration: "line-through"}}>{item.price} - AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{item.sale_price} - AED  </span>
                               {products_data.rate}{" "}
                             </p>
                             <a

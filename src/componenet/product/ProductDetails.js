@@ -27,7 +27,7 @@ export default function ProductDetails({ productdata, addToCart }) {
           <span className="pl-left">(1 customer review)</span>
         </div>
         <div className="s-price pt-30 mb-30">
-          <span>PRICE - {productdata.price} - AED </span> | <span>SALE PRICE -{productdata.sale_price} - AED </span>
+        <span style={{textDecoration: "line-through"}}>{productdata.price}  AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{productdata.sale_price} - AED  </span>
         </div>
         <div className="viewcontent__stock">
                   <h4>
@@ -75,8 +75,8 @@ export default function ProductDetails({ productdata, addToCart }) {
             <li>SKU:</li>
           </ul>
           <ul>
-            <li>jackets, Youth</li>
-            <li>woo-hoodie-with-logo</li>
+            {/* <li>{productdata?.category?.name}</li>
+            <li>{productdata.brand.name}</li> */}
           </ul>
         </div>
         <div className="social__media f-social-media mb-30 pt-15">
