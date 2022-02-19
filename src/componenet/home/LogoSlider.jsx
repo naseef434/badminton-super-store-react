@@ -1,5 +1,5 @@
 import React from "react";
-import "./logo-slider.css";
+import Slider from "react-slick";
 import kawasaki from "./gallery/kawasaki.png";
 import flypower from "./gallery/11.jpg";
 import infinite from "./gallery/INFINITE.jpg";
@@ -8,59 +8,44 @@ import aeroplane from "./gallery/airo-plane.jpg";
 import mizuno from "./gallery/MIZUNO 2.jpg";
 import apecs from "./gallery/appecs.jpg";
 export default function LogoSlider() {
+  const settings = {
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 2,
+  };
   return (
     <div>
-      <div className="row">
-        <div className="col-lg-12 col-md-12 col-xs-12">
-        <div className="slider">
-        <ul>
-          <li>
-            <img src={kawasaki} alt="" />
-          </li>
-          <li>
-            <img src={flypower} alt="" />
-          </li>
-          <li>
-            <img src={infinite} alt="" />
-          </li>
-          <li>
-            <img src={victor} alt="" />
-          </li>
-          <li>
-            <img src={aeroplane} alt="" />
-          </li>
-          <li>
-            <img src={mizuno} alt="" />
-          </li>
-          <li>
-            <img src={apecs} alt="" />
-          </li>
-          <li>
-            <img src={kawasaki} alt="" />
-          </li>
-          <li>
-            <img src={flypower} alt="" />
-          </li>
-          <li>
-            <img src={infinite} alt="" />
-          </li>
-          <li>
-            <img src={victor} alt="" />
-          </li>
-          <li>
-            <img src={aeroplane} alt="" />
-          </li>
-          <li>
-            <img src={mizuno} alt="" />
-          </li>
-          <li>
-            <img src={apecs} alt="" />
-          </li>
-        </ul>
-      </div>
+      <Slider {...settings}>
+        <div>
+          <img src={kawasaki} />
         </div>
-      </div>
-
+        <div>
+          <img src={flypower} />
+        </div>
+        <div>
+          <img src={infinite} />
+        </div>
+        <div>
+          <img src={victor} />
+        </div>
+        <div>
+          <img src={aeroplane} />
+        </div>
+        <div>
+          <img src={mizuno} />
+        </div>
+        <div>
+          <img src={apecs} />
+        </div>
+        <div>
+          <img src={flypower} />
+        </div>
+        <div>
+          <img src={infinite} />
+        </div>
+      </Slider>
     </div>
   );
 }

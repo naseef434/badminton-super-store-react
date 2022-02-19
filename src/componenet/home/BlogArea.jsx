@@ -62,9 +62,12 @@ export default function BlogArea({ blog }) {
                     <p>
                       By <span>{item?.created_by} </span>/{item?.date_posted}
                     </p>
+                    {item?.content.substr(0, 120)}...
                     <p>
-                      Sapien luctus id justo suscipit nonummy eget hymenaeos...
+                    <Link to={`/events/${item?.id}`} style={{textDecoration:"underline"}}>Countinue Reading</Link>
+
                     </p>
+                   
                   </div>
                 </div>
               ))}
