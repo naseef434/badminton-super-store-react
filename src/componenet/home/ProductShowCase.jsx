@@ -17,11 +17,9 @@ export default function ProductShowCase({ showCase }) {
               </div>
             </div>
             <div class="case-info text-center">
-              <span class="offer-text d-none d-lg-block">
-                hot deal<i class="far fa-stars"></i>
-              </span>
+              
               {showCase?.map((item) => (
-                <h2 class="back1-text d-none d-lg-block">{item.title2}</h2>
+                <h2 class="back1-text d-none d-lg-block" style={{fontSize:"10px;"}}>{item.title2}</h2>
               ))}
 
               {/* <h2 class="back-text d-none d-lg-block">Deals</h2> */}
