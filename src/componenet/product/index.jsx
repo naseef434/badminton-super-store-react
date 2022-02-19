@@ -125,7 +125,17 @@ export default function Index() {
     );
     setProducts(response?.data?.results);
   };
-
+  const [offerBanner, setofferBanner] = useState([])
+   //get offer banner
+  useEffect(async() => {
+    const response = await urlGateWay.get(
+      `${serviceEndPoint.offerBanner.offerBanner}`
+   
+    );
+   
+    setofferBanner(response);
+  }, [])
+ 
   //search
   const searchInput = (event) => {
     // console.log(event.target.value);
@@ -200,7 +210,7 @@ export default function Index() {
         <ProductSinleView addToCart={addToCart} />
       ) : (
         <>
-          <BreadCrumb name={["Home", "Shop"]} />
+          <BreadCrumb offerBanner={offerBanner} />
           {/* shop page start */}
           <div className="shop-page pt-85">
             <div className="container">

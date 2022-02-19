@@ -34,3 +34,7 @@ export const productSearch = {
 export const blogsEndpoints = {
   blogs : "/blog"
 }
+
+export const offerBanner = {
+  offerBanner : "/offer_banner"
+}

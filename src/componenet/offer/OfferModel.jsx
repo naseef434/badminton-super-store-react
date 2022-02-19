@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import offer from "./offer1.PNG";
 import { Link } from "react-router-dom";
-export default function OfferModel({ closeModal }) {
+export default function OfferModel({ closeModal,modalImage }) {
   return (
     <div>
       {/* popup area start */}
@@ -16,13 +16,16 @@ export default function OfferModel({ closeModal }) {
           checked
         />
         <label htmlFor="modal-btn">
-          <i  className="uil uil-expand-arrows" />
+          <i  className="uil uil-expand-arrows" onClick={()=>closeModal(false)}/>
         </label>
         <div className="modal">
           <div className="modal-wrap">
             <button onClick={()=>closeModal(false)}>X</button>
             <Link to="/products?offerProd=true">
-            <img src={offer} alt="" />
+              {modalImage.map((itm)=>(
+                <img src={itm.image} alt="" />
+              ))}
+            
             </Link>
           </div>
         </div>

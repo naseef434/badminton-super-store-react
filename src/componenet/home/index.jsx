@@ -28,6 +28,8 @@ export default function Index() {
   }, []);
   const [myCurousal, setmyCarousel] = useState([]);
   const [showCase, setShowCase] = useState([]);
+  const [modal, setOpenModal] = useState(false);
+  const [modalImage, setmodalImage] = useState([])
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -36,6 +38,7 @@ export default function Index() {
 
       setShowCase(response?.data?.showcase);
       setmyCarousel(response?.data?.curosal);
+      setmodalImage(response?.data?.popup)
     } catch (error) {
       console.log("showcase api rice an error ", error);
     }
@@ -52,19 +55,21 @@ export default function Index() {
       console.log("sport api rice an error ", error);
     }
   }, []);
+
+  //home page modal
   const x = () => {
     setOpenModal(true);
   };
-  const [modal, setOpenModal] = useState(false);
 
-  useEffect(() => {
+  useEffect(async() => {
+  
     setTimeout(() => {
       x();
     }, 10000);
   }, []);
   return (
     <div>
-      {modal && <OfferModel closeModal={setOpenModal} />}
+      {modal && <OfferModel closeModal={setOpenModal} modalImage={modalImage}/>}
       {/* <CarouselNew /> */}
       <Carousel customCarousels={myCurousal} />
       <FeaturesArea sports={sports} />
