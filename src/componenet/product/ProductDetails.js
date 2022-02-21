@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductDetails({ productdata, addToCart }) {
+export default function ProductDetails({ productdata, addToCart,cartQty }) {
   console.log(productdata);
   return (
     <div className="col-xl-6 col-lg-6 col-md-12">
@@ -55,7 +55,7 @@ export default function ProductDetails({ productdata, addToCart }) {
         </div> */}
         <div className="viewcontent__action single_action pt-30">
           <span>
-            <input type="number" placeholder="1" />
+          <input type="text" onInput={cartQty} name="qty" />
           </span>
           <span>
             <a href="javascript:void(0)" onClick={() => addToCart(productdata)}>

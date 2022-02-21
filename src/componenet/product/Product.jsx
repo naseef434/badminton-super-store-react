@@ -16,6 +16,7 @@ export default function Product({
   product,
   openModelFunction,
   addToCart,
+  cartQty,
 })
 {
 // console.log(products_data) 
@@ -24,7 +25,7 @@ export default function Product({
     <>
       {/* if model is true run the component */}
       {openModelSingleView && (
-        <ProductPopUp closeModel={setOpen} item={product} />
+        <ProductPopUp closeModel={setOpen} item={product}  addToCart={addToCart} cartQty={cartQty}/>
       )}
       {openLoginModel && <Signup closeModel={setLoginModel} />}
       <div className="col-xl-12 col-lg-12 col-md-12">
@@ -94,7 +95,7 @@ export default function Product({
                               href="javascript:void(0)"
                               onClick={() => addToCart(item)}
                             >
-                              add toooo cart
+                              add to cart
                             </a>
                           </div>
                         </div>

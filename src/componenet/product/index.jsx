@@ -125,17 +125,16 @@ export default function Index() {
     );
     setProducts(response?.data?.results);
   };
-  const [offerBanner, setofferBanner] = useState([])
-   //get offer banner
-  useEffect(async() => {
+  const [offerBanner, setofferBanner] = useState([]);
+  //get offer banner
+  useEffect(async () => {
     const response = await urlGateWay.get(
       `${serviceEndPoint.offerBanner.offerBanner}`
-   
     );
-   
+
     setofferBanner(response);
-  }, [])
- 
+  }, []);
+
   //search
   const searchInput = (event) => {
     // console.log(event.target.value);
@@ -162,11 +161,13 @@ export default function Index() {
     name: "",
     sale_price: "",
     short_desc: "",
+    price: "",
     size: "",
     thumbnail: "",
   });
   //calling single product model
   function openModelFunction(item) {
+    console.log({ item: item });
     setOpen(true);
     setProduct({
       id: item.id,
@@ -175,24 +176,34 @@ export default function Index() {
       color: item.color,
       long_desc: item.long_desc,
       name: item.name,
+      price: item.price,
       sale_price: item.sale_price,
       short_desc: item.short_desc,
       size: item.size,
       thumbnail: item.thumbnail,
     });
   }
+
+  //handle add to cart qty
+  const [Qty, setQty] = useState(0);
+  const cartQty = (event) => {
+    setQty(event.target.value);
+    console.log(event.target.value);
+  };
+  console.log({ qtyyy: Qty });
   //add items  to cart
   const addToCart = async (prod) => {
     const response = await urlGateWay.post(
       serviceEndPoint.cart.getAccessToken,
       uuId
     );
+    const qty = parseInt(Qty)  
     localStorage.setItem("token", response?.data?.access);
     const userToken = localStorage.getItem("token");
     if (userToken) {
       let body = {
         product_id: prod.id,
-        quantity: 1,
+        quantity: qty,
       };
       const response = await urlGateWay.post(
         serviceEndPoint.cart.addToCart,
@@ -200,14 +211,16 @@ export default function Index() {
       );
     }
     toast.success("Added to cart!");
+   setQty(1)
   };
+//delete cart item
 
   const { section } = useParams();
   return (
     <>
       <PuffLoader color={"blue"} loading={loader} css={override} size={150} />
       {section === "view" ? (
-        <ProductSinleView addToCart={addToCart} />
+        <ProductSinleView addToCart={addToCart} cartQty={cartQty} />
       ) : (
         <>
           <BreadCrumb offerBanner={offerBanner} />
@@ -243,6 +256,7 @@ export default function Index() {
                         setProduct={setProduct}
                         openModelFunction={openModelFunction}
                         addToCart={addToCart}
+                        cartQty={cartQty}
                       />
                     </div>
                   </div>

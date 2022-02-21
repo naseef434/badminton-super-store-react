@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-export default function ProductPopUp({ closeModel, item }) {
-  console.log({single: item});
+export default function ProductPopUp({ closeModel, item,addToCart,cartQty }) {
+
   return (
     <div>
       <div className="overlay show-popup" />
@@ -42,7 +42,7 @@ export default function ProductPopUp({ closeModel, item }) {
                 </div>
                 <div className="viewcontent__price">
                   <h4>
-                  <span style={{textDecoration: "line-through"}}>{item.price}234  AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{item.sale_price} - AED  </span>
+                  <span style={{textDecoration: "line-through"}}>{item.price}- AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{item.sale_price} - AED  </span>
         
                   </h4>
                 </div>
@@ -55,12 +55,12 @@ export default function ProductPopUp({ closeModel, item }) {
                   <p>{item.long_desc}</p>
                 </div>
                 <div className="viewcontent__action">
-                  <span>Qty</span>
+                  <span>Qtdy</span>
                   <span>
-                    <input type="number" placeholder={1} />
+                    <input type="text" onInput={cartQty} name="qty" />
                   </span>
                   <span>
-                    <a href="#">add to cart</a>
+                    <a href="javascript:void(0)"  onClick={() => addToCart(item)}>add to cart</a>
                   </span>
                   <span>
                     <i className="fal fa-heart" />

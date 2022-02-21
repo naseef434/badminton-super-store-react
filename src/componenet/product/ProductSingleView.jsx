@@ -6,7 +6,7 @@ import ProductDetails from "./ProductDetails";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function ProductSinleView(props) {
+export default function ProductSinleView({addToCart,cartQty}) {
   const { product_id } = useParams();
   const [singleProduct, setSingleProduct] = useState([0]);
 
@@ -31,8 +31,10 @@ export default function ProductSinleView(props) {
           <div className="row">
             <ProductImagesView product={singleProduct} />
             <ProductDetails
-              addToCart={props.addToCart}
+              addToCart={addToCart}
               productdata={singleProduct}
+              cartQty={cartQty}
+              
             />
           </div>
         </div>

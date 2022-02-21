@@ -24,7 +24,7 @@ export const cart = {
   getAccessToken:"/customer/get_token/",
   addToCart: "/cart/add_to_cart/",
   getCart: "/cart/get_cart/", 
-  
+  deleteCartItem: "cart/delete_cart_item/",
 };
 
 export const productSearch = {
