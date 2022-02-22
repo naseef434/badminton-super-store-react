@@ -15,12 +15,12 @@ export default function OfferModel({ closeModal,modalImage }) {
           name="modal-btn"
           checked
         />
-        <label htmlFor="modal-btn">
-          <i  className="uil uil-expand-arrows" onClick={()=>closeModal(false)}/>
+        <label htmlFor="modal-btn"  onClick={()=>closeModal(false)}>
+        <i class="fa fa-times" aria-hidden="true"></i>
         </label>
         <div className="modal">
           <div className="modal-wrap">
-            <button onClick={()=>closeModal(false)}>X</button>
+            {/* <button onClick={()=>closeModal(false)}>X</button> */}
             <Link to="/products?offerProd=true">
               {modalImage.map((itm)=>(
                 <img src={itm.image} alt="" />

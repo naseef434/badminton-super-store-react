@@ -4,10 +4,10 @@ import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import { useState } from "react/cjs/react.development";
 export default function OfferModal() {
-  const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
   return (
     <>
       <Button variant="primary" onClick={handleShow}>

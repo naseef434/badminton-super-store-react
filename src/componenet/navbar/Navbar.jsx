@@ -67,7 +67,7 @@ export default function Navbar({ shopMenu ,myBag}) {
             </div>
           </div>
         </div>
-        <div className="gota_bottom position-relative">
+        <div className="gota_bottom position-relative" >
           <div className="container-fluid">
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 d-none d-sm-block">
