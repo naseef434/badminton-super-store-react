@@ -55,7 +55,7 @@ export default function ProductPopUp({ closeModel, item,addToCart,cartQty }) {
                   <p>{item.long_desc}</p>
                 </div>
                 <div className="viewcontent__action">
-                  <span>Qtdy</span>
+                  <span>Quantity</span>
                   <span>
                     <input type="text" onInput={cartQty} name="qty" />
                   </span>

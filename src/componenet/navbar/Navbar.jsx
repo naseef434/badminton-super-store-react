@@ -8,7 +8,7 @@ export default function Navbar({ shopMenu ,myBag}) {
   const [openCartModel, setCartOpen] = useState(false);
   return (
     <>
-      {openCartModel && <CartSideBar closeModel={setCartOpen} />}
+      {openCartModel && <CartSideBar closeModel={setCartOpen}  />}
       <header className="header-area">
         <div className="gota_top bg-soft d-none d-sm-block">
           <div className="container-fluid">

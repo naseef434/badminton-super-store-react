@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BreadCrumb from "../product/BreadCrumb";
+import { toast } from "react-toastify";
 var img = "assets/img/product/test.jpg";
-function Cart({ cart_item }) {
+
+function Cart({ cart_item ,deleteCartItem}) {
   console.log(cart_item);
   return (
     <div>
@@ -20,7 +22,7 @@ function Cart({ cart_item }) {
                       <td> price  </td>
                       <td> Quantity </td>
                       <td> Total </td>
-                      <td></td>
+                      <td>Action</td>
                     </tr>
                   </tbody>
                   <tbody>
@@ -33,6 +35,7 @@ function Cart({ cart_item }) {
                         <td>{item.price} - AED</td>
                         <td>{item.quantity} </td>
                         <td>{item.total}</td>
+                     
                         {/* <td>
 
                           <div className="viewcontent__action single_action pt-30">
@@ -42,7 +45,7 @@ function Cart({ cart_item }) {
                           </div>
                         </td> */}
                         <td className="width-set">
-                          <a href="javascript:void(0)">
+                          <a href="javascript:void(0)" onClick={()=>{deleteCartItem(item.id)}}>
                             <i className="fal fa-times-circle" />
                           </a>
                         </td>

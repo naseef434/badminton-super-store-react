@@ -11,7 +11,7 @@ import { css } from "@emotion/react";
 import { useLocation, useParams } from "react-router-dom";
 import ProductSinleView from "./ProductSingleView";
 import { v4 as uuidv4 } from "uuid";
-import { succes, error } from "../toaster/Toaster";
+
 import { toast } from "react-toastify";
 import qs from "query-string";
 
@@ -185,7 +185,7 @@ export default function Index() {
   }
 
   //handle add to cart qty
-  const [Qty, setQty] = useState(0);
+  const [Qty, setQty] = useState(1);
   const cartQty = (event) => {
     setQty(event.target.value);
     console.log(event.target.value);

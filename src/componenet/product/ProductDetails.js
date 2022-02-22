@@ -55,7 +55,7 @@ export default function ProductDetails({ productdata, addToCart,cartQty }) {
         </div> */}
         <div className="viewcontent__action single_action pt-30">
           <span>
-          <input type="text" onInput={cartQty} name="qty" />
+          <input type="text" onInput={cartQty} name="qty" placeholder="Quantity"/>
           </span>
           <span>
             <a href="javascript:void(0)" onClick={() => addToCart(productdata)}>
