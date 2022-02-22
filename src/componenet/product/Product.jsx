@@ -87,7 +87,12 @@ export default function Product({
                           {/* <h4><Link to=""> {item.name}</Link></h4> */}
                           <div className="pro-price">
                             <p className="p-absoulute pr-1">
-                              <span style={{textDecoration: "line-through"}}>{item.price} - AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{item.sale_price} - AED  </span>
+                              {item.price === 0 ? <span style={{color:"green"}}>{item.sale_price} - AED  </span> 
+                              : <>
+                              
+                              <span style={{textDecoration: "line-through",color:"red"}}>{item.price}- AED   </span> &nbsp;&nbsp; | &nbsp;&nbsp;    <span style={{color:"green"}}>{item.sale_price} - AED  </span>
+                              </> 
+                              }
                               {products_data.rate}{" "}
                             </p>
                             <a

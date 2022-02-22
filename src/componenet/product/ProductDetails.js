@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductDetails({ productdata, addToCart,cartQty }) {
+export default function ProductDetails({ productdata, addToCart, cartQty }) {
   console.log(productdata);
   return (
     <div className="col-xl-6 col-lg-6 col-md-12">
@@ -27,13 +27,27 @@ export default function ProductDetails({ productdata, addToCart,cartQty }) {
           <span className="pl-left">(1 customer review)</span>
         </div>
         <div className="s-price pt-30 mb-30">
-        <span style={{textDecoration: "line-through"}}>{productdata.price}  AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{productdata.sale_price} - AED  </span>
+          {productdata.price === 0 ? (
+            <span style={{ color: "green" }}>
+              {productdata.sale_price} - AED{" "}
+            </span>
+          ) : (
+            <>
+              <span style={{ textDecoration: "line-through", color: "red" }}>
+                {productdata.price}- AED{" "}
+              </span>{" "}
+              &nbsp;&nbsp; | &nbsp;&nbsp;{" "}
+              <span style={{ color: "green" }}>
+                {productdata.sale_price} - AED{" "}
+              </span>
+            </>
+          )}
         </div>
         <div className="viewcontent__stock">
-                  <h4>
-                    Available :<span> {productdata.quantity} In stock</span>
-                  </h4>
-                </div>
+          <h4>
+            Available :<span> {productdata.quantity} In stock</span>
+          </h4>
+        </div>
         <div className="s-des">
           <p>{productdata.long_desc}</p>
         </div>
@@ -55,7 +69,12 @@ export default function ProductDetails({ productdata, addToCart,cartQty }) {
         </div> */}
         <div className="viewcontent__action single_action pt-30">
           <span>
-          <input type="text" onInput={cartQty} name="qty" placeholder="Quantity"/>
+            <input
+              type="text"
+              onInput={cartQty}
+              name="qty"
+              placeholder="Quantity"
+            />
           </span>
           <span>
             <a href="javascript:void(0)" onClick={() => addToCart(productdata)}>

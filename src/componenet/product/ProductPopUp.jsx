@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-
-export default function ProductPopUp({ closeModel, item,addToCart,cartQty }) {
-
+export default function ProductPopUp({ closeModel, item, addToCart, cartQty }) {
   return (
     <div>
       <div className="overlay show-popup" />
@@ -20,7 +18,7 @@ export default function ProductPopUp({ closeModel, item,addToCart,cartQty }) {
             <div className="col-xl-7 col-lg-7 col-md-7">
               <div className="viewcontent">
                 <div className="viewcontent__header">
-                <Link to={`/products/view/${item.id}`}>
+                  <Link to={`/products/view/${item.id}`}>
                     <h2> {item.name}</h2>
                   </Link>
 
@@ -42,13 +40,31 @@ export default function ProductPopUp({ closeModel, item,addToCart,cartQty }) {
                 </div>
                 <div className="viewcontent__price">
                   <h4>
-                  <span style={{textDecoration: "line-through"}}>{item.price}- AED   </span>  &nbsp;&nbsp;&nbsp;&nbsp;  <span>{item.sale_price} - AED  </span>
-        
+                    {item.price === 0 ? (
+                      <span style={{ color: "green" }}>
+                        {item.sale_price} - AED{" "}
+                      </span>
+                    ) : (
+                      <>
+                        <span
+                          style={{
+                            textDecoration: "line-through",
+                            color: "red",
+                          }}
+                        >
+                          {item.price}- AED{" "}
+                        </span>{" "}
+                        &nbsp;&nbsp; | &nbsp;&nbsp;{" "}
+                        <span style={{ color: "green" }}>
+                          {item.sale_price} - AED{" "}
+                        </span>
+                      </>
+                    )}
                   </h4>
                 </div>
                 <div className="viewcontent__stock">
                   <h4>
-                  Available :<span> {item.quantity} In stock</span>
+                    Available :<span> {item.quantity} In stock</span>
                   </h4>
                 </div>
                 <div className="viewcontent__details">
@@ -60,7 +76,12 @@ export default function ProductPopUp({ closeModel, item,addToCart,cartQty }) {
                     <input type="text" onInput={cartQty} name="qty" />
                   </span>
                   <span>
-                    <a href="javascript:void(0)"  onClick={() => addToCart(item)}>add to cart</a>
+                    <a
+                      href="javascript:void(0)"
+                      onClick={() => addToCart(item)}
+                    >
+                      add to cart
+                    </a>
                   </span>
                   <span>
                     <i className="fal fa-heart" />
