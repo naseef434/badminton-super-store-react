@@ -5,13 +5,13 @@ export default function ProductPopUp({ closeModel, item, addToCart, cartQty }) {
   return (
     <div>
       <div className="overlay show-popup" />
-      <div className="product-popup show-popup">
+      <div className="product-popup show-popup" style={{marginTop:"50px"}}>
         <div className="view-background">
           <div className="row">
             <div className="col-xl-5 col-lg-5 col-md-5">
               <div className="quickview">
                 <div className="quickview__thumb">
-                  <img src={item.thumbnail} alt="product thumbnail" />
+                  <img className="responsive" src={item.thumbnail} alt="product thumbnail" height={"500px"} width={"500px"} style={{marginTop:"75px"}}/>
                 </div>
               </div>
             </div>
@@ -22,7 +22,7 @@ export default function ProductPopUp({ closeModel, item, addToCart, cartQty }) {
                     <h2> {item.name}</h2>
                   </Link>
 
-                  <a
+                  <a 
                     className="view_close product-p-close"
                     onClick={() => {
                       closeModel(false);
