@@ -22,14 +22,19 @@ export default function Carousel({ customCarousels }) {
                 <div className="slider_images">
                   <Slider {...settings}>
                     {customCarousels?.map((item) => (
-                      <>
-                        <div>
-                          <img src={item.image} />
-                        </div>
-                      </>
+                      <div>
+                        <img className="back" src={item.image} alt="slider" />
+                      </div>
                     ))}
+
+                    <div>
+                      <img
+                        src="./assets/img/slider/slider-img-1-test.png"
+                        alt="slider" style={{maxWidth:"100%",height:"auto"}}
+                      />
+                    </div>
                   </Slider>
-                  {/* className="back" */}
+                   {/* className="back" */}
                   <img
                     className="top"
                     src="./assets/img/slider/text.png"

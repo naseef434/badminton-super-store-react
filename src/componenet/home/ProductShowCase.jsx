@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import img from "./s-rembg-view.png";
 export default function ProductShowCase({ showCase }) {
   
@@ -25,9 +26,9 @@ export default function ProductShowCase({ showCase }) {
               {/* <h2 class="back-text d-none d-lg-block">Deals</h2> */}
 
               {showCase?.map((item) => (
-                <a href="shop.html">
+                <Link to="/products?offerProd=true">
                   <img class="banar-product" src={item.image} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>

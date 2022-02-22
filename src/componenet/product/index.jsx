@@ -43,7 +43,7 @@ export default function Index() {
       const response = await urlGateWay.get(
         `${serviceEndPoint.sportsEndpoints.getSports}`
       );
-      console.log(response);
+     
       setSports(response?.data);
     } catch (error) {
       console.log("sport api rice an error ", error);
@@ -188,9 +188,9 @@ export default function Index() {
   const [Qty, setQty] = useState(1);
   const cartQty = (event) => {
     setQty(event.target.value);
-    console.log(event.target.value);
+    
   };
-  console.log({ qtyyy: Qty });
+
   //add items  to cart
   const addToCart = async (prod) => {
     const response = await urlGateWay.post(
