@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CartSideBar from "../Cart/CartSideBar";
 
 export default function Navbar({ shopMenu ,myBag}) {
-
+console.log({mybag:myBag})
   const [openCartModel, setCartOpen] = useState(false);
   return (
     <>
@@ -149,7 +149,7 @@ export default function Navbar({ shopMenu ,myBag}) {
                     }}
                   >
                     <i className="fal fa-shopping-cart" />
-                    My Bag<span className="counter"> (2)</span>
+                    My Bag<span className="counter"> ({myBag?.item_count !=0 ? myBag.item_count : "" })</span>
                   </a>
                 </div>
               </div>

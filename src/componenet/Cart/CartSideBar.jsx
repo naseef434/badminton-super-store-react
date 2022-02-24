@@ -23,7 +23,12 @@ function CartSideBar({ closeModel }) {
               {cart?.items?.map((itm)=>(
                    <div className="add_cart_product">
                    <div className="add_cart_product__thumb">
-                     <img src="./assets/img/product/17.jpg" alt="" />
+                     { itm.thumbnail === "null" ? 
+                        <img src="./assets/img/product/17.jpg" alt="" />
+                      :
+                        <img src={itm.thumbnail} />                   
+                     }
+                     
                    </div>
                    <div className="add_cart_product__content">
                      <h5>
