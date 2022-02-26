@@ -17,15 +17,15 @@ urlGateWay.interceptors.request.use(function (config) {
   return config;
 });
 
-urlGateWay.interceptors.response.use(
-  (res) => {
-    return res;
-  },
-  function (res) {
-    if (res.response && res.response.status === 401) {
-      localStorage.clear();
-      window.location.href = "/";
-    }
-    return res;
-  }
-);
+// urlGateWay.interceptors.response.use(
+//   (res) => {
+//     return res;
+//   },
+//   function (res) {
+//     if (res.response && res.response.status === 401) {
+//       localStorage.clear();
+//       window.location.href = "/";
+//     }
+//     return res;
+//   }
+// );

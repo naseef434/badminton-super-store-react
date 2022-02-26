@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { urlGateWay } from "../../services/service";
-import * as serviceEndPoint from "../../services/serviceEndPoint"
+import * as serviceEndPoint from "../../services/serviceEndPoint";
 
 function CartSideBar({ closeModel }) {
   const [cart, setCart] = useState({});
 
   useEffect(async () => {
-    const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
-    setCart(response?.data);
-    
+    const token= localStorage.getItem('token')
+    if(token){
+      const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
+      setCart(response?.data);
+    }
   }, []);
   console.log(cart);
   return (
@@ -20,28 +22,28 @@ function CartSideBar({ closeModel }) {
           <div className="cart__content">
             <div className="cart-text">
               <h3 className="mb-40">Shopping cart</h3>
-              {cart?.items?.map((itm)=>(
-                   <div className="add_cart_product">
-                   <div className="add_cart_product__thumb">
-                     { itm.thumbnail === "null" ? 
-                        <img src="./assets/img/product/17.jpg" alt="" />
-                      :
-                        <img src={itm.thumbnail} />                   
-                     }
-                     
-                   </div>
-                   <div className="add_cart_product__content">
-                     <h5>
-                       <a href="shop.html">{itm.product}</a>
-                     </h5>
-                     <p>{itm.quantity} × {itm.price} - AED</p>
-                     <button className="cart_close">
-                       <i className="fal fa-times" />
-                     </button>
-                   </div>
-                 </div>
+              {cart?.items?.map((itm) => (
+                <div className="add_cart_product">
+                  <div className="add_cart_product__thumb">
+                    {itm.thumbnail === "null" ? (
+                      <img src="./assets/img/product/17.jpg" alt="" />
+                    ) : (
+                      <img src={itm.thumbnail} />
+                    )}
+                  </div>
+                  <div className="add_cart_product__content">
+                    <h5>
+                      <a href="shop.html">{itm.product}</a>
+                    </h5>
+                    <p>
+                      {itm.quantity} × {itm.price} - AED
+                    </p>
+                    <button className="cart_close">
+                      <i className="fal fa-times" />
+                    </button>
+                  </div>
+                </div>
               ))}
-           
             </div>
             <div className="cart-icon">
               <i

@@ -16,6 +16,7 @@ export default function Index() {
   const [blog, setBlog] = useState([]);
 
   useEffect(async () => {
+    
     try {
       const response = await urlGateWay.get(
         `${serviceEndPoint.blogsEndpoints.blogs}`

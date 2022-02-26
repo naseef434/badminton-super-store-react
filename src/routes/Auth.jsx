@@ -41,9 +41,9 @@ export default function Auth() {
         <Route path="*" element={<NotFound />} />
       </Route>
       
-      <Route element={<PrivateRoutes />}>
+      {/* <Route element={<PrivateRoutes />}>
       
-      </Route>
+      </Route> */}
       
     </Routes>
   );

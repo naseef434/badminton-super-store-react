@@ -49,7 +49,7 @@
 
 
 */
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
@@ -6456,7 +6456,7 @@ label {
 }
 
 .mega_menu {
-  min-height: 200px;;
+  min-height: 200px;
   width: 100%;
   position: absolute;
   top: 100%;

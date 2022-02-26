@@ -38,19 +38,21 @@ export default function Category({
         <div className="product-widget">
           <h3 className="widget-title mb-30">categories</h3>
           <ul className="product-categories">
-            {query.sport && category_data?.length
-              ? category_data?.map((item, key) => (
-                  <li>
-                    <a
-                      href="javascript:void(0)"
-                      onClick={() => selectCategory(item.id)}
-                      style={{ color: query.category == item.id ? "red" : "" }}
-                    >
-                      {item.name} <span>( {item.count} ) </span>
-                    </a>
-                  </li>
-                ))
-              : <li>-</li>}
+            {query.sport && category_data?.length ? (
+              category_data?.map((item, key) => (
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    onClick={() => selectCategory(item.id)}
+                    style={{ color: params.category == item.id ? "red" : "" }}
+                  >
+                    {item.name} <span>( {item.count} ) </span>
+                  </a>
+                </li>
+              ))
+            ) : (
+              <li>-</li>
+            )}
           </ul>
         </div>
 
@@ -63,6 +65,7 @@ export default function Category({
                   <a
                     href="javascript:void(0)"
                     onClick={() => getProductByBrand(item.id)}
+                    style={{ color: params.brand == item.id ? "red" : "" }}
                   >
                     {item.name} <span>({item.count}) </span>
                   </a>
@@ -77,7 +80,11 @@ export default function Category({
         <br />
         <div className="product-widget">
           <Link to="/products?offerProd=true">
-            <h3 className="widget-title mb-30"><Badge bg="primary"><span>OfferZone</span></Badge> </h3>
+            <h3 className="widget-title mb-30">
+              <Badge bg="primary">
+                <span>OfferZone</span>
+              </Badge>{" "}
+            </h3>
           </Link>
         </div>
       </div>

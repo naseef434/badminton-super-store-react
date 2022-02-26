@@ -10,8 +10,7 @@ import { PuffLoader } from "react-spinners";
 import { css } from "@emotion/react";
 import { useLocation, useParams } from "react-router-dom";
 import ProductSinleView from "./ProductSingleView";
-import { v4 as uuidv4 } from "uuid";
-
+// import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import qs from "query-string";
 
@@ -20,10 +19,11 @@ const override = css`
   margin: 0 auto;
   border-color: #ff0000;
 `;
-export default function Index() {
-  const [uuId, setuuId] = useState({
-    customer_id: "",
-  });
+export default function Index(props) {
+  // const [uuId, setuuId] = useState({
+  //   customer_id: "",
+  // });
+
   const [sports, setSports] = useState([]);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -43,7 +43,7 @@ export default function Index() {
       const response = await urlGateWay.get(
         `${serviceEndPoint.sportsEndpoints.getSports}`
       );
-     
+
       setSports(response?.data);
     } catch (error) {
       console.log("sport api rice an error ", error);
@@ -62,7 +62,7 @@ export default function Index() {
       console.log("categories api error ");
     }
   }, [search]);
-
+  console.log(category);
   //get brands
   useEffect(async () => {
     const query = qs.parse(search);
@@ -77,16 +77,16 @@ export default function Index() {
   //get products
   useEffect(async () => {
     setLoader(true);
-    const get_uuuId = localStorage.getItem("uuid");
-    if (!get_uuuId) {
-      //setting uuid
-      const uuid = uuidv4();
-      localStorage.setItem("uuid", uuid);
+    // const get_uuuId = localStorage.getItem("uuid");
+    // if (!get_uuuId) {
+    //   //setting uuid
+    //   const uuid = uuidv4();
+    //   localStorage.setItem("uuid", uuid);
 
-      setuuId({ customer_id: uuid });
-    } else {
-      setuuId({ customer_id: get_uuuId });
-    }
+    //   setuuId({ customer_id: uuid });
+    // } else {
+    //   setuuId({ customer_id: get_uuuId });
+    // }
 
     const query = qs.parse(search);
     console.log(query);
@@ -109,16 +109,18 @@ export default function Index() {
 
   //get product by category
   const SelectCategory = async (id) => {
+    setParams({...params,brand: null, category: id})
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
       { params: { category: id } }
     );
     setProducts(response?.data?.results);
   };
-
+  console.log(products);
   //get product by brand
   const getProductByBrand = async (id) => {
     console.log("brand clicked");
+    setParams({...params,category:null, brand: id})
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
       { params: { brand: id } }
@@ -188,19 +190,19 @@ export default function Index() {
   const [Qty, setQty] = useState(1);
   const cartQty = (event) => {
     setQty(event.target.value);
-    
   };
 
   //add items  to cart
   const addToCart = async (prod) => {
-    const response = await urlGateWay.post(
-      serviceEndPoint.cart.getAccessToken,
-      uuId
-    );
-    const qty = parseInt(Qty)  
-    localStorage.setItem("token", response?.data?.access);
-    const userToken = localStorage.getItem("token");
-    if (userToken) {
+    // const uuId= localStorage.getItem("uuid")
+    // const response = await urlGateWay.post(
+    //   serviceEndPoint.cart.getAccessToken,
+    //   uuId
+    // );
+    const qty = parseInt(Qty);
+    // localStorage.setItem("token", response?.data?.access);
+    // const userToken = localStorage.getItem("token");
+    // if (userToken) {
       let body = {
         product_id: prod.id,
         quantity: qty,
@@ -209,11 +211,12 @@ export default function Index() {
         serviceEndPoint.cart.addToCart,
         body
       );
-    }
+    // }
+    
     toast.success("Added to cart!");
-   setQty(1)
+    setQty(1);
   };
-//delete cart item
+  //delete cart item
 
   const { section } = useParams();
   return (

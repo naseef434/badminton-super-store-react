@@ -149,7 +149,7 @@ console.log({mybag:myBag})
                     }}
                   >
                     <i className="fal fa-shopping-cart" />
-                    My Bag<span className="counter"> ({myBag?.item_count !=0 ? myBag.item_count : "" })</span>
+                    My Bag<span className="counter"> ({myBag || 0 })</span>
                   </a>
                 </div>
               </div>

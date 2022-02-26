@@ -3,12 +3,12 @@ import Navbar from "./Navbar";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
 import { urlGateWay } from "../../services/service";
 import { v4 as uuidv4 } from "uuid";
-export default function Index() {
-  const [uuId, setuuId] = useState({
-    customer_id: "",
-  });
+export default function Index(props) {
+  // const [uuId, setuuId] = useState({
+  //   customer_id: "",
+  // });
     const [shop, setshop] = useState([])
-    const [cart, setCart] = useState({});
+    // const [cart, setCart] = useState({});
     useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -41,7 +41,7 @@ export default function Index() {
 
   return (
     <div>
-      <Navbar  shopMenu = {shop} myBag={cart}/>
+      <Navbar  shopMenu = {shop} myBag={props.cartCount}/>
     </div>
   );
 }

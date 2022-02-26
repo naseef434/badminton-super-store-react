@@ -7,8 +7,12 @@ export default function Index() {
   const [cart, setCart] = useState({});
 //get cart items
   useEffect(async () => {
-    const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
-    setCart(response?.data);
+    const token= localStorage.getItem("token")
+    if(token){
+
+      const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
+      setCart(response?.data);
+    }
   }, []);
   console.log({ cart: cart });
 
