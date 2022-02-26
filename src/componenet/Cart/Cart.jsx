@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import BreadCrumb from "../product/BreadCrumb";
 import { toast } from "react-toastify";
 var img = "assets/img/product/test.jpg";
 
-function Cart({ cart_item ,deleteCartItem}) {
-  console.log(cart_item);
+function Cart({ cart_item, deleteCartItem, updateCart ,handleChange}) {
+  
   return (
     <div>
       <BreadCrumb name={["Home", "Cart"]} />
@@ -19,7 +19,7 @@ function Cart({ cart_item ,deleteCartItem}) {
                     <tr>
                       <td>Product</td>
                       <td>Name</td>
-                      <td> price  </td>
+                      <td> price </td>
                       <td> Quantity </td>
                       <td> Total </td>
                       <td>Action</td>
@@ -33,9 +33,22 @@ function Cart({ cart_item ,deleteCartItem}) {
                         </td>
                         <td>{item.product}</td>
                         <td>{item.price} - AED</td>
-                        <td>{item.quantity} </td>
+                        <td>
+                          <div className="viewcontent__action single_action pt-30">
+                            <span>
+                              <input
+                                type="number"
+                                
+                                value={item.quantity || 1}
+                                style={{ color: "black" }}
+                                onChange={(e)=>{handleChange(item.id,e)}}
+                              />
+                            </span>
+                          </div>
+                        </td>
+
                         <td>{item.total}</td>
-                     
+
                         {/* <td>
 
                           <div className="viewcontent__action single_action pt-30">
@@ -45,7 +58,12 @@ function Cart({ cart_item ,deleteCartItem}) {
                           </div>
                         </td> */}
                         <td className="width-set">
-                          <a href="javascript:void(0)" onClick={()=>{deleteCartItem(item.id)}}>
+                          <a
+                            href="javascript:void(0)"
+                            onClick={() => {
+                              deleteCartItem(item.id);
+                            }}
+                          >
                             <i className="fal fa-times-circle" />
                           </a>
                         </td>
@@ -61,7 +79,9 @@ function Cart({ cart_item ,deleteCartItem}) {
                         <button type="submit">Apply Coupon</button>
                       </td>
                       <td colSpan={3}>
-                        <a href="#">update cart</a>
+                        <a href="#" onClick={updateCart}>
+                          update cart
+                        </a>
                       </td>
                     </tr>
                   </tfoot>
@@ -90,7 +110,7 @@ function Cart({ cart_item ,deleteCartItem}) {
                     </tr>
                     <tr>
                       <td colSpan={2}>
-                        <Link to='/checkout'>
+                        <Link to="/checkout">
                           <input
                             type="submit"
                             defaultValue="procced to checkout"

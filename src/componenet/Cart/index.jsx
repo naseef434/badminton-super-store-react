@@ -17,7 +17,23 @@ export default function Index() {
     }
   }, []);
  
+  
 
+
+  const [updateCartItem, setupdateCartItem] = useState({
+    "item":"",
+    "quantity":"",
+  });
+  const handleChange = async(id,event)=>{
+    setupdateCartItem({...updateCartItem,"item":id,"quantity":event.target.value})
+    const response = await urlGateWay.patch(`${serviceEndPoint.cart.updateCart}`,{updateCart});
+    console.log(response);
+  }
+
+  console.log(updateCartItem);
+  const updateCart = ()=>{
+    alert("update cart")
+  }
   //delete cart items
   const deleteCartItem = async (itemId) => {
     let body = {
@@ -29,11 +45,11 @@ export default function Index() {
     );
     setCart(response?.data);
     setCartCount(response?.data?.item_count ?? cartCount);
-    toast.error("Deleted an item from cart!");
+    toast.error("Removed item from cart!");
   };
   return (
     <div>
-      <Cart cart_item={cart} deleteCartItem={deleteCartItem} />
+      <Cart cart_item={cart} deleteCartItem={deleteCartItem} updateCart={updateCart} handleChange={handleChange} />
     </div>
   );
 }

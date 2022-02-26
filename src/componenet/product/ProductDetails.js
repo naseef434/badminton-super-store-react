@@ -90,8 +90,8 @@ export default function ProductDetails({ productdata, addToCart, cartQty }) {
         </div>
         <div className="viewcontent__footer border-top-0 border-bottom pb-30">
           <ul>
-            <li>Category:</li>
-            <li>SKU:</li>
+            <li>Category  :  <b>{productdata?.category?.name || ""}</b> </li>
+            <li>SKU  :  SCJ99I</li>
           </ul>
           <ul>
             {/* <li>{productdata?.category?.name}</li>

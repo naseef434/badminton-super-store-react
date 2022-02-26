@@ -16,7 +16,7 @@ export default function OfferModel({ closeModal,modalImage }) {
           checked
         />
         <label htmlFor="modal-btn"  onClick={()=>closeModal(false)}>
-        <i class="fa fa-times" aria-hidden="true"></i>
+       
         </label>
         <div className="modal">
           <div className="modal-wrap">

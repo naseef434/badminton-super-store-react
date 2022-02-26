@@ -25,6 +25,7 @@ export const cart = {
   addToCart: "/cart/add_to_cart/",
   getCart: "/cart/get_cart/", 
   deleteCartItem: "cart/delete_cart_item/",
+  updateCart:"/cart/update_cart/"
 };
 
 export const productSearch = {

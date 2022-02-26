@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { urlGateWay } from "../../services/service";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
@@ -17,7 +17,6 @@ function CartSideBar({ closeModel }) {
       setCart(response?.data);
     }
   }, []);
- 
 
   //delete cart items
   const deleteCartItem = async (itemId) => {
@@ -30,10 +29,14 @@ function CartSideBar({ closeModel }) {
     );
     setCart(response?.data);
     setCartCount(response?.data?.item_count ?? cartCount);
-    toast.error("Deleted an item from cart!");
+    toast.error("Removed an item from cart!");
+  };
+  const hello = () => {
+    alert("hello");
   };
   return (
     <div>
+      <div className="outer" onClick={hello}></div>
       {/* cart area start  */}
       <div className="cart__sidebar open-cart">
         <div className="container">
@@ -56,7 +59,12 @@ function CartSideBar({ closeModel }) {
                     <p>
                       {itm.quantity} × {itm.price} - AED
                     </p>
-                    <button className="cart_close" onClick={()=>{deleteCartItem(itm.id)}}>
+                    <button
+                      className="cart_close"
+                      onClick={() => {
+                        deleteCartItem(itm.id);
+                      }}
+                    >
                       <i className="fal fa-times" />
                     </button>
                   </div>
@@ -82,7 +90,12 @@ function CartSideBar({ closeModel }) {
           </div>
         </div>
       </div>
-      <div className="cart-offcanvas-overlay open-cart-overlay" />
+      <div
+        className="cart-offcanvas-overlay open-cart-overlay"
+        onClick={() => {
+          closeModel(false);
+        }}
+      />
       {/* cart area end  */}
     </div>
   );
