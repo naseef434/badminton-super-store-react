@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import img from "./test.jpg";
-import img1 from "./test11.jpeg";
 
 export default function ProductImagesView({ product }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+  console.log({ productsingle: product });
   // console.log(randomstring);
   const getDatabs = (item) => {
     setSelectedIndex(item);

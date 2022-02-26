@@ -1,19 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import { urlGateWay } from "../../services/service";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
+import { toast } from "react-toastify";
+import AppContext from "../../AppContext";
 
 function CartSideBar({ closeModel }) {
-  const [cart, setCart] = useState({});
+  const { cartCount, setCartCount } = useContext(AppContext);
 
+  const [cart, setCart] = useState({});
+  //get cart items
   useEffect(async () => {
-    const token= localStorage.getItem('token')
-    if(token){
+    const token = localStorage.getItem("token");
+    if (token) {
       const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
       setCart(response?.data);
     }
   }, []);
-  console.log(cart);
+ 
+
+  //delete cart items
+  const deleteCartItem = async (itemId) => {
+    let body = {
+      item: itemId,
+    };
+    const response = await urlGateWay.post(
+      serviceEndPoint.cart.deleteCartItem,
+      body
+    );
+    setCart(response?.data);
+    setCartCount(response?.data?.item_count ?? cartCount);
+    toast.error("Deleted an item from cart!");
+  };
   return (
     <div>
       {/* cart area start  */}
@@ -38,7 +56,7 @@ function CartSideBar({ closeModel }) {
                     <p>
                       {itm.quantity} × {itm.price} - AED
                     </p>
-                    <button className="cart_close">
+                    <button className="cart_close" onClick={()=>{deleteCartItem(itm.id)}}>
                       <i className="fal fa-times" />
                     </button>
                   </div>

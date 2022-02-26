@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CartSideBar from "../Cart/CartSideBar";
+import AppContext from "../../AppContext"
+export default function Navbar({ shopMenu }) {
+  const {cartCount} = useContext(AppContext);
 
-export default function Navbar({ shopMenu ,myBag}) {
-console.log({mybag:myBag})
   const [openCartModel, setCartOpen] = useState(false);
   return (
     <>
@@ -149,7 +150,7 @@ console.log({mybag:myBag})
                     }}
                   >
                     <i className="fal fa-shopping-cart" />
-                    My Bag<span className="counter"> ({myBag || 0 })</span>
+                    My Bag<span className="counter"> ({cartCount || 0 })</span>
                   </a>
                 </div>
               </div>

@@ -6,7 +6,7 @@ import ProductDetails from "./ProductDetails";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function ProductSinleView({addToCart,cartQty}) {
+export default function ProductSinleView({ addToCart, cartQty }) {
   const { product_id } = useParams();
   const [singleProduct, setSingleProduct] = useState([0]);
 
@@ -14,7 +14,8 @@ export default function ProductSinleView({addToCart,cartQty}) {
   useEffect(() => {
     async function fetchMyAPI() {
       let response = await fetch(
-        "http://ec2-18-191-207-113.us-east-2.compute.amazonaws.com/api/product/" + product_id
+        "http://ec2-18-191-207-113.us-east-2.compute.amazonaws.com/api/product/" +
+          product_id
       );
       response = await response.json();
       setSingleProduct(response);
@@ -24,17 +25,15 @@ export default function ProductSinleView({addToCart,cartQty}) {
 
   return (
     <>
-    
       <div className="single_breadcrumb pt-25">
         <div className="container">
-          <ProductBreadCrumb />
+          <ProductBreadCrumb singleProduct={singleProduct} />
           <div className="row">
             <ProductImagesView product={singleProduct} />
             <ProductDetails
               addToCart={addToCart}
               productdata={singleProduct}
               cartQty={cartQty}
-              
             />
           </div>
         </div>

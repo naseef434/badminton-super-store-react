@@ -16,7 +16,7 @@ export default function Product({
   cartQty,
 })
 {
-console.log(product) 
+
 
   return (
     <>

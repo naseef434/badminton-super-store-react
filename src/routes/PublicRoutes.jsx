@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect,useState, createContext  } from "react";
+import React, { Suspense, useEffect, useState, createContext } from "react";
 import { Outlet } from "react-router-dom";
 import { PuffLoader } from "react-spinners";
 import { css } from "@emotion/react";
@@ -7,7 +7,7 @@ import Footer from "../componenet/footer/Footer";
 import { v4 as uuidv4 } from "uuid";
 import { urlGateWay } from "../services/service";
 import * as serviceEndPoint from "../services/serviceEndPoint";
-import AppContext from  '../AppContext'
+import AppContext from "../AppContext";
 
 const override = css`
   display: flex;
@@ -17,8 +17,8 @@ const override = css`
 `;
 
 function PublicRoute() {
-  const [cartCount, setCartCount] = useState(0)
-  useEffect(async() => {
+  const [cartCount, setCartCount] = useState(0);
+  useEffect(async () => {
     const get_uuuId = localStorage.getItem("uuid");
     const token = localStorage.getItem("token");
 
@@ -27,29 +27,34 @@ function PublicRoute() {
       const uuid = uuidv4();
       const response = await urlGateWay.post(
         serviceEndPoint.cart.getAccessToken,
-        {customer_id: uuid}
+        { customer_id: uuid }
       );
       localStorage.setItem("token", response?.data?.access);
       localStorage.setItem("uuid", uuid);
-    }else{
+    } else {
       const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
-      setCartCount(response?.data?.count);
+      setCartCount(response?.data?.item_count);
     }
   }, []);
 
   return (
     <div>
-   
-      <Navbar cartCount={cartCount} />
-      <Suspense
-        fallback={
-          <PuffLoader color={"blue"} css={override} loading={true} size={150} />
-        }
-      >
-        <Outlet context={[cartCount, setCartCount]} />
-      </Suspense>
-      <Footer />
-     
+      <AppContext.Provider value={{cartCount, setCartCount}}>
+        <Navbar />
+        <Suspense
+          fallback={
+            <PuffLoader
+              color={"blue"}
+              css={override}
+              loading={true}
+              size={150}
+            />
+          }
+        >
+          <Outlet />
+        </Suspense>
+        <Footer />
+      </AppContext.Provider>
     </div>
   );
 }

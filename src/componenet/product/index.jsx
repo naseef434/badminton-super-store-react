@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { urlGateWay } from "../../services/service";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
 import Navbar from "../navbar/Navbar";
@@ -13,6 +13,7 @@ import ProductSinleView from "./ProductSingleView";
 // import { v4 as uuidv4 } from "uuid";
 import { toast } from "react-toastify";
 import qs from "query-string";
+import AppContext from "../../AppContext";
 
 const override = css`
   display: block;
@@ -36,8 +37,8 @@ export default function Index(props) {
   });
   const [loader, setLoader] = useState(true);
   const { search } = useLocation();
+  const {cartCount, setCartCount} = useContext(AppContext);
   //loading spots Name nd passing Feautures component
-
   useEffect(async () => {
     try {
       const response = await urlGateWay.get(
@@ -109,7 +110,7 @@ export default function Index(props) {
 
   //get product by category
   const SelectCategory = async (id) => {
-    setParams({...params,brand: null, category: id})
+    setParams({ ...params, brand: null, category: id });
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
       { params: { category: id } }
@@ -120,7 +121,7 @@ export default function Index(props) {
   //get product by brand
   const getProductByBrand = async (id) => {
     console.log("brand clicked");
-    setParams({...params,category:null, brand: id})
+    setParams({ ...params, category: null, brand: id });
     const response = await urlGateWay.get(
       `${serviceEndPoint.productsEndpoints.getProducts}`,
       { params: { brand: id } }
@@ -203,16 +204,16 @@ export default function Index(props) {
     // localStorage.setItem("token", response?.data?.access);
     // const userToken = localStorage.getItem("token");
     // if (userToken) {
-      let body = {
-        product_id: prod.id,
-        quantity: qty,
-      };
-      const response = await urlGateWay.post(
-        serviceEndPoint.cart.addToCart,
-        body
-      );
+    let body = {
+      product_id: prod.id,
+      quantity: qty,
+    };
+    const response = await urlGateWay.post(
+      serviceEndPoint.cart.addToCart,
+      body
+    );
     // }
-    
+    setCartCount(response?.data?.item_count || cartCount);
     toast.success("Added to cart!");
     setQty(1);
   };
