@@ -245,6 +245,7 @@ export default function Index(props) {
                   <ProductFilter
                     searchInput={searchInput}
                     buttonSerach={buttonSerach}
+                    products_data={products}
                   />
                   {/* product listing start with xl-3 */}
                   <div className="shop-page-product pt-50 pb-100">

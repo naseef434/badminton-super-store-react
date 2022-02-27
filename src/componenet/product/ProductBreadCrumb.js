@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ProductBreadCrumb({singleProduct}) {
-  console.log({singleProduct:singleProduct});
+
   return (
     <nav aria-label="breadcrumb">
       <ol className="breadcrumb">
