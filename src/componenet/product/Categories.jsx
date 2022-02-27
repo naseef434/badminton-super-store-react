@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import qs from "query-string";
 import "./offerbtn.css";
-import { Badge } from "react-bootstrap";
+// import { Badge } from "react-bootstrap";
 export default function Category({
   category_data,
   sports,
@@ -81,9 +81,9 @@ export default function Category({
         <div className="product-widget">
           <Link to="/products?offerProd=true">
             <h3 className="widget-title mb-30">
-              <Badge bg="primary">
+              {/* <Badge bg="primary"> */}
                 <span>OfferZone</span>
-              </Badge>{" "}
+              {/* </Badge>{" "} */}
             </h3>
           </Link>
         </div>
