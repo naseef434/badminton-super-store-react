@@ -56,7 +56,7 @@ function Cart({ cart_item, deleteCartItem, updateCart }) {
                           <div className="viewcontent__action single_action pt-30">
                             <span>
                               <input
-                                type="number"
+                                type="text"
                                 min={1}
                                 // value={updateCartItem.quantity}
                                 placeholder={item.quantity}
