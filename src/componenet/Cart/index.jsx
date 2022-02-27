@@ -16,14 +16,18 @@ export default function Index() {
       setCart(response?.data);
     }
   }, []);
- 
-  
 
-
- 
-  const updateCart = ()=>{
-    alert("update cart")
-  }
+  const updateCart = async (id, event) => {
+    const response = await urlGateWay.patch(serviceEndPoint.cart.updateCart, {
+      item: id,
+      quantity: event.target.value,
+    });
+    const token = localStorage.getItem("token");
+    if (token) {
+      const response = await urlGateWay.get(`${serviceEndPoint.cart.getCart}`);
+      setCart(response?.data);
+    }
+  };
   //delete cart items
   const deleteCartItem = async (itemId) => {
     let body = {
@@ -39,7 +43,11 @@ export default function Index() {
   };
   return (
     <div>
-      <Cart cart_item={cart} deleteCartItem={deleteCartItem} updateCart={updateCart}  />
+      <Cart
+        cart_item={cart}
+        deleteCartItem={deleteCartItem}
+        updateCart={updateCart}
+      />
     </div>
   );
 }

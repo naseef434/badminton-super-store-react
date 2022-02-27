@@ -26,7 +26,7 @@ export default function CarouselM({ customCarousels }) {
             {customCarousels?.map((item)=>(
                 <Carousel.Item>
                 <img 
-                  className="d-block w-10"
+                  className="d-block w-10 "
                   src={item.image}
                   alt="First slide"
                   style={{height:"769px",width:"100%"}}

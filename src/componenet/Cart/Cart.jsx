@@ -6,27 +6,25 @@ import { urlGateWay } from "../../services/service";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
 var img = "assets/img/product/test.jpg";
 
-function Cart({ cart_item, deleteCartItem, updateCart}) {
-  const [updateCartItem, setupdateCartItem] = useState({
-    "item":"",
-    "quantity":"",
-  });
-  
-  const handleChange = async(id,event)=>{
-    setupdateCartItem({...updateCartItem,"item":id,"quantity":event.target.value+1})
-    let body = {
-      item: updateCartItem.item,
-      quantity: updateCartItem.quantity,
-    };
-    const response = await urlGateWay.patch(
-      serviceEndPoint.cart.updateCart,
-      updateCartItem)
-    // const response = await urlGateWay.patch(`${serviceEndPoint.cart.updateCart}`,{updateCartItem});
-    console.log(body);
-  }
+function Cart({ cart_item, deleteCartItem, updateCart }) {
+  // const [updateCartItem, setupdateCartItem] = useState({
+  //   item: "",
+  //   quantity: "",
+  // });
 
-  console.log(updateCartItem);
-  
+  // const handleChange = async (id, event) => {
+  //   // await setupdateCartItem({ item: id, quantity: event.target.value });
+  //   const response = await urlGateWay.patch(serviceEndPoint.cart.updateCart, {
+  //     item: id,
+  //     quantity: event.target.value,
+  //   });
+  // };
+
+  // const response = await urlGateWay.patch(`${serviceEndPoint.cart.updateCart}`,{updateCartItem});
+  // console.log(response);
+
+  // console.log(updateCartItem);
+
   return (
     <div>
       <BreadCrumb name={["Home", "Cart"]} />
@@ -58,11 +56,14 @@ function Cart({ cart_item, deleteCartItem, updateCart}) {
                           <div className="viewcontent__action single_action pt-30">
                             <span>
                               <input
-                                type="text"
-                                
+                                type="number"
+                                min={1}
+                                // value={updateCartItem.quantity}
                                 placeholder={item.quantity}
                                 style={{ color: "black" }}
-                                onChange={(e)=>{handleChange(item.id,e)}}
+                                onChange={(e) => {
+                                  updateCart(item.id, e);
+                                }}
                               />
                             </span>
                           </div>
