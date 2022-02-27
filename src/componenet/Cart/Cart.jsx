@@ -101,9 +101,9 @@ function Cart({ cart_item, deleteCartItem, updateCart }) {
                         <button type="submit">Apply Coupon</button>
                       </td>
                       <td colSpan={3}>
-                        <a href="#" onClick={updateCart}>
+                        {/* <a href="#" onClick={updateCart}>
                           update cart
-                        </a>
+                        </a> */}
                       </td>
                     </tr>
                   </tfoot>
