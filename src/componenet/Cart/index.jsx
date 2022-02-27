@@ -20,17 +20,7 @@ export default function Index() {
   
 
 
-  const [updateCartItem, setupdateCartItem] = useState({
-    "item":"",
-    "quantity":"",
-  });
-  const handleChange = async(id,event)=>{
-    setupdateCartItem({...updateCartItem,"item":id,"quantity":event.target.value})
-    const response = await urlGateWay.patch(`${serviceEndPoint.cart.updateCart}`,{updateCart});
-    console.log(response);
-  }
-
-  console.log(updateCartItem);
+ 
   const updateCart = ()=>{
     alert("update cart")
   }
@@ -49,7 +39,7 @@ export default function Index() {
   };
   return (
     <div>
-      <Cart cart_item={cart} deleteCartItem={deleteCartItem} updateCart={updateCart} handleChange={handleChange} />
+      <Cart cart_item={cart} deleteCartItem={deleteCartItem} updateCart={updateCart}  />
     </div>
   );
 }

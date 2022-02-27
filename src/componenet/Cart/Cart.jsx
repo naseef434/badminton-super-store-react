@@ -2,9 +2,30 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import BreadCrumb from "../product/BreadCrumb";
 import { toast } from "react-toastify";
+import { urlGateWay } from "../../services/service";
+import * as serviceEndPoint from "../../services/serviceEndPoint";
 var img = "assets/img/product/test.jpg";
 
-function Cart({ cart_item, deleteCartItem, updateCart ,handleChange}) {
+function Cart({ cart_item, deleteCartItem, updateCart}) {
+  const [updateCartItem, setupdateCartItem] = useState({
+    "item":"",
+    "quantity":"",
+  });
+  
+  const handleChange = async(id,event)=>{
+    setupdateCartItem({...updateCartItem,"item":id,"quantity":event.target.value+1})
+    let body = {
+      item: updateCartItem.item,
+      quantity: updateCartItem.quantity,
+    };
+    const response = await urlGateWay.patch(
+      serviceEndPoint.cart.updateCart,
+      updateCartItem)
+    // const response = await urlGateWay.patch(`${serviceEndPoint.cart.updateCart}`,{updateCartItem});
+    console.log(body);
+  }
+
+  console.log(updateCartItem);
   
   return (
     <div>
@@ -37,9 +58,9 @@ function Cart({ cart_item, deleteCartItem, updateCart ,handleChange}) {
                           <div className="viewcontent__action single_action pt-30">
                             <span>
                               <input
-                                type="number"
+                                type="text"
                                 
-                                value={item.quantity || 1}
+                                placeholder={item.quantity}
                                 style={{ color: "black" }}
                                 onChange={(e)=>{handleChange(item.id,e)}}
                               />
@@ -106,7 +127,7 @@ function Cart({ cart_item, deleteCartItem, updateCart ,handleChange}) {
                     </tr> */}
                     <tr className="first-child">
                       <td>Total</td>
-                      <td>{`${cart_item.total} - AED`}</td>
+                      <td>{`${cart_item?.total} - AED`}</td>
                     </tr>
                     <tr>
                       <td colSpan={2}>
