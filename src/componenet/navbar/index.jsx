@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import * as serviceEndPoint from "../../services/serviceEndPoint";
 import { urlGateWay } from "../../services/service";
 import { v4 as uuidv4 } from "uuid";
+import CustomNavbar from "./CustomNavbar";
 export default function Index(props) {
   // const [uuId, setuuId] = useState({
   //   customer_id: "",
@@ -41,7 +42,8 @@ export default function Index(props) {
 
   return (
     <div>
-      <Navbar  shopMenu = {shop} myBag={props.cartCount}/>
+      {/* <Navbar  shopMenu = {shop} myBag={props.cartCount}/> */}
+      <CustomNavbar shopMenu = {shop} />
     </div>
   );
 }

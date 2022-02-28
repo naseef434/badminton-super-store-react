@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './mystyle.css'
-function CustomNavbar() {
+function CustomNavbar({shopMenu}) {
+  console.log(shopMenu);
   return (
     
         <div className="wrapper">
@@ -34,19 +35,24 @@ function CustomNavbar() {
           <input type="checkbox" id="show-services" />
           <label htmlFor="show-services">Services</label>
           <ul>
-            <li><a href="#">Drop Menu 1</a></li>
+            {/* <li><a href="#">Drop Menu 1</a></li>
             <li><a href="#">Drop Menu 2</a></li>
-            <li><a href="#">Drop Menu 3</a></li>
-            <li>
-              <a href="#" className="desktop-link">More Items</a>
-              <input type="checkbox" id="show-items" />
-              <label htmlFor="show-items">More Items</label>
-              <ul>
-                <li><a href="#">Sub Menu 1</a></li>
-                <li><a href="#">Sub Menu 2</a></li>
-                <li><a href="#">Sub Menu 3</a></li>
-              </ul>
-            </li>
+            <li><a href="#">Drop Menu 3</a></li> */}
+            {shopMenu?.map((menu)=>(
+                  <li>
+                  <a href="#" className="desktop-link">{menu.name}</a>
+                  <input type="checkbox" id="show-items" />
+                  <label htmlFor="show-items">{menu.name}</label>
+                  <ul>
+                    {menu?.category.map((item)=>(
+                      <li><a href="#">{item.name}</a></li>
+                    ))}
+                    
+                   
+                  </ul>
+                </li>
+            ))}
+        
           </ul>
         </li>
         <li><a href="#">Feedback</a></li>

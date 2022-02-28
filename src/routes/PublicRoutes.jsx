@@ -42,8 +42,8 @@ function PublicRoute() {
     <div>
       <AppContext.Provider value={{cartCount, setCartCount}}>
        
-        {/* <Navbar /> */}
-        <CustomNavbar />
+        <Navbar />
+        {/* <CustomNavbar /> */}
         <Suspense
           fallback={
             <PuffLoader
