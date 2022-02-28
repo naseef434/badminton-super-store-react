@@ -12928,7 +12928,7 @@ input:-ms-input-placeholder {
 
 .banar-product {
   position: relative;
-  z-index: 999;
+  /* z-index: 999; */
   top: 10%;
   animation: float-bob-x 5s infinite;
 }

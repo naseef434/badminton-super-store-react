@@ -130,6 +130,7 @@ export default function Navbar({ shopMenu }) {
                       <li>
                         <Link to="/events">Events</Link>
                       </li>
+                      
 
                       <li>
                         <Link to="/about">About</Link>

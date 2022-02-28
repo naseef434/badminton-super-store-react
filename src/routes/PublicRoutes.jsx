@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import { urlGateWay } from "../services/service";
 import * as serviceEndPoint from "../services/serviceEndPoint";
 import AppContext from "../AppContext";
+import CustomNavbar from "../componenet/navbar/CustomNavbar";
 
 const override = css`
   display: flex;
@@ -40,7 +41,9 @@ function PublicRoute() {
   return (
     <div>
       <AppContext.Provider value={{cartCount, setCartCount}}>
-        <Navbar />
+       
+        {/* <Navbar /> */}
+        <CustomNavbar />
         <Suspense
           fallback={
             <PuffLoader

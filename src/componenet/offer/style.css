@@ -4,7 +4,7 @@
 
 
 
-
+/*
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 *,
 *::before,
@@ -152,8 +152,8 @@
 
 
 .logo {
-	position: absolute;
-	top: 25px;
+	/* position: absolute; */
+/*	top: 25px;
 	left: 25px;
 	display: block;
 	z-index: 1000;
@@ -180,4 +180,4 @@
 	.modal-wrap p {
 	  padding: 15px 20px 0 20px;
 	}
-}
+}*/

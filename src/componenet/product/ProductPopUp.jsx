@@ -11,7 +11,7 @@ export default function ProductPopUp({ closeModel, item, addToCart, cartQty }) {
             <div className="col-xl-5 col-lg-5 col-md-5">
               <div className="quickview">
                 <div className="quickview__thumb">
-                  <img className="responsive" src={item.thumbnail} alt="product thumbnail" height={"500px"} width={"500px"} style={{marginTop:"75px"}}/>
+                  <img className="responsive" src={item.thumbnail} alt="product thumbnail" />
                 </div>
               </div>
             </div>
